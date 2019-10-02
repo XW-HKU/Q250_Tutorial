@@ -1,8 +1,8 @@
 ## Run Full Simulator Inside the ROS (PX4, Gazebo, MAVROS, OFFBOARD)
 PX4 SITL + Gazebo
-1. cd MaRS_Offboard
+1. copy all the files in MaRS_Offboard/ to a catkin workspace
 2. catkin build
-3. source launch-mars-sim.sh
+3. source sources-mars-sim.sh
 4. roslaunch mars-sim.launch
 
 ## Using the Offboard Control With the Independent PX4 Firmware:
