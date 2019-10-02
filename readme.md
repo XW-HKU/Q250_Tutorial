@@ -1,4 +1,13 @@
-SITL+Offboard:
+## Run Full Simulator Inside the ROS (PX4, Gazebo, MAVROS, OFFBOARD)
+PX4 SITL + Gazebo
+1. cd MaRS_Offboard
+2. catkin build
+3. source launch-mars-sim.sh
+4. roslaunch mars-sim.launch
+
+## Using the Offboard Control With the Independent PX4 Firmware:
+
+SITL + Offboard:
 
 0. Open the vehicle model's sdf file (e.g. **Tools/sitl_gazebo/models/iris/iris.sdf**).
 Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
