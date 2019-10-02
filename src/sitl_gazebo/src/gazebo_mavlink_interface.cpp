@@ -59,8 +59,6 @@ void GazeboMavlinkInterface::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf
   getSdfParam<std::string>(_sdf, "gpsSubTopic", gps_sub_topic_, gps_sub_topic_);
   getSdfParam<std::string>(_sdf, "visionSubTopic", vision_sub_topic_, vision_sub_topic_);
   getSdfParam<std::string>(_sdf, "lidarSubTopic", lidar_sub_topic_, lidar_sub_topic_);
-  getSdfParam<std::string>(_sdf, "opticalFlowSubTopic",
-      opticalFlow_sub_topic_, opticalFlow_sub_topic_);
   getSdfParam<std::string>(_sdf, "sonarSubTopic", sonar_sub_topic_, sonar_sub_topic_);
   getSdfParam<std::string>(_sdf, "irlockSubTopic", irlock_sub_topic_, irlock_sub_topic_);
   groundtruth_sub_topic_ = "/groundtruth";
@@ -254,7 +252,6 @@ void GazeboMavlinkInterface::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf
   // Subscribe to messages of other plugins.
   imu_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + imu_sub_topic_, &GazeboMavlinkInterface::ImuCallback, this);
   lidar_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + lidar_sub_topic_, &GazeboMavlinkInterface::LidarCallback, this);
-  opticalFlow_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + opticalFlow_sub_topic_, &GazeboMavlinkInterface::OpticalFlowCallback, this);
   sonar_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + sonar_sub_topic_, &GazeboMavlinkInterface::SonarCallback, this);
   irlock_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + irlock_sub_topic_, &GazeboMavlinkInterface::IRLockCallback, this);
   gps_sub_ = node_handle_->Subscribe("~/" + model_->GetName() + gps_sub_topic_, &GazeboMavlinkInterface::GpsCallback, this);
@@ -822,36 +819,6 @@ void GazeboMavlinkInterface::LidarCallback(LidarPtr& lidar_message) {
 
   mavlink_message_t msg;
   mavlink_msg_distance_sensor_encode_chan(1, 200, MAVLINK_COMM_0, &msg, &sensor_msg);
-  send_mavlink_message(&msg);
-}
-
-void GazeboMavlinkInterface::OpticalFlowCallback(OpticalFlowPtr& opticalFlow_message) {
-  mavlink_hil_optical_flow_t sensor_msg;
-  sensor_msg.time_usec = opticalFlow_message->time_usec();
-  sensor_msg.sensor_id = opticalFlow_message->sensor_id();
-  sensor_msg.integration_time_us = opticalFlow_message->integration_time_us();
-  sensor_msg.integrated_x = opticalFlow_message->integrated_x();
-  sensor_msg.integrated_y = opticalFlow_message->integrated_y();
-
-  bool no_gyro = (ignition::math::isnan(opticalFlow_message->integrated_xgyro())) ||
-                 (ignition::math::isnan(opticalFlow_message->integrated_ygyro())) ||
-                 (ignition::math::isnan(opticalFlow_message->integrated_zgyro()));
-  if (no_gyro) {
-    sensor_msg.integrated_xgyro = NAN;
-    sensor_msg.integrated_ygyro = NAN;
-    sensor_msg.integrated_zgyro = NAN;
-  } else {
-    sensor_msg.integrated_xgyro = opticalFlow_message->quality() ? opticalFlow_message->integrated_xgyro() : 0.0f;
-    sensor_msg.integrated_ygyro = opticalFlow_message->quality() ? opticalFlow_message->integrated_ygyro() : 0.0f;
-    sensor_msg.integrated_zgyro = opticalFlow_message->quality() ? opticalFlow_message->integrated_zgyro() : 0.0f;
-  }
-  sensor_msg.temperature = opticalFlow_message->temperature();
-  sensor_msg.quality = opticalFlow_message->quality();
-  sensor_msg.time_delta_distance_us = opticalFlow_message->time_delta_distance_us();
-  sensor_msg.distance = optflow_distance;
-
-  mavlink_message_t msg;
-  mavlink_msg_hil_optical_flow_encode_chan(1, 200, MAVLINK_COMM_0, &msg, &sensor_msg);
   send_mavlink_message(&msg);
 }
 

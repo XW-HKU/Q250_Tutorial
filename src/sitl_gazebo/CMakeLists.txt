@@ -49,8 +49,8 @@ pkg_check_modules(OGRE OGRE)
 include_directories(SYSTEM ${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
-add_subdirectory( external/OpticalFlow OpticalFlow )
-set( OpticalFlow_LIBS "OpticalFlow" )
+#add_subdirectory( external/OpticalFlow OpticalFlow )
+#set( OpticalFlow_LIBS "OpticalFlow" )
 
 # for ROS subscribers and publishers
 if (BUILD_ROS_INTERFACE)
@@ -144,7 +144,7 @@ include_directories(
   ${OGRE_INCLUDE_DIRS}
   ${OGRE_INCLUDE_DIRS}/Paging		# Workaround for "fatal error: OgrePagedWorldSection.h: No such file or directory"
   ${OpenCV_INCLUDE_DIRS}
-  ${OpticalFlow_INCLUDE_DIRS}
+  #${OpticalFlow_INCLUDE_DIRS}
   ${TinyXML_INCLUDE_DIRS}
   )
 
@@ -261,7 +261,7 @@ set(sensor_msgs
   msgs/Groundtruth.proto
   msgs/Range.proto
   msgs/SITLGps.proto
-  msgs/OpticalFlow.proto
+  #msgs/OpticalFlow.proto
   )
 
 PROTOBUF_GENERATE_CPP(MAV_PROTO_SRCS MAV_PROTO_HDRS ${mav_msgs})
@@ -287,7 +287,7 @@ add_library(gazebo_geotagged_images_plugin SHARED src/gazebo_geotagged_images_pl
 add_library(gazebo_gps_plugin SHARED src/gazebo_gps_plugin.cpp)
 add_library(gazebo_irlock_plugin SHARED src/gazebo_irlock_plugin.cpp)
 add_library(gazebo_lidar_plugin SHARED src/gazebo_lidar_plugin.cpp)
-add_library(gazebo_opticalflow_plugin SHARED src/gazebo_opticalflow_plugin.cpp)
+#add_library(gazebo_opticalflow_plugin SHARED src/gazebo_opticalflow_plugin.cpp)
 add_library(gazebo_sonar_plugin SHARED src/gazebo_sonar_plugin.cpp)
 add_library(gazebo_uuv_plugin SHARED src/gazebo_uuv_plugin.cpp)
 add_library(gazebo_vision_plugin SHARED src/gazebo_vision_plugin.cpp)
@@ -304,7 +304,7 @@ set(plugins
   gazebo_gps_plugin
   gazebo_irlock_plugin
   gazebo_lidar_plugin
-  gazebo_opticalflow_plugin
+  #gazebo_opticalflow_plugin
   gazebo_sonar_plugin
   gazebo_uuv_plugin
   gazebo_vision_plugin
@@ -320,7 +320,7 @@ set(plugins
 foreach(plugin ${plugins})
   target_link_libraries(${plugin} ${Boost_LIBRARIES} ${GAZEBO_LIBRARIES} ${TinyXML_LIBRARIES})
 endforeach()
-target_link_libraries(gazebo_opticalflow_plugin ${OpticalFlow_LIBS})
+#target_link_libraries(gazebo_opticalflow_plugin ${OpticalFlow_LIBS})
 
 # If BUILD_ROS_INTERFACE set to ON, build plugins that have ROS dependencies
 # Current plugins that can be used with ROS interface: gazebo_motor_failure_plugin

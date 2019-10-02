@@ -58,7 +58,6 @@
 #include <CommandMotorSpeed.pb.h>
 #include <MotorSpeed.pb.h>
 #include <Imu.pb.h>
-#include <OpticalFlow.pb.h>
 #include <Range.pb.h>
 #include <SITLGps.pb.h>
 #include <IRLock.pb.h>
@@ -89,7 +88,6 @@ typedef const boost::shared_ptr<const nav_msgs::msgs::Odometry> OdomPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::Groundtruth> GtPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::Imu> ImuPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::IRLock> IRLockPtr;
-typedef const boost::shared_ptr<const sensor_msgs::msgs::OpticalFlow> OpticalFlowPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::Range> SonarPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::Range> LidarPtr;
 typedef const boost::shared_ptr<const sensor_msgs::msgs::SITLGps> GpsPtr;
@@ -103,7 +101,6 @@ static const std::string kDefaultMotorVelocityReferencePubTopic = "/gazebo/comma
 
 static const std::string kDefaultImuTopic = "/imu";
 static const std::string kDefaultLidarTopic = "/link/lidar";
-static const std::string kDefaultOpticalFlowTopic = "/px4flow/link/opticalFlow";
 static const std::string kDefaultSonarTopic = "/sonar_model/link/sonar";
 static const std::string kDefaultIRLockTopic = "/camera/link/irlock";
 static const std::string kDefaultGPSTopic = "/gps";
@@ -132,7 +129,6 @@ public:
     send_vision_estimation_(false),
     send_odometry_(false),
     imu_sub_topic_(kDefaultImuTopic),
-    opticalFlow_sub_topic_(kDefaultOpticalFlowTopic),
     lidar_sub_topic_(kDefaultLidarTopic),
     sonar_sub_topic_(kDefaultSonarTopic),
     irlock_sub_topic_(kDefaultIRLockTopic),
@@ -234,7 +230,6 @@ private:
   void GroundtruthCallback(GtPtr& groundtruth_msg);
   void LidarCallback(LidarPtr& lidar_msg);
   void SonarCallback(SonarPtr& sonar_msg);
-  void OpticalFlowCallback(OpticalFlowPtr& opticalFlow_msg);
   void IRLockCallback(IRLockPtr& irlock_msg);
   void VisionCallback(OdomPtr& odom_msg);
   void send_mavlink_message(const mavlink_message_t *message, const int destination_port = 0);
@@ -270,7 +265,6 @@ private:
   transport::SubscriberPtr imu_sub_;
   transport::SubscriberPtr lidar_sub_;
   transport::SubscriberPtr sonar_sub_;
-  transport::SubscriberPtr opticalFlow_sub_;
   transport::SubscriberPtr irlock_sub_;
   transport::SubscriberPtr gps_sub_;
   transport::SubscriberPtr groundtruth_sub_;
@@ -278,7 +272,6 @@ private:
 
   std::string imu_sub_topic_;
   std::string lidar_sub_topic_;
-  std::string opticalFlow_sub_topic_;
   std::string sonar_sub_topic_;
   std::string irlock_sub_topic_;
   std::string gps_sub_topic_;
