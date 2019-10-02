@@ -1,9 +1,10 @@
 ## Run Full Simulator Inside the ROS (PX4, Gazebo, MAVROS, OFFBOARD)
-PX4 SITL + Gazebo
+PX4 SITL + Gazeb
+dependencies:
+if you install gazebo9, gazebo_ros should be installed as: `sudo apt-get install ros-kinetic-gazebo9-ros*`
 1. copy all the files in **MaRS_Offboard/** to a catkin workspace
-2. `catkin build`
-3. `source sources-mars-sim.sh`
-4. `roslaunch mars-sim.launch`
+2. `source sources-mars-sim.sh`
+3. `roslaunch mars-sim.launch`
 
 Noted:
 1. If you just want to develope the simulator, you don't need to pay attention to Firmware_xw which is linked to our flight controller project.
