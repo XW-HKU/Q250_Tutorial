@@ -1,6 +1,3 @@
-[submodule "src/geometry"]
-	path = src/geometry
-	url = https://github.com/ros/geometry.git
 [submodule "src/Firmware-xw"]
 	path = src/Firmware-xw
 	url = https://github.com/WeiBUAA/Firmware-xw.git
