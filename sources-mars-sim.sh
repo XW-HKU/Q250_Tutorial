@@ -1,10 +1,12 @@
 #!/bin/bash
 
-if [ ! -d "/src/Firmware_xw" ]; then
-  cd $(pwd)/src
+cd $(pwd)/src
+if [ ! -d "Firmware-xw" ]; then
   git clone https://github.com/WeiBUAA/Firmware-xw.git
-  cd ..
 fi
+cd Firmware-xw
+git pull
+cd ../..
 
 catkin build
 
