@@ -1,7 +1,11 @@
 ## Run Full Simulator Inside the ROS (PX4, Gazebo, MAVROS, OFFBOARD)
 PX4 SITL + Gazeb
 dependencies:
-if you install gazebo9, gazebo_ros should be installed as: `sudo apt-get install ros-kinetic-gazebo9-ros*`
+1. if you install gazebo9, gazebo_ros should be installed as: `sudo apt-get install ros-kinetic-gazebo9-ros*`
+2. install the mavros package dependencies `https://github.com/mavlink/mavros/blob/master/mavros/README.md#installation`, especially the section `Binary installation (deb)`
+3. if the catkin build show error at the beginning, source the neccesary direction to the .basrc in the \home folder.
+
+Guide of Run
 1. `cd MaRS_Offboard`
 2. `source sources-mars-sim.sh`
 3. `roslaunch mars-sim.launch`
