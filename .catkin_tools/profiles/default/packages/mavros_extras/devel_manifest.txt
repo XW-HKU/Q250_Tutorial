@@ -1,0 +1,8 @@
+mavros/mavros_extras
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/cmake.lock /home/dji/MaRS_Offboard/devel/./cmake.lock
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/lib/libmavros_extras.so /home/dji/MaRS_Offboard/devel/lib/libmavros_extras.so
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/lib/mavros_extras/servo_state_publisher /home/dji/MaRS_Offboard/devel/lib/mavros_extras/servo_state_publisher
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/lib/mavros_extras/copter_visualization /home/dji/MaRS_Offboard/devel/lib/mavros_extras/copter_visualization
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/lib/pkgconfig/mavros_extras.pc /home/dji/MaRS_Offboard/devel/lib/pkgconfig/mavros_extras.pc
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake /home/dji/MaRS_Offboard/devel/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake
+/home/dji/MaRS_Offboard/devel/.private/mavros_extras/share/mavros_extras/cmake/mavros_extrasConfig.cmake /home/dji/MaRS_Offboard/devel/share/mavros_extras/cmake/mavros_extrasConfig.cmake

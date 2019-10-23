@@ -1,0 +1,1 @@
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/share/mocap_optitrack/cmake/mocap_optitrackConfig-version.cmake

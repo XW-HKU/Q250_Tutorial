@@ -1,0 +1,6 @@
+devel_space: /home/dji/MaRS_Offboard/devel
+install: false
+install_space: /home/dji/MaRS_Offboard/install
+profile: default
+source_space: /home/dji/MaRS_Offboard/src
+workspace: /home/dji/MaRS_Offboard

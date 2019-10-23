@@ -1,0 +1,1 @@
+/home/dji/MaRS_Offboard/devel/.private/catkin_tools_prebuild/setup.bash

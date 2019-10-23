@@ -1,0 +1,4 @@
+Symlinking /home/dji/MaRS_Offboard/devel/lib/offboard/offboard_node
+Symlinking /home/dji/MaRS_Offboard/devel/lib/pkgconfig/offboard.pc
+Symlinking /home/dji/MaRS_Offboard/devel/share/offboard/cmake/offboardConfig-version.cmake
+Symlinking /home/dji/MaRS_Offboard/devel/share/offboard/cmake/offboardConfig.cmake

@@ -1,0 +1,1 @@
+/home/dji/MaRS_Offboard/devel/.private/mavros_msgs/share/mavros_msgs/cmake/mavros_msgs-msg-extras.cmake

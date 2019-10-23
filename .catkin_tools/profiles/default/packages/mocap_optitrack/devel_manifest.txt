@@ -1,0 +1,6 @@
+mocap_optitrack
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/cmake.lock /home/dji/MaRS_Offboard/devel/./cmake.lock
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/lib/mocap_optitrack/mocap_node /home/dji/MaRS_Offboard/devel/lib/mocap_optitrack/mocap_node
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/lib/pkgconfig/mocap_optitrack.pc /home/dji/MaRS_Offboard/devel/lib/pkgconfig/mocap_optitrack.pc
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/share/mocap_optitrack/cmake/mocap_optitrackConfig.cmake /home/dji/MaRS_Offboard/devel/share/mocap_optitrack/cmake/mocap_optitrackConfig.cmake
+/home/dji/MaRS_Offboard/devel/.private/mocap_optitrack/share/mocap_optitrack/cmake/mocap_optitrackConfig-version.cmake /home/dji/MaRS_Offboard/devel/share/mocap_optitrack/cmake/mocap_optitrackConfig-version.cmake

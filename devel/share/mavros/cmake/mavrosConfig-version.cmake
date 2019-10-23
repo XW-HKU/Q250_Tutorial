@@ -1,0 +1,1 @@
+/home/dji/MaRS_Offboard/devel/.private/mavros/share/mavros/cmake/mavrosConfig-version.cmake

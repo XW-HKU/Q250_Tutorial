@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dji/MaRS_Offboard/devel/.private/libmavconn/setup.sh

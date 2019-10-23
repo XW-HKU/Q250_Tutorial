@@ -1,0 +1,7 @@
+mavros/libmavconn
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/cmake.lock /home/dji/MaRS_Offboard/devel/./cmake.lock
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/lib/libmavconn.so /home/dji/MaRS_Offboard/devel/lib/libmavconn.so
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/lib/pkgconfig/libmavconn.pc /home/dji/MaRS_Offboard/devel/lib/pkgconfig/libmavconn.pc
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig.cmake /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconnConfig.cmake
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig-version.cmake /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake
+/home/dji/MaRS_Offboard/devel/.private/libmavconn/share/libmavconn/cmake/libmavconn-extras.cmake /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconn-extras.cmake
