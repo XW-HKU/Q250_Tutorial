@@ -9,17 +9,20 @@ Guide of Run
 1. `cd MaRS_Offboard`
 2. `source sources-mars-sim.sh`
 3. `roslaunch mars-sim.launch`
+4. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
 
-Noted:
-1. If you just want to develope the simulator, you don't need to pay attention to Firmware_xw which is linked to our flight controller project.
-
-## Software In The Loop (SITL) Simulation + Offboard:
+## Offboard Mode Simulation (SITL):
 
 0. Open the vehicle model's sdf file (e.g. **/src/sitl_gazebo/models/iris/iris.sdf**).
 Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
-1. `make px4_sitl_default gazebo`
-2. `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"`
-3. `rosrun offboard offboard_node`
+1. `cd MaRS_Offboard`
+2. `source sources-mars-sim.sh`
+3. `roslaunch mars-sim.launch`
+4. open a new terminal, run `source sources-mars-sim.sh`
+5. `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"`
+6. open a new terminal, run `source sources-mars-sim.sh`
+7. `rosrun offboard offboard_node`
+
 
 ## Hardware In The Loop (HITL) simulation
 HITL+Offboard
