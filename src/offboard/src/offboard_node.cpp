@@ -43,6 +43,8 @@ int main(int argc, char **argv)
     pose.pose.position.y = 0;
     pose.pose.position.z = 0.5;
 
+    ROS_INFO("pos cmd: %f %f %f", pose.pose.position.x, pose.pose.position.y, pose.pose.position.z);
+
     //send a few setpoints before starting
     for(int i = 100; ros::ok() && i > 0; --i){
         local_pos_pub.publish(pose);
