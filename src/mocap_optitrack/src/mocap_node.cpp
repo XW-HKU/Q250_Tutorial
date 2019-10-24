@@ -138,13 +138,8 @@ void processMocapData( const char** mocap_model,
               int ID = format.model.rigidBodies[i].ID;
               RigidBodyMap::iterator item = published_rigid_bodies.find(ID);
 
-              static int down_samp_cout = 0;
-              down_samp_cout ++;
-
-              if ((item != published_rigid_bodies.end()) && (down_samp_cout % 12 == 0))
-              {
-                  item->second.publish(format.model.rigidBodies[i]);
-              }
+              item->second.publish(format.model.rigidBodies[i]);
+              
             }
           }
         }

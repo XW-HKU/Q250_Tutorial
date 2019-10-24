@@ -198,7 +198,7 @@ void MoCapDataFormat::parse()
 
   // read number of rigid bodies of the model
   read_and_seek(model.numRigidBodies);
-  ROS_DEBUG("Number of rigid bodies: %d", model.numRigidBodies);
+  ROS_INFO("Number of rigid bodies: %d", model.numRigidBodies);
 
   model.rigidBodies = new RigidBody[model.numRigidBodies];
   for (int m = 0; m < model.numRigidBodies; m++)
@@ -210,9 +210,9 @@ void MoCapDataFormat::parse()
     // get number of markers per rigid body
     read_and_seek(model.rigidBodies[m].NumberOfMarkers);
 
-    ROS_DEBUG("Rigid body ID: %d", model.rigidBodies[m].ID);
-    ROS_DEBUG("Number of rigid body markers: %d", model.rigidBodies[m].NumberOfMarkers);
-    ROS_DEBUG("pos: [%3.2f,%3.2f,%3.2f], ori: [%3.2f,%3.2f,%3.2f,%3.2f]",
+    ROS_INFO("Rigid body ID: %d", model.rigidBodies[m].ID);
+    ROS_INFO("Number of rigid body markers: %d", model.rigidBodies[m].NumberOfMarkers);
+    ROS_INFO("pos: [%3.2f,%3.2f,%3.2f], ori: [%3.2f,%3.2f,%3.2f,%3.2f]",
              model.rigidBodies[m].pose.position.x,
              model.rigidBodies[m].pose.position.y,
              model.rigidBodies[m].pose.position.z,
@@ -240,6 +240,8 @@ void MoCapDataFormat::parse()
 
     // skip mean marker error
     seek(sizeof(float));
+
+    seek(sizeof(short));
 
     // 2.6 or later.
     if (NatNetVersion > Version("2.6"))
