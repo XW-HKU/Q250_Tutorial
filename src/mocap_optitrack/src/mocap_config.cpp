@@ -45,6 +45,7 @@
  */
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Pose2D.h>
+#include <nav_msgs/Path.h>
 #include <tf/transform_datatypes.h>
 #include "mocap_optitrack/mocap_config.h"
 
@@ -68,6 +69,7 @@ PublishedRigidBody::PublishedRigidBody(XmlRpc::XmlRpcValue &config_node)
   {
     pose_topic = (std::string&) config_node[POSE_TOPIC_PARAM_NAME];
     pose_pub = n.advertise<geometry_msgs::PoseStamped>(pose_topic, 1000);
+    path_pub = n.advertise<nav_msgs::Path>("optitrack_path", 1000);
   }
 
   if (publish_pose2d)
@@ -103,6 +105,10 @@ void PublishedRigidBody::publish(RigidBody &body)
   {
     pose.header.frame_id = parent_frame_id;
     pose_pub.publish(pose);
+
+    path_msg.header = pose.header;
+    path_msg.poses.push_back(pose);
+    path_pub.publish(path_msg);
   }
 
   if (!publish_pose2d && !publish_tf)
