@@ -10,7 +10,7 @@ rigid_bodies:
         parent_frame_id: world
         use_new_coordinates: false
     '2':
-        pose: Robot_2/pose
+        pose: mavros/vision_pose/pose
         pose2d: Robot_2/ground_pose
         child_frame_id: Robot_4/base_link
         parent_frame_id: world
