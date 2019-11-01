@@ -87,11 +87,16 @@ int main(int argc, char **argv)
     while(ros::ok()){
         if((current_state.mode == "OFFBOARD") && current_state.armed)
         {
-            pose.pose.position.x = last_pose.pose.position.x + current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
-            pose.pose.position.y = last_pose.pose.position.y + current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
-            pose.pose.position.z = 1.0;
-
             offb_time = (ros::Time::now() - last_request).toSec();
+            double radio = 0.5;
+            double rotation_freq = 0.4;
+            double target_pos_offset_x = radio - cos(2.0 * 3.1415 * rotation_freq * offb_time);
+            double target_pos_offset_y = sin(2.0 * 3.1415 * rotation_freq * offb_time);
+            //pose.pose.position.x = last_pose.pose.position.x + current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
+            //pose.pose.position.y = last_pose.pose.position.y + current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
+            pose.pose.position.x = last_pose.pose.position.x + target_pos_offset_x;
+            pose.pose.position.y = last_pose.pose.position.y + target_pos_offset_y;
+            pose.pose.position.z = 1.0;
 
             ROS_INFO("Switch into OFFBOARD mode!");
 
