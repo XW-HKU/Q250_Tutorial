@@ -88,15 +88,15 @@ int main(int argc, char **argv)
         if((current_state.mode == "OFFBOARD") && current_state.armed)
         {
             offb_time = (ros::Time::now() - last_request).toSec();
-            double radio = 0.4;
-            double rotation_freq = 0.4;
-            double target_pos_offset_x = radio - cos(2.0 * 3.1415 * rotation_freq * offb_time);
-            double target_pos_offset_y = sin(2.0 * 3.1415 * rotation_freq * offb_time);
+            double radio = 0.35;
+            double rotation_freq = 1;
+            double target_pos_offset_x = radio -radio * cos(2.0 * 3.1415 * rotation_freq * offb_time);
+            double target_pos_offset_y = radio * sin(2.0 * 3.1415 * rotation_freq * offb_time);
 
+            double leader_mov_y = 0.0;
             double leader_mov_x = 0.0;
-            double leader_mov_y = 0.0 + 0.6 * sin(2.0 * 3.1415 * 0.2 * offb_time);
-            //pose.pose.position.x = last_pose.pose.position.x + current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
-            //pose.pose.position.y = last_pose.pose.position.y + current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
+            leader_mov_x = current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
+            leader_mov_y = current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
             pose.pose.position.x = last_pose.pose.position.x + target_pos_offset_x + leader_mov_x;
             pose.pose.position.y = last_pose.pose.position.y + target_pos_offset_y + leader_mov_y;
             pose.pose.position.z = 1.0;
