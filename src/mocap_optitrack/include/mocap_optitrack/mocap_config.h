@@ -49,7 +49,6 @@
 
 #include <ros/ros.h>
 #include <tf/transform_broadcaster.h>
-#include <nav_msgs/Path.h>
 #include "mocap_datapackets.h"
 
 class PublishedRigidBody
@@ -61,23 +60,16 @@ class PublishedRigidBody
   std::string pose2d_topic;
   std::string parent_frame_id;
   std::string child_frame_id;
-  nav_msgs::Path path_msg;
-  nav_msgs::Path path_rlt_msg;
-  geometry_msgs::PoseStamped init_pose;
-  double yaw0, pitch0, roll0;
+
 
   bool publish_pose;
   bool publish_tf;
   bool publish_pose2d;
   bool use_new_coordinates;
-  bool init_done=false;
 
   tf::TransformBroadcaster tf_pub;
   ros::Publisher pose_pub;
-  ros::Publisher path_pub;
-  ros::Publisher path_rlt_pub;
   ros::Publisher pose2d_pub;
-
 
   bool validateParam(XmlRpc::XmlRpcValue &, const std::string &);
 

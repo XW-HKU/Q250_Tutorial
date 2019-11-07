@@ -45,9 +45,7 @@
  */
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Pose2D.h>
-#include <nav_msgs/Path.h>
 #include <tf/transform_datatypes.h>
-#include <tf/tf.h>
 #include "mocap_optitrack/mocap_config.h"
 
 const std::string POSE_TOPIC_PARAM_NAME = "pose";
@@ -70,8 +68,6 @@ PublishedRigidBody::PublishedRigidBody(XmlRpc::XmlRpcValue &config_node)
   {
     pose_topic = (std::string&) config_node[POSE_TOPIC_PARAM_NAME];
     pose_pub = n.advertise<geometry_msgs::PoseStamped>(pose_topic, 1000);
-    path_pub = n.advertise<nav_msgs::Path>("optitrack_path", 1000);
-    path_rlt_pub = n.advertise<nav_msgs::Path>("optitrack_path_rlt", 1000);
   }
 
   if (publish_pose2d)
@@ -102,47 +98,11 @@ void PublishedRigidBody::publish(RigidBody &body)
 
   // TODO Below was const, see if there a way to keep it like that.
   geometry_msgs::PoseStamped pose = body.get_ros_pose(use_new_coordinates);
-  if (init_done == false)
-  {
-    init_pose = pose;
-    tf::Quaternion RQ2;
-    tf::quaternionMsgToTF(init_pose.pose.orientation,RQ2);  
-    tf::Matrix3x3(RQ2).getRPY(roll0,pitch0,yaw0);
-    init_done = true;
-  }
 
   if (publish_pose)
   {
     pose.header.frame_id = parent_frame_id;
     pose_pub.publish(pose);
-    
-    path_msg.header = pose.header;
-    path_msg.poses.push_back(pose);
-    path_pub.publish(path_msg);
-
-    geometry_msgs::PoseStamped temp_pose = pose;
-    path_rlt_msg.header = pose.header;
-    temp_pose.pose.position.x = pose.pose.position.x - init_pose.pose.position.x;
-    temp_pose.pose.position.y = pose.pose.position.y - init_pose.pose.position.y;
-    temp_pose.pose.position.z = pose.pose.position.z - init_pose.pose.position.z;
-    
-    double roll,pitch,yaw;
-    tf::Quaternion RQ2;
-    tf::quaternionMsgToTF(pose.pose.orientation,RQ2);  
-    tf::Matrix3x3(RQ2).getRPY(roll,pitch,yaw);  
-
-    yaw = yaw-yaw0;
-    pitch = pitch-pitch0;
-    roll = roll-roll0;
-    geometry_msgs::Quaternion q=tf::createQuaternionMsgFromRollPitchYaw(roll,pitch,yaw);
-    temp_pose.pose.orientation.x = q.x;
-    temp_pose.pose.orientation.y = q.y;
-    temp_pose.pose.orientation.z = q.z;
-    temp_pose.pose.orientation.w = q.w;
-    path_rlt_msg.poses.push_back(temp_pose);
-
-    path_pub.publish(path_msg);
-    path_rlt_pub.publish(path_rlt_msg);
   }
 
   if (!publish_pose2d && !publish_tf)
