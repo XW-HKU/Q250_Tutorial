@@ -82,21 +82,21 @@ int main(int argc, char **argv)
     arm_cmd.request.value = true;
 
     ros::Time last_request = ros::Time::now();
-    double offb_time = 0; 
+    double offb_time = 0;
 
     while(ros::ok()){
         if((current_state.mode == "OFFBOARD") && current_state.armed)
         {
             offb_time = (ros::Time::now() - last_request).toSec();
-            double radio = 0.35;
-            double rotation_freq = 1;
+            double radio = 0.4;
+            double rotation_freq = 0.5;
             double target_pos_offset_x = radio -radio * cos(2.0 * 3.1415 * rotation_freq * offb_time);
             double target_pos_offset_y = radio * sin(2.0 * 3.1415 * rotation_freq * offb_time);
 
             double leader_mov_y = 0.0;
             double leader_mov_x = 0.0;
-            leader_mov_x = current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
-            leader_mov_y = current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
+           // leader_mov_x = current_leader_pos.pose.position.x - last_lead_pose.pose.position.x;
+           // leader_mov_y = current_leader_pos.pose.position.y - last_lead_pose.pose.position.y;
             pose.pose.position.x = last_pose.pose.position.x + target_pos_offset_x + leader_mov_x;
             pose.pose.position.y = last_pose.pose.position.y + target_pos_offset_y + leader_mov_y;
             pose.pose.position.z = 1.0;
@@ -118,7 +118,7 @@ int main(int argc, char **argv)
             memcpy(&(last_pose.pose),&(pose.pose), sizeof(pose.pose));
             memcpy(&(last_lead_pose.pose),&(current_leader_pos.pose), sizeof(current_leader_pos.pose));
 
-            ros::Time last_request = ros::Time::now();
+            last_request = ros::Time::now();
         }
 
         ROS_INFO("pos cmd: %f %f %f", pose.pose.position.x, pose.pose.position.y, pose.pose.position.z);
