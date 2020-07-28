@@ -1,21 +1,20 @@
-SITL+Offboard:
+Welcome to the MaRS Quadrotor Manual book!
 
-0. Open the vehicle model's sdf file (e.g. **Tools/sitl_gazebo/models/iris/iris.sdf**).
-Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
-1. make px4_sitl_default gazebo
-2. roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"
-3. rosrun offboard offboard_node
+## UAV Platform
 
+The UAV platform for SAVE project is shown below:
 
-HITL+Offboard
+<div align="center">
+    <img src="pics/Q250-1.jpg" width = 48% >
+    <img src="pics/Q250-2.jpg" width = 48% >
+</div>
 
-1. connect computer to flight controller hardware
-2. roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"
-3. Open the vehicle model's sdf file (e.g. **Tools/sitl_gazebo/models/iris/iris.sdf**).
-Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `true`.
-4. source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
-5. gazebo Tools/sitl_gazebo/worlds/iris.world
-6. rosrun offboard offboard_node
+The UAV platform is built based on Q250 Quadrotor and is mainly consist of four parts:
 
+1. A standard quadrotor UAV with [Pixhawk 4 mini](https://docs.px4.io/v1.9.0/en/flight_controller/pixhawk4_mini.html) flight controller and relative devices (NO GPS).
 
+2. A [DJI manifold 2](https://www.dji.com/cn/manifold-2) onboard computer with Intel i7 processor.
 
+3. A [realsense D435i](https://www.intelrealsense.com/zh-hans/depth-camera-d435i/) camera.
+
+4. Communication devices: A Two way [data telementry](https://docs.px4.io/v1.9.0/en/telemetry/holybro_sik_radio.html) and a 2.4 GHz [RC transmitter-receiver](https://www.rc.futaba.co.jp/english/propo/air/14sg.html).
