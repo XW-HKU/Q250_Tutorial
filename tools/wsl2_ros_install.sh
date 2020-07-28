@@ -9,6 +9,7 @@ sudo cp /etc/skel/.bashrc ~/
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt-get install ros-melodic-eigen3* ros-melodic-pcl* ros-melodic-sophus*
+cd ~
 mkdir Livox_ros_driver && cd Livox_ros_driver
 mkdir src && cd src
 git clone https://github.com/Livox-SDK/livox_ros_driver.git
