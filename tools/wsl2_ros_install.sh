@@ -5,3 +5,12 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 sudo apt update
 sudo apt upgrade
 sudo apt install ros-melodic-desktop-full
+sudo cp /etc/skel/.bashrc ~/
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt-get install ros-melodic-eigen3* ros-melodic-pcl* ros-melodic-sophus*
+mkdir Livox_ros_driver && cd Livox_ros_driver
+mkdir src && cd src
+git clone https://github.com/Livox-SDK/livox_ros_driver.git
+cd .. && catkin_make -j8
+echo "source ~/Livox_ros_driver/devel/setup.sh" >> ~/.bashrc
