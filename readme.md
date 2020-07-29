@@ -1,5 +1,15 @@
 Welcome to the MaRS Quadrotor Manual book!
 
+## Files Introduction
+
+- 3DPrinter_configurations: the reference 3d printer project and relevant configuration (software: Cura 3.5);
+
+- Q250_CAD: the CAD files of our Quadrotor platform;
+
+- pics: pictures for introduction
+
+- tools: .sh files for quick environment setup
+
 ## UAV Platform
 
 The UAV platform for SAVE project is shown below:
