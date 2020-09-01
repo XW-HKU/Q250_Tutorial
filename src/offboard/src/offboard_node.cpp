@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     ros::Subscriber cur_leader_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>
             ("mavros/local_position/pose", 10, local_cb);
     ros::Subscriber cur_local_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>
-            ("Robot_1/pose", 10, leader_cb);
+            ("mavros/vison_pose/pose", 10, leader_cb);
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
             ("mavros/state", 10, state_cb);
 

@@ -1,0 +1,12 @@
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./local_setup.sh
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./setup.zsh
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./setup.sh
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./local_setup.bash
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./setup.bash
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./cmake.lock
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./local_setup.zsh
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./env.sh
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/./_setup_util.py
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/dji/catkin_albert/src/bicopter/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

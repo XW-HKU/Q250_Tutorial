@@ -1,0 +1,6 @@
+devel_space: /home/dji/catkin_albert/src/bicopter/devel
+install: false
+install_space: /home/dji/catkin_albert/src/bicopter/install
+profile: default
+source_space: /home/dji/catkin_albert/src/bicopter/src
+workspace: /home/dji/catkin_albert/src/bicopter

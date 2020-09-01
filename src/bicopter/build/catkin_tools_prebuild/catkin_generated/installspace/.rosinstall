@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dji/catkin_albert/src/bicopter/install/setup.sh

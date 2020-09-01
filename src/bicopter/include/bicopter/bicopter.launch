@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find realsense2_camera)/launch/rs_t265.launch"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense2_camera)/rviz/t265.rviz" required="true" />
+  <node pkg="bicopter" type="bicopter_node" name ="chan_bicopter_node" />
+</launch>
