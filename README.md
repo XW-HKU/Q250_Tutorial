@@ -15,7 +15,7 @@
 1. `cd MaRS_Offboard`
 2. `catkin build`
 3. `source devel/setup.bash`
-4. `roslaunch mocap_optitrack mocap.launch`
+4. `roslaunch realsense2_camera rs_camera.launch`
 5. open a new terminal and move into MaRS_Offboard directory
 6. `source devel/setup.bash`
 7. `roslaunch mavros px4.launch`
