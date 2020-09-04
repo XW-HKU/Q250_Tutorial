@@ -1,14 +1,12 @@
 #!/bin/bash
 
 cd $(pwd)/src
-if [ ! -d "Firmware-xw" ]; then
+if [ ! -d "VTOL-FC" ]; then
   git clone https://github.com/XW-HKU/VTOL-FC.git
 fi
 cd VTOL-FC
 git pull
 cd ../..
-
-catkin build
 
 source $(pwd)/devel/setup.bash
 
