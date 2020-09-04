@@ -6,11 +6,12 @@ PX4 SITL + Gazeb
 3. if the catkin build show error at the beginning, source the neccesary direction to the .basrc in the \home folder.
 
 ### Run Gazebo Simulator (quadrotor)
-1. `cd MaRS_Offboard && git submodule update --init`
+1. `cd MaRS_Offboard`
+2. `git submodule update --init`
 2. `catkin build`
 3. `cd src/VTOL-FC`
 4. `make px4_sitl gazebo`
-5. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
+5. if you want to simulate the flight mission, directly open the QGroundControl software, than use the mission function as usal.
 
 ### Software In The Loop (SITL) Offboard Mode Simulation 
 0. Open the vehicle model's sdf file (e.g. **/src/VTOL-FC/Tool/sitl_gazebo/models/iris/iris.sdf**).
