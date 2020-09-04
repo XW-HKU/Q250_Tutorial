@@ -10,7 +10,7 @@ PX4 SITL + Gazeb
 2. `source sources-mars-sim.sh && cd VTOL-FC && make px4_sitl gazebo`
 4. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
 
-### Offboard Mode Simulation (SITL)
+### Software In The Loop (SITL) Offboard Mode Simulation 
 0. Open the vehicle model's sdf file (e.g. **/src/VTOL-FC/Tool/sitl_gazebo/models/iris/iris.sdf**).
 Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
 
