@@ -6,8 +6,8 @@ PX4 SITL + Gazeb
 3. if the catkin build show error at the beginning, source the neccesary direction to the .basrc in the \home folder.
 
 ### Run Gazebo Simulator (quadrotor)
-1. `cd MaRS_Offboard`
-2. `source sources-mars-sim.sh && cd src/VTOL-FC && make px4_sitl gazebo && cd ../..`
+1. `cd MaRS_Offboard/src/VTOL-FC`
+2. `make px4_sitl gazebo`
 4. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
 
 ### Software In The Loop (SITL) Offboard Mode Simulation 
@@ -15,11 +15,12 @@ PX4 SITL + Gazeb
 Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
 
 1. open a new terminal and cd into MaRS_Offboard
-2. `source sources-mars-sim.sh`
-3. `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"`
-4. open a new terminal
-5. `source sources-mars-sim.sh`
-6. `rosrun offboard offboard_node`
+2. `catkin build`
+3. `source sources-mars-sim.sh`
+4. `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"`
+5. open a new terminal
+6. `source sources-mars-sim.sh`
+7. `rosrun offboard offboard_node`
 
 ## Hardware In The Loop (HITL) simulation
 HITL+Offboard
