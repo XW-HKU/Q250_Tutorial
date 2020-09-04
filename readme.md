@@ -7,10 +7,13 @@ PX4 SITL + Gazeb
 
 ### Run Gazebo Simulator (quadrotor)
 for the first time
+
 1. `cd MaRS_Offboard`
 2. `git submodule update --init`
 3. `catkin build`
+
 Then:
+
 1. `cd src/VTOL-FC`
 2. `make px4_sitl gazebo`
 3. if you want to simulate the flight mission, directly open the QGroundControl software, than use the mission function as usal.
