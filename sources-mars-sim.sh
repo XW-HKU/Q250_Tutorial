@@ -2,9 +2,9 @@
 
 cd $(pwd)/src
 if [ ! -d "Firmware-xw" ]; then
-  git clone https://github.com/WeiBUAA/Firmware-xw.git
+  git clone https://github.com/XW-HKU/VTOL-FC.git
 fi
-cd Firmware-xw
+cd VTOL-FC
 git pull
 cd ../..
 
