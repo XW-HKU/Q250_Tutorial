@@ -7,16 +7,16 @@ PX4 SITL + Gazeb
 
 ### Run Gazebo Simulator (quadrotor)
 1. `cd MaRS_Offboard && git submodule update --init`
-2. `cd src/VTOL-FC`
-3. `make px4_sitl gazebo`
-4. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
+2. `catkin build`
+3. `cd src/VTOL-FC`
+4. `make px4_sitl gazebo`
+5. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
 
 ### Software In The Loop (SITL) Offboard Mode Simulation 
 0. Open the vehicle model's sdf file (e.g. **/src/VTOL-FC/Tool/sitl_gazebo/models/iris/iris.sdf**).
 Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hil_mode` parameters to `false`.
 
 1. open a new terminal and cd into MaRS_Offboard
-2. `catkin build`
 3. `source sources-mars-sim.sh`
 4. `roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14550"`
 5. open a new terminal
