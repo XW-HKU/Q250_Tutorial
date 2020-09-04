@@ -7,7 +7,7 @@ PX4 SITL + Gazeb
 
 ### Run Gazebo Simulator (quadrotor)
 1. `cd MaRS_Offboard`
-2. `source sources-mars-sim.sh && cd VTOL-FC && make px4_sitl gazebo`
+2. `source sources-mars-sim.sh && cd src/VTOL-FC && make px4_sitl gazebo && cd ..`
 4. if you want to simulate the flihgt mission, directly open the QGroundControl software, than use the mission function as usal.
 
 ### Software In The Loop (SITL) Offboard Mode Simulation 
