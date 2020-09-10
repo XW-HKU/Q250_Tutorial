@@ -9,7 +9,7 @@ PX4 SITL + Gazeb
 for the first time
 
 1. `cd MaRS_Offboard`
-2. `git submodule update --init`
+2. `git submodule update --init --recursive --remote`
 3. `catkin build`
 
 Then:
