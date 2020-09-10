@@ -39,3 +39,11 @@ Under the `mavlink_interface plugin` section, change the `serialEnabled` and `hi
 4. `source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default`
 5. `gazebo Tools/sitl_gazebo/worlds/iris.world`
 6. `rosrun offboard offboard_node`
+
+
+## Trajectory tracking 
+The default is a horizontal trajectory like "8", which requires flight control parameter tuning. If you want another trajectory that requires no any tunings, switch "traj_mode" in <**/src/offboard/src/offboard_node.cpp> to "HOVER", save and `catkin build` the project.
+
+For the default trajectory,  parameter reference of simulator and Q250+realsence can be respectfully found in <*/src/offboard/FC_para>.
+
+
