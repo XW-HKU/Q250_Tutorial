@@ -100,12 +100,66 @@ int main(int argc, char **argv)
         }
         else
         {
-            gene_math_v3f_copy_to_point_msg(traj.pos , &pose.pose.position);
-            gene_math_v4f_copy_to_quat_msg(traj.q, &pose.pose.orientation);
+            pose.pose.position.x = current_local_pos.pose.position.x;
+            pose.pose.position.y = current_local_pos.pose.position.y;
+            pose.pose.position.z = current_local_pos.pose.position.z;
+
+            pose.pose.orientation.w = current_local_pos.pose.orientation.w;
+            pose.pose.orientation.x = current_local_pos.pose.orientation.x;
+            pose.pose.orientation.y = current_local_pos.pose.orientation.y;
+            pose.pose.orientation.z = current_local_pos.pose.orientation.z;
 
             last_request = ros::Time::now();
         }
 
+
+
+        // tmp += 2.0f * M_PI * test_f * 0.05;
+        // if (tmp > 2.0f * M_PI)
+        // {
+        //     tmp -= 2.0f * M_PI;
+        // }
+        // yaw = M_PI * sin(tmp);
+
+        
+        // q_tar.setRPY( 0.0f, -0.0f, yaw);  // Create this quaternion from roll/pitch/yaw (in radians)
+
+        // pose.pose.orientation.x = q_tar.x();
+        // pose.pose.orientation.y = q_tar.y();
+        // pose.pose.orientation.z = q_tar.z();
+        // pose.pose.orientation.w = q_tar.w();
+
+        // ROS_INFO_STREAM(q_tar);
+
+        // Eigen::Matrix3d R;
+        // R<<1,0,0,0,1,0,0,0,1;
+        // std::cout<<q_tar.w()<<", "<<q_tar.x()<<", "<<q_tar.y()<<", "<<q_tar.z()<<"\n";
+
+        // std::cout<<temp<<"\n";
+        // std::cout<<number<<", "<<word<<", "<<real<<", "<<letter<<"\n";
+
+
+        //****************** set tar pose and quat ******************//
+        // cnt ++;
+        // if (cnt >= data_row)
+        // {
+        //     cnt = 250;
+        // }
+
+        // pose.pose.position.x = traj_data[cnt][0];
+        // pose.pose.position.y = traj_data[cnt][1];
+        // pose.pose.position.z = traj_data[cnt][2];
+
+        // pose.pose.orientation.w = traj_data[cnt][14];
+        // pose.pose.orientation.x = traj_data[cnt][15];
+        // pose.pose.orientation.y = traj_data[cnt][16];
+        // pose.pose.orientation.z = traj_data[cnt][17];
+
+        // std::cout<<pose.pose.position.x<<", "<<pose.pose.position.y<<", "<<pose.pose.position.z<<", "<<pose.pose.orientation.w
+        //             <<", "<<pose.pose.orientation.x<<", "<<pose.pose.orientation.y<<", "<<pose.pose.orientation.z<<"\n";
+
+        // std::cout<<cnt<<": "<<pose.pose.position.x<<", "<<pose.pose.position.y<<"\n";
+ 
         local_pos_pub.publish(pose);
 
         ros::spinOnce();
