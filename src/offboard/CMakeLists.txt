@@ -117,6 +117,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include
+  src/gene_src
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -125,7 +126,11 @@ include_directories(
 #   src/${PROJECT_NAME}/offboard.cpp
 # )
 
-add_library(gene src/math_by_gene.cpp)
+add_library(gene 
+src/gene_src/math/gene_math.cpp
+src/gene_src/message/gene_ros_msg.cpp
+src/gene_src/trajectory/gene_trajectory_generation.cpp
+)
 
 
 ## Add cmake target dependencies of the library
