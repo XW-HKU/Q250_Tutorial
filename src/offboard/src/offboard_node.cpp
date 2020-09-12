@@ -9,6 +9,7 @@
 #include <math.h>
 #include <unistd.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <mavros_msgs/CommandBool.h>
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
@@ -22,33 +23,54 @@
 using namespace std;
 extern const traj_data_t traj_data;
 
-geometry_msgs::PoseStamped current_local_pos;  //!< Current local position in ENU
-
 mavros_msgs::State current_state;
+geometry_msgs::PoseStamped current_local_pose;     //!< Current local pose in ENU
+geometry_msgs::TwistStamped current_local_twist;   //!< Current local twist in ENU
+geometry_msgs::TwistStamped current_body_twist;    //!< Current local twist in body
+
+traj_t      trajectory;
+feedback_t  feedback;
+
+
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
     current_state = *msg;
 }
 
-void local_cb(const geometry_msgs::PoseStamped::ConstPtr &msg)
+void local_pose_cb(const geometry_msgs::PoseStamped::ConstPtr &msg)
 {
-    current_local_pos = *msg;
+    current_local_pose = *msg;
+}
+
+void local_twist_cb(const geometry_msgs::TwistStamped::ConstPtr &msg)
+{
+    current_local_twist = *msg;
+}
+
+void body_twist_cb(const geometry_msgs::TwistStamped::ConstPtr &msg)
+{
+    current_body_twist = *msg;
 }
 
 int main(int argc, char **argv)
 {
-    // ************ read data file *********//
-    traj_t traj;
-    traj.mode = TRAJ_1;
+    // ************ Initailation *********//
+    trajectory.mode = TRAJ_1;
     // ************************************//
 
 
     ros::init(argc, argv, "offb_node");
     ros::NodeHandle nh;
 
-    ros::Subscriber cur_leader_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>
-            ("mavros/local_position/pose", 10, local_cb);
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
             ("mavros/state", 10, state_cb);
+    ros::Subscriber cur_local_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>
+            ("mavros/local_position/pose", 10, local_pose_cb);
+    ros::Subscriber cur_local_twist_sub = nh.subscribe<geometry_msgs::TwistStamped>
+            ("mavros/local_position/velocity_local", 10, local_twist_cb);
+    ros::Subscriber cur_body_twist_sub = nh.subscribe<geometry_msgs::TwistStamped>
+            ("mavros/local_position/velocity_body", 10, body_twist_cb);
+    
+
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
             ("mavros/setpoint_position/local", 10);
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
@@ -87,27 +109,51 @@ int main(int argc, char **argv)
     while(ros::ok()){
         if((current_state.mode == "OFFBOARD") && current_state.armed)
         {   
+            /* 1. receive feedback data from ros msg */
+            gene_feedback_msg_receive(feedback,
+                                            current_local_pose,
+                                            current_local_twist,
+                                            current_body_twist);
 
-            gene_offline_traj_generate(&traj, traj_data, &(pose.pose));
+            /* 2. plan a trajectory */
+            gene_offline_traj_generate(trajectory, traj_data, pose.pose);
         
 
             ROS_INFO("Switch into OFFBOARD mode!");
 
             // ROS_INFO("Continued Time: %f", offb_time);
 
-            ROS_INFO("Traj_cnt: %d ; Target Positon: %f, %f , %f; Target Quat: %f, %f , %f , %f", traj.read_cnt , pose.pose.position.x , pose.pose.position.y , pose.pose.position.z ,
-                                                        pose.pose.orientation.w , pose.pose.orientation.x , pose.pose.orientation.y , pose.pose.orientation.z);
+            // ROS_INFO("Traj_cnt: %d ; Target Positon: %f, %f , %f; Target Quat: %f, %f , %f , %f", trajectory.read_cnt , pose.pose.position.x , pose.pose.position.y , pose.pose.position.z ,
+            //                                             pose.pose.orientation.w , pose.pose.orientation.x , pose.pose.orientation.y , pose.pose.orientation.z);
+        
+            // ROS_INFO("Traj_cnt: %d ;\n Target Positon: %f, %f , %f ;\n Fusion Positon: %f, %f , %f", 
+            //             trajectory.read_cnt , pose.pose.position.x , pose.pose.position.y , pose.pose.position.z,
+            //             feedback.pos(0) , feedback.pos(1) , feedback.pos(2));
+
+            ROS_INFO("Traj_cnt: %d ;\n Target quat: %f, %f , %f , %f;\n Fusion quat: %f, %f , %f , %f", 
+                        trajectory.read_cnt , pose.pose.orientation.w , pose.pose.orientation.x , pose.pose.orientation.y , pose.pose.orientation.z,
+                        feedback.q_eb.w() , feedback.q_eb.x() , feedback.q_eb.y() , feedback.q_eb.z());
+
+            // ROS_INFO("Traj_cnt: %d ;\n Target Positon: %f, %f , %f ;\n Fusion Positon: %f, %f , %f", 
+            //             trajectory.read_cnt , feedback.vel(0) , feedback.vel(1) , feedback.vel(2),
+            //             feedback.vel_test(0) , feedback.vel_test(1) , feedback.vel_test(2));
+
+            // ROS_INFO("Traj_cnt: %d ;\n Target quat: %f, %f , %f , %f",
+            //             trajectory.read_cnt , trajectory.q.w() , trajectory.q.x() , trajectory.q.y() , trajectory.q.z());
+            
+
+            // cout << "Rotation: " << R <<endl;
         }
         else
         {
-            pose.pose.position.x = current_local_pos.pose.position.x;
-            pose.pose.position.y = current_local_pos.pose.position.y;
-            pose.pose.position.z = current_local_pos.pose.position.z;
+            pose.pose.position.x = current_local_pose.pose.position.x;
+            pose.pose.position.y = current_local_pose.pose.position.y;
+            pose.pose.position.z = current_local_pose.pose.position.z;
 
-            pose.pose.orientation.w = current_local_pos.pose.orientation.w;
-            pose.pose.orientation.x = current_local_pos.pose.orientation.x;
-            pose.pose.orientation.y = current_local_pos.pose.orientation.y;
-            pose.pose.orientation.z = current_local_pos.pose.orientation.z;
+            pose.pose.orientation.w = current_local_pose.pose.orientation.w;
+            pose.pose.orientation.x = current_local_pose.pose.orientation.x;
+            pose.pose.orientation.y = current_local_pose.pose.orientation.y;
+            pose.pose.orientation.z = current_local_pose.pose.orientation.z;
 
             last_request = ros::Time::now();
         }

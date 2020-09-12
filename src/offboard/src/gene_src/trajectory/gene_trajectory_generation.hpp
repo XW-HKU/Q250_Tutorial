@@ -37,9 +37,8 @@ enum traj_mode_t
      Quaternionf                                        q;              // quaternion,          order: wxyz
  };
 
- traj_t *traj_t_ = new traj_t;
 
-void gene_traj_data_read(traj_t *traj, const traj_data_t traj_data);
-void gene_offline_traj_generate(traj_t *traj, const traj_data_t traj_data, geometry_msgs::Pose_<std::allocator<void> > *pose);
+void gene_traj_data_read(traj_t &traj, const traj_data_t &traj_data);
+void gene_offline_traj_generate(traj_t &traj, const traj_data_t &traj_data, geometry_msgs::Pose_<std::allocator<void> > &pose);
 
 #endif
