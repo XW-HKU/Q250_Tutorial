@@ -2,15 +2,15 @@
 #define  GENE_TRAJECTORY_GENERATION_H
 #include <stdint.h>
 #include "../math/gene_math.hpp"
-#include "../message/gene_ros_msg.hpp"
 
 
+#define TRAJ_RATE 50
 #define DATA_ROW 1101
 #define DATA_COL 18
-#define TAKEOFF_TIME (3*OFFBORAD_RUN_RATE)
-#define HOVER_TIME (7*OFFBORAD_RUN_RATE)
+#define TAKEOFF_TIME (3*TRAJ_RATE)
+#define HOVER_TIME (7*TRAJ_RATE)
 #define PRIOR_TIME (TAKEOFF_TIME + HOVER_TIME)
-#define WAIT_TIME (5*OFFBORAD_RUN_RATE)
+#define WAIT_TIME (5*TRAJ_RATE)
 
 typedef float traj_data_t[DATA_ROW][DATA_COL];
 

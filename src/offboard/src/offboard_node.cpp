@@ -19,6 +19,9 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+// #include "matplotlibcpp.h"
+
+// namespace plt = matplotlibcpp;
 
 using namespace std;
 extern const traj_data_t traj_data;
@@ -30,6 +33,7 @@ geometry_msgs::TwistStamped current_body_twist;    //!< Current local twist in b
 
 traj_t      trajectory;
 feedback_t  feedback;
+log_t       log_data;
 
 
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
@@ -55,6 +59,7 @@ int main(int argc, char **argv)
 {
     // ************ Initailation *********//
     trajectory.mode = TRAJ_1;
+    float ros_time_stamp;
     // ************************************//
 
 
@@ -102,7 +107,8 @@ int main(int argc, char **argv)
     mavros_msgs::CommandBool arm_cmd;
     arm_cmd.request.value = true;
 
-    ros::Time last_request = ros::Time::now();
+    ros::Time time_begin = ros::Time::now();
+    ros::Time time_current;
     double offb_time = 0;
 
 
@@ -119,6 +125,9 @@ int main(int argc, char **argv)
             gene_offline_traj_generate(trajectory, traj_data, pose.pose);
         
 
+            Vector3f vec_test;
+            vec_test = feedback.q_eb.normalized().toRotationMatrix() * feedback.vel_body;
+
             ROS_INFO("Switch into OFFBOARD mode!");
 
             // ROS_INFO("Continued Time: %f", offb_time);
@@ -130,13 +139,14 @@ int main(int argc, char **argv)
             //             trajectory.read_cnt , pose.pose.position.x , pose.pose.position.y , pose.pose.position.z,
             //             feedback.pos(0) , feedback.pos(1) , feedback.pos(2));
 
-            ROS_INFO("Traj_cnt: %d ;\n Target quat: %f, %f , %f , %f;\n Fusion quat: %f, %f , %f , %f", 
-                        trajectory.read_cnt , pose.pose.orientation.w , pose.pose.orientation.x , pose.pose.orientation.y , pose.pose.orientation.z,
-                        feedback.q_eb.w() , feedback.q_eb.x() , feedback.q_eb.y() , feedback.q_eb.z());
+            // ROS_INFO("Traj_cnt: %d ;\n Target quat: %f, %f , %f , %f;\n Fusion quat: %f, %f , %f , %f", 
+            //             trajectory.read_cnt , pose.pose.orientation.w , pose.pose.orientation.x , pose.pose.orientation.y , pose.pose.orientation.z,
+            //             feedback.q_eb.w() , feedback.q_eb.x() , feedback.q_eb.y() , feedback.q_eb.z());
 
-            // ROS_INFO("Traj_cnt: %d ;\n Target Positon: %f, %f , %f ;\n Fusion Positon: %f, %f , %f", 
+            // ROS_INFO("Traj_cnt: %d ;\n local vel: %f, %f , %f ;\n body vel: %f, %f , %f ;\n test vel: %f, %f , %f", 
             //             trajectory.read_cnt , feedback.vel(0) , feedback.vel(1) , feedback.vel(2),
-            //             feedback.vel_test(0) , feedback.vel_test(1) , feedback.vel_test(2));
+            //             feedback.vel_body(0) , feedback.vel_body(1) , feedback.vel_body(2),
+            //             vec_test(0) , vec_test(1) , vec_test(2));
 
             // ROS_INFO("Traj_cnt: %d ;\n Target quat: %f, %f , %f , %f",
             //             trajectory.read_cnt , trajectory.q.w() , trajectory.q.x() , trajectory.q.y() , trajectory.q.z());
@@ -155,62 +165,24 @@ int main(int argc, char **argv)
             pose.pose.orientation.y = current_local_pose.pose.orientation.y;
             pose.pose.orientation.z = current_local_pose.pose.orientation.z;
 
-            last_request = ros::Time::now();
+            
         }
 
-
-
-        // tmp += 2.0f * M_PI * test_f * 0.05;
-        // if (tmp > 2.0f * M_PI)
-        // {
-        //     tmp -= 2.0f * M_PI;
-        // }
-        // yaw = M_PI * sin(tmp);
-
-        
-        // q_tar.setRPY( 0.0f, -0.0f, yaw);  // Create this quaternion from roll/pitch/yaw (in radians)
-
-        // pose.pose.orientation.x = q_tar.x();
-        // pose.pose.orientation.y = q_tar.y();
-        // pose.pose.orientation.z = q_tar.z();
-        // pose.pose.orientation.w = q_tar.w();
-
-        // ROS_INFO_STREAM(q_tar);
-
-        // Eigen::Matrix3d R;
-        // R<<1,0,0,0,1,0,0,0,1;
-        // std::cout<<q_tar.w()<<", "<<q_tar.x()<<", "<<q_tar.y()<<", "<<q_tar.z()<<"\n";
-
-        // std::cout<<temp<<"\n";
-        // std::cout<<number<<", "<<word<<", "<<real<<", "<<letter<<"\n";
-
-
-        //****************** set tar pose and quat ******************//
-        // cnt ++;
-        // if (cnt >= data_row)
-        // {
-        //     cnt = 250;
-        // }
-
-        // pose.pose.position.x = traj_data[cnt][0];
-        // pose.pose.position.y = traj_data[cnt][1];
-        // pose.pose.position.z = traj_data[cnt][2];
-
-        // pose.pose.orientation.w = traj_data[cnt][14];
-        // pose.pose.orientation.x = traj_data[cnt][15];
-        // pose.pose.orientation.y = traj_data[cnt][16];
-        // pose.pose.orientation.z = traj_data[cnt][17];
-
-        // std::cout<<pose.pose.position.x<<", "<<pose.pose.position.y<<", "<<pose.pose.position.z<<", "<<pose.pose.orientation.w
-        //             <<", "<<pose.pose.orientation.x<<", "<<pose.pose.orientation.y<<", "<<pose.pose.orientation.z<<"\n";
-
-        // std::cout<<cnt<<": "<<pose.pose.position.x<<", "<<pose.pose.position.y<<"\n";
- 
         local_pos_pub.publish(pose);
+
+        time_current = ros::Time::now();
+        ros_time_stamp = (time_current - time_begin).toSec();
+
+        gene_log_save(log_data, ros_time_stamp, feedback, trajectory);
 
         ros::spinOnce();
         rate.sleep();
     }
+
+    std::ofstream log_file("./src/offboard/log/log_data.txt");
+    std::ostream_iterator<Eigen::Matrix<float, 1, LOG_NUM>> log_iterator(log_file, "\n");
+    std::copy(log_data.begin(), log_data.end(), log_iterator);
+
 
     return 0;
 }

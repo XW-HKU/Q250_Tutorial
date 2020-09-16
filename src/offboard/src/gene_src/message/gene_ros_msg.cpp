@@ -1,47 +1,5 @@
 #include "gene_ros_msg.hpp"
 
-// @brief: copy Vertor3f to double xyz point msg
-void gene_math_copy_v3f_to_point_msg(const Vector3f &v_src , geometry_msgs::Point_<std::allocator<void> > &point_msg)
-{
-    point_msg.x = v_src(0);
-    point_msg.y = v_src(1);
-    point_msg.z = v_src(2);
-}
-
-// @brief: copy Vertor4f to double wxyz msg
-void gene_math_copy_v4f_to_quat_msg(const Quaternionf &q_src , geometry_msgs::Quaternion_<std::allocator<void> > &quat_msg)
-{
-    quat_msg.w = q_src.w();
-    quat_msg.x = q_src.x();
-    quat_msg.y = q_src.y();
-    quat_msg.z = q_src.z();
-}
-
-// @brief: copy double xyz point msg to Vertor3f
-void gene_math_copy_point_msg_to_v3f(Vector3f &v_des , const geometry_msgs::Point_<std::allocator<void> > &point_msg)
-{
-    v_des(0) = (float)point_msg.x;
-    v_des(1) = (float)point_msg.y;
-    v_des(2) = (float)point_msg.z;
-}
-
-// @brief: copy double wxyz msg to Vertor4f
-void gene_math_copy_quat_msg_to_v4f(Quaternionf &q_des , const geometry_msgs::Quaternion_<std::allocator<void> > &quat_msg)
-{
-    q_des.w() = (float)quat_msg.w;
-    q_des.x() = (float)quat_msg.x;
-    q_des.y() = (float)quat_msg.y;
-    q_des.z() = (float)quat_msg.z;
-}
-
-// @brief: copy double xyz vector msg to Vertor3f
-void gene_math_copy_vector_msg_to_v3f(Vector3f &v_des , const geometry_msgs::Vector3_<std::allocator<void> > &vector_msg)
-{
-    v_des(0) = (float)vector_msg.x;
-    v_des(1) = (float)vector_msg.y;
-    v_des(2) = (float)vector_msg.z;
-}
-
 // @brief: receive feedback data from ros msg
 void gene_feedback_msg_receive(feedback_t &fb,
                                geometry_msgs::PoseStamped  &local_pose,
@@ -58,4 +16,34 @@ void gene_feedback_msg_receive(feedback_t &fb,
 
     fb.R_eb = fb.q_eb.normalized().toRotationMatrix();
 
+}
+
+//@brief: save log data to std::vector
+void gene_log_save(log_t &log_data , float time_stamp, feedback_t &fb, traj_t &traj)
+{
+    Eigen::Matrix<float, 1, LOG_NUM> log_per_tick;
+
+    /* feedback data */
+    log_per_tick(0,0) = time_stamp;                         // 0
+    log_per_tick(0,1) = fb.q_eb.w();                        // 1~4
+    log_per_tick(0,2) = fb.q_eb.x();
+    log_per_tick(0,3) = fb.q_eb.y();
+    log_per_tick(0,4) = fb.q_eb.z();
+    log_per_tick.block<1,3>(0,5) = fb.pos;                  // 5~7
+    log_per_tick.block<1,3>(0,8) = fb.vel;                  // 8~10
+    log_per_tick.block<1,3>(0,11) = fb.acc;                 // 11~13
+    log_per_tick.block<1,3>(0,14) = fb.omega;               // 14~16
+    log_per_tick.block<1,3>(0,17) = fb.ang_acc;             // 17~19
+    
+    /* trajectory data */
+    log_per_tick(0,20) = traj.q.w();                        // 20~23
+    log_per_tick(0,21) = traj.q.x();
+    log_per_tick(0,22) = traj.q.y();
+    log_per_tick(0,23) = traj.q.z();
+    log_per_tick.block<1,3>(0,24) = traj.pos;               // 24~26
+    log_per_tick.block<1,3>(0,27) = traj.vel;               // 27~29
+    log_per_tick.block<1,3>(0,30) = traj.omega;             // 30~32
+    
+
+    log_data.push_back(log_per_tick);
 }

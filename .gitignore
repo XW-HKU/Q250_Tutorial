@@ -3,3 +3,4 @@
 /devel/
 /logs/
 /src/Firmware-xw/
+*.pyc

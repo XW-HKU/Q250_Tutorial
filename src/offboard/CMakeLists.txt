@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   mavros
   roscpp
 )
+find_package(PythonLibs REQUIRED)
+find_path(MATPLOTLIB_CPP_INCLUDE_DIRS "matplotlibcpp.h")
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -119,6 +121,7 @@ include_directories(
   include
   src/gene_src
   ${catkin_INCLUDE_DIRS}
+  ${PYTHON_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -160,7 +163,7 @@ target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
 )
 
-
+target_include_directories(gene PRIVATE ${PYTHON_INCLUDE_DIRS})
 
 #############
 ## Install ##
