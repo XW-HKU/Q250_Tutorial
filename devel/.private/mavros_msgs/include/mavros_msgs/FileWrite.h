@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::FileWrite > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::FileWriteRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileWrite > 
+// service_traits::MD5Sum< ::mavros_msgs::FileWriteRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileWrite >
 template<>
 struct MD5Sum< ::mavros_msgs::FileWriteRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::FileWriteRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileWriteRequest> should match 
-// service_traits::DataType< ::mavros_msgs::FileWrite > 
+// service_traits::DataType< ::mavros_msgs::FileWriteRequest> should match
+// service_traits::DataType< ::mavros_msgs::FileWrite >
 template<>
 struct DataType< ::mavros_msgs::FileWriteRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::FileWriteRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::FileWriteResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileWrite > 
+// service_traits::MD5Sum< ::mavros_msgs::FileWriteResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileWrite >
 template<>
 struct MD5Sum< ::mavros_msgs::FileWriteResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::FileWriteResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileWriteResponse> should match 
-// service_traits::DataType< ::mavros_msgs::FileWrite > 
+// service_traits::DataType< ::mavros_msgs::FileWriteResponse> should match
+// service_traits::DataType< ::mavros_msgs::FileWrite >
 template<>
 struct DataType< ::mavros_msgs::FileWriteResponse>
 {

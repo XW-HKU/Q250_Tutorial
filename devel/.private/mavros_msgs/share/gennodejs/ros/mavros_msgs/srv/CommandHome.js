@@ -99,7 +99,7 @@ class CommandHomeRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # request set new home position
     
     bool current_gps
     float32 latitude

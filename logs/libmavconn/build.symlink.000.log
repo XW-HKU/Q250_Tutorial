@@ -1,5 +1,0 @@
-Symlinking /home/dji/MaRS_Offboard/devel/lib/libmavconn.so
-Symlinking /home/dji/MaRS_Offboard/devel/lib/pkgconfig/libmavconn.pc
-Symlinking /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconnConfig.cmake
-Symlinking /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake
-Symlinking /home/dji/MaRS_Offboard/devel/share/libmavconn/cmake/libmavconn-extras.cmake

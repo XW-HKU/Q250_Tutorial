@@ -118,7 +118,7 @@
 (setf (get mavros_msgs::CommandBoolRequest :md5sum-) "e09abbb4e5bae6b558e5010966eb6e9e")
 (setf (get mavros_msgs::CommandBoolRequest :datatype-) "mavros_msgs/CommandBoolRequest")
 (setf (get mavros_msgs::CommandBoolRequest :definition-)
-      "
+      "# Common type for switch commands
 
 bool value
 ---
@@ -130,7 +130,7 @@ uint8 result
 (setf (get mavros_msgs::CommandBoolResponse :md5sum-) "e09abbb4e5bae6b558e5010966eb6e9e")
 (setf (get mavros_msgs::CommandBoolResponse :datatype-) "mavros_msgs/CommandBoolResponse")
 (setf (get mavros_msgs::CommandBoolResponse :definition-)
-      "
+      "# Common type for switch commands
 
 bool value
 ---

@@ -142,10 +142,10 @@
   "93ff4eaa9907f58c0e7a909cddce23e2")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandTOL-request>)))
   "Returns full string definition for message of type '<CommandTOL-request>"
-  (cl:format cl:nil "~%~%float32 min_pitch~%float32 yaw~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
+  (cl:format cl:nil "# Common type for Take Off and Landing~%~%float32 min_pitch	# used by takeoff~%float32 yaw~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandTOL-request)))
   "Returns full string definition for message of type 'CommandTOL-request"
-  (cl:format cl:nil "~%~%float32 min_pitch~%float32 yaw~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
+  (cl:format cl:nil "# Common type for Take Off and Landing~%~%float32 min_pitch	# used by takeoff~%float32 yaw~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandTOL-request>))
   (cl:+ 0
      4

@@ -151,12 +151,12 @@
 (setf (get mavros_msgs::SetModeRequest :md5sum-) "e4f18fa93379f9ff1780d270ce110203")
 (setf (get mavros_msgs::SetModeRequest :datatype-) "mavros_msgs/SetModeRequest")
 (setf (get mavros_msgs::SetModeRequest :definition-)
-      "
+      "# set FCU mode
+#
+# Known custom modes listed here:
+# http://wiki.ros.org/mavros/CustomModes
 
-
-
-
-
+# basic modes from MAV_MODE
 uint8 MAV_MODE_PREFLIGHT		= 0
 uint8 MAV_MODE_STABILIZE_DISARMED	= 80
 uint8 MAV_MODE_STABILIZE_ARMED		= 208
@@ -169,22 +169,22 @@ uint8 MAV_MODE_AUTO_ARMED		= 220
 uint8 MAV_MODE_TEST_DISARMED		= 66
 uint8 MAV_MODE_TEST_ARMED		= 194
 
-uint8 base_mode
-string custom_mode
+uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''
+string custom_mode	# string mode representation or integer
 ---
-bool mode_sent
+bool mode_sent		# Mode known/parsed correctly and SET_MODE are sent
 
 ")
 
 (setf (get mavros_msgs::SetModeResponse :md5sum-) "e4f18fa93379f9ff1780d270ce110203")
 (setf (get mavros_msgs::SetModeResponse :datatype-) "mavros_msgs/SetModeResponse")
 (setf (get mavros_msgs::SetModeResponse :definition-)
-      "
+      "# set FCU mode
+#
+# Known custom modes listed here:
+# http://wiki.ros.org/mavros/CustomModes
 
-
-
-
-
+# basic modes from MAV_MODE
 uint8 MAV_MODE_PREFLIGHT		= 0
 uint8 MAV_MODE_STABILIZE_DISARMED	= 80
 uint8 MAV_MODE_STABILIZE_ARMED		= 208
@@ -197,10 +197,10 @@ uint8 MAV_MODE_AUTO_ARMED		= 220
 uint8 MAV_MODE_TEST_DISARMED		= 66
 uint8 MAV_MODE_TEST_ARMED		= 194
 
-uint8 base_mode
-string custom_mode
+uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''
+string custom_mode	# string mode representation or integer
 ---
-bool mode_sent
+bool mode_sent		# Mode known/parsed correctly and SET_MODE are sent
 
 ")
 

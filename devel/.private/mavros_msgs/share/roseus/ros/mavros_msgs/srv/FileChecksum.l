@@ -129,12 +129,12 @@
 (setf (get mavros_msgs::FileChecksumRequest :md5sum-) "c32158e17d9a1a1c682fe19adbd29fac")
 (setf (get mavros_msgs::FileChecksumRequest :datatype-) "mavros_msgs/FileChecksumRequest")
 (setf (get mavros_msgs::FileChecksumRequest :definition-)
-      "
-
-
-
-
-
+      "# FTP::Checksum
+#
+# :file_path:	file to calculate checksum
+# :crc32:	file checksum
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---
@@ -147,12 +147,12 @@ int32 r_errno
 (setf (get mavros_msgs::FileChecksumResponse :md5sum-) "c32158e17d9a1a1c682fe19adbd29fac")
 (setf (get mavros_msgs::FileChecksumResponse :datatype-) "mavros_msgs/FileChecksumResponse")
 (setf (get mavros_msgs::FileChecksumResponse :definition-)
-      "
-
-
-
-
-
+      "# FTP::Checksum
+#
+# :file_path:	file to calculate checksum
+# :crc32:	file checksum
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---

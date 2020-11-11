@@ -67,6 +67,21 @@ ros::message_operations::Printer< ::mavros_msgs::WaypointList_<ContainerAllocato
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::WaypointList_<ContainerAllocator1> & lhs, const ::mavros_msgs::WaypointList_<ContainerAllocator2> & rhs)
+{
+  return lhs.current_seq == rhs.current_seq &&
+    lhs.waypoints == rhs.waypoints;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::WaypointList_<ContainerAllocator1> & lhs, const ::mavros_msgs::WaypointList_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -74,12 +89,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -144,47 +153,47 @@ struct Definition< ::mavros_msgs::WaypointList_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# WaypointList.msg\n\
-#\n\
-#  :current_seq:   seq nr of currently active waypoint\n\
-#                  waypoints[current_seq].is_current == True\n\
-#\n\
-#  :waypoints:     list of waypoints\n\
-\n\
-uint16 current_seq\n\
-mavros_msgs/Waypoint[] waypoints\n\
-\n\
-================================================================================\n\
-MSG: mavros_msgs/Waypoint\n\
-# Waypoint.msg\n\
-#\n\
-# ROS representation of MAVLink MISSION_ITEM\n\
-# See mavlink documentation\n\
-\n\
-\n\
-\n\
-# see enum MAV_FRAME\n\
-uint8 frame\n\
-uint8 FRAME_GLOBAL = 0\n\
-uint8 FRAME_LOCAL_NED = 1\n\
-uint8 FRAME_MISSION = 2\n\
-uint8 FRAME_GLOBAL_REL_ALT = 3\n\
-uint8 FRAME_LOCAL_ENU = 4\n\
-\n\
-# see enum MAV_CMD and CommandCode.msg\n\
-uint16 command\n\
-\n\
-bool is_current\n\
-bool autocontinue\n\
-# meaning of this params described in enum MAV_CMD\n\
-float32 param1\n\
-float32 param2\n\
-float32 param3\n\
-float32 param4\n\
-float64 x_lat\n\
-float64 y_long\n\
-float64 z_alt\n\
-";
+    return "# WaypointList.msg\n"
+"#\n"
+"#  :current_seq:   seq nr of currently active waypoint\n"
+"#                  waypoints[current_seq].is_current == True\n"
+"#\n"
+"#  :waypoints:     list of waypoints\n"
+"\n"
+"uint16 current_seq\n"
+"mavros_msgs/Waypoint[] waypoints\n"
+"\n"
+"================================================================================\n"
+"MSG: mavros_msgs/Waypoint\n"
+"# Waypoint.msg\n"
+"#\n"
+"# ROS representation of MAVLink MISSION_ITEM\n"
+"# See mavlink documentation\n"
+"\n"
+"\n"
+"\n"
+"# see enum MAV_FRAME\n"
+"uint8 frame\n"
+"uint8 FRAME_GLOBAL = 0\n"
+"uint8 FRAME_LOCAL_NED = 1\n"
+"uint8 FRAME_MISSION = 2\n"
+"uint8 FRAME_GLOBAL_REL_ALT = 3\n"
+"uint8 FRAME_LOCAL_ENU = 4\n"
+"\n"
+"# see enum MAV_CMD and CommandCode.msg\n"
+"uint16 command\n"
+"\n"
+"bool is_current\n"
+"bool autocontinue\n"
+"# meaning of this params described in enum MAV_CMD\n"
+"float32 param1\n"
+"float32 param2\n"
+"float32 param3\n"
+"float32 param4\n"
+"float64 x_lat\n"
+"float64 y_long\n"
+"float64 z_alt\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::WaypointList_<ContainerAllocator>&) { return value(); }

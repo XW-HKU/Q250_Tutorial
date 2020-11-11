@@ -40,6 +40,14 @@ struct OverrideRCIn_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(CHAN_RELEASE)
+  #undef CHAN_RELEASE
+#endif
+#if defined(_WIN32) && defined(CHAN_NOCHANGE)
+  #undef CHAN_NOCHANGE
+#endif
+
   enum {
     CHAN_RELEASE = 0u,
     CHAN_NOCHANGE = 65535u,
@@ -71,6 +79,20 @@ ros::message_operations::Printer< ::mavros_msgs::OverrideRCIn_<ContainerAllocato
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::OverrideRCIn_<ContainerAllocator1> & lhs, const ::mavros_msgs::OverrideRCIn_<ContainerAllocator2> & rhs)
+{
+  return lhs.channels == rhs.channels;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::OverrideRCIn_<ContainerAllocator1> & lhs, const ::mavros_msgs::OverrideRCIn_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -78,12 +100,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -148,14 +164,14 @@ struct Definition< ::mavros_msgs::OverrideRCIn_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Override RC Input\n\
-# Currently MAVLink defines override for 8 channel\n\
-\n\
-uint16 CHAN_RELEASE=0\n\
-uint16 CHAN_NOCHANGE=65535\n\
-\n\
-uint16[8] channels\n\
-";
+    return "# Override RC Input\n"
+"# Currently MAVLink defines override for 8 channel\n"
+"\n"
+"uint16 CHAN_RELEASE=0\n"
+"uint16 CHAN_NOCHANGE=65535\n"
+"\n"
+"uint16[8] channels\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::OverrideRCIn_<ContainerAllocator>&) { return value(); }

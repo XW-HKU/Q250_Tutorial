@@ -1,7 +1,7 @@
 mavros/test_mavros
 /home/dji/MaRS_Offboard/devel/.private/test_mavros/cmake.lock /home/dji/MaRS_Offboard/devel/./cmake.lock
 /home/dji/MaRS_Offboard/devel/.private/test_mavros/lib/libmavros_sitl_test.so /home/dji/MaRS_Offboard/devel/lib/libmavros_sitl_test.so
-/home/dji/MaRS_Offboard/devel/.private/test_mavros/lib/test_mavros/sitl_test_node /home/dji/MaRS_Offboard/devel/lib/test_mavros/sitl_test_node
 /home/dji/MaRS_Offboard/devel/.private/test_mavros/lib/pkgconfig/test_mavros.pc /home/dji/MaRS_Offboard/devel/lib/pkgconfig/test_mavros.pc
+/home/dji/MaRS_Offboard/devel/.private/test_mavros/lib/test_mavros/sitl_test_node /home/dji/MaRS_Offboard/devel/lib/test_mavros/sitl_test_node
 /home/dji/MaRS_Offboard/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig.cmake /home/dji/MaRS_Offboard/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
 /home/dji/MaRS_Offboard/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig-version.cmake /home/dji/MaRS_Offboard/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake

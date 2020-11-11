@@ -87,10 +87,10 @@
   "71bf45fe3600fc220a82346ce1d1430c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileTruncate-request>)))
   "Returns full string definition for message of type '<FileTruncate-request>"
-  (cl:format cl:nil "~%~%~%~%~%string file_path~%uint64 length~%~%~%"))
+  (cl:format cl:nil "# FTP::Truncate~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 length~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileTruncate-request)))
   "Returns full string definition for message of type 'FileTruncate-request"
-  (cl:format cl:nil "~%~%~%~%~%string file_path~%uint64 length~%~%~%"))
+  (cl:format cl:nil "# FTP::Truncate~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 length~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileTruncate-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

@@ -38,10 +38,10 @@
   "a8d9ecef8fb37028d2db2a9aa4ed7e79")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<WaypointPull-request>)))
   "Returns full string definition for message of type '<WaypointPull-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%"))
+  (cl:format cl:nil "# Requests waypoints from device~%#~%# Returns success status and received count~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'WaypointPull-request)))
   "Returns full string definition for message of type 'WaypointPull-request"
-  (cl:format cl:nil "~%~%~%~%~%~%"))
+  (cl:format cl:nil "# Requests waypoints from device~%#~%# Returns success status and received count~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <WaypointPull-request>))
   (cl:+ 0
 ))

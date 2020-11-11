@@ -68,10 +68,10 @@ class FileRemoveRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
-    
+    # FTP::Remove
+    #
+    # :success:	indicates success end of request
+    # :r_errno:	remote errno if applicapable
     
     string file_path
     

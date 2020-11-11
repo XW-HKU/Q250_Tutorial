@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::WaypointPull > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::WaypointPullRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::WaypointPull > 
+// service_traits::MD5Sum< ::mavros_msgs::WaypointPullRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::WaypointPull >
 template<>
 struct MD5Sum< ::mavros_msgs::WaypointPullRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::WaypointPullRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::WaypointPullRequest> should match 
-// service_traits::DataType< ::mavros_msgs::WaypointPull > 
+// service_traits::DataType< ::mavros_msgs::WaypointPullRequest> should match
+// service_traits::DataType< ::mavros_msgs::WaypointPull >
 template<>
 struct DataType< ::mavros_msgs::WaypointPullRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::WaypointPullRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::WaypointPullResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::WaypointPull > 
+// service_traits::MD5Sum< ::mavros_msgs::WaypointPullResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::WaypointPull >
 template<>
 struct MD5Sum< ::mavros_msgs::WaypointPullResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::WaypointPullResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::WaypointPullResponse> should match 
-// service_traits::DataType< ::mavros_msgs::WaypointPull > 
+// service_traits::DataType< ::mavros_msgs::WaypointPullResponse> should match
+// service_traits::DataType< ::mavros_msgs::WaypointPull >
 template<>
 struct DataType< ::mavros_msgs::WaypointPullResponse>
 {

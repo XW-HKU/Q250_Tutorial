@@ -49,10 +49,10 @@
   "e09abbb4e5bae6b558e5010966eb6e9e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandBool-request>)))
   "Returns full string definition for message of type '<CommandBool-request>"
-  (cl:format cl:nil "~%~%bool value~%~%~%"))
+  (cl:format cl:nil "# Common type for switch commands~%~%bool value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandBool-request)))
   "Returns full string definition for message of type 'CommandBool-request"
-  (cl:format cl:nil "~%~%bool value~%~%~%"))
+  (cl:format cl:nil "# Common type for switch commands~%~%bool value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandBool-request>))
   (cl:+ 0
      1

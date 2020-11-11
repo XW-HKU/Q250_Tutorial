@@ -51,10 +51,10 @@
   "f99aa1a911a80ab546ea470f4e90c807")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<WaypointSetCurrent-request>)))
   "Returns full string definition for message of type '<WaypointSetCurrent-request>"
-  (cl:format cl:nil "~%~%~%~%uint16 wp_seq~%~%~%"))
+  (cl:format cl:nil "# Request set current waypoint~%#~%# wp_seq - index in waypoint array~%~%uint16 wp_seq~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'WaypointSetCurrent-request)))
   "Returns full string definition for message of type 'WaypointSetCurrent-request"
-  (cl:format cl:nil "~%~%~%~%uint16 wp_seq~%~%~%"))
+  (cl:format cl:nil "# Request set current waypoint~%#~%# wp_seq - index in waypoint array~%~%uint16 wp_seq~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <WaypointSetCurrent-request>))
   (cl:+ 0
      2

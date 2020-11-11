@@ -102,6 +102,27 @@ ros::message_operations::Printer< ::mavros_msgs::HilStateQuaternion_<ContainerAl
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::HilStateQuaternion_<ContainerAllocator1> & lhs, const ::mavros_msgs::HilStateQuaternion_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.orientation == rhs.orientation &&
+    lhs.angular_velocity == rhs.angular_velocity &&
+    lhs.linear_acceleration == rhs.linear_acceleration &&
+    lhs.linear_velocity == rhs.linear_velocity &&
+    lhs.geo == rhs.geo &&
+    lhs.ind_airspeed == rhs.ind_airspeed &&
+    lhs.true_airspeed == rhs.true_airspeed;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::HilStateQuaternion_<ContainerAllocator1> & lhs, const ::mavros_msgs::HilStateQuaternion_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -109,12 +130,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -179,77 +194,75 @@ struct Definition< ::mavros_msgs::HilStateQuaternion_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# HilStateQuaternion.msg\n\
-#\n\
-# ROS representation of MAVLink HIL_STATE_QUATERNION\n\
-# See mavlink message documentation here:\n\
-# https://mavlink.io/en/messages/common.html#HIL_STATE_QUATERNION\n\
-\n\
-std_msgs/Header header\n\
-\n\
-geometry_msgs/Quaternion orientation\n\
-geometry_msgs/Vector3 angular_velocity\n\
-geometry_msgs/Vector3 linear_acceleration\n\
-geometry_msgs/Vector3 linear_velocity\n\
-geographic_msgs/GeoPoint geo\n\
-float32 ind_airspeed\n\
-float32 true_airspeed\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
-================================================================================\n\
-MSG: geometry_msgs/Quaternion\n\
-# This represents an orientation in free space in quaternion form.\n\
-\n\
-float64 x\n\
-float64 y\n\
-float64 z\n\
-float64 w\n\
-\n\
-================================================================================\n\
-MSG: geometry_msgs/Vector3\n\
-# This represents a vector in free space. \n\
-# It is only meant to represent a direction. Therefore, it does not\n\
-# make sense to apply a translation to it (e.g., when applying a \n\
-# generic rigid transformation to a Vector3, tf2 will only apply the\n\
-# rotation). If you want your data to be translatable too, use the\n\
-# geometry_msgs/Point message instead.\n\
-\n\
-float64 x\n\
-float64 y\n\
-float64 z\n\
-================================================================================\n\
-MSG: geographic_msgs/GeoPoint\n\
-# Geographic point, using the WGS 84 reference ellipsoid.\n\
-\n\
-# Latitude [degrees]. Positive is north of equator; negative is south\n\
-# (-90 <= latitude <= +90).\n\
-float64 latitude\n\
-\n\
-# Longitude [degrees]. Positive is east of prime meridian; negative is\n\
-# west (-180 <= longitude <= +180). At the poles, latitude is -90 or\n\
-# +90, and longitude is irrelevant, but must be in range.\n\
-float64 longitude\n\
-\n\
-# Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).\n\
-float64 altitude\n\
-";
+    return "# HilStateQuaternion.msg\n"
+"#\n"
+"# ROS representation of MAVLink HIL_STATE_QUATERNION\n"
+"# See mavlink message documentation here:\n"
+"# https://mavlink.io/en/messages/common.html#HIL_STATE_QUATERNION\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"geometry_msgs/Quaternion orientation\n"
+"geometry_msgs/Vector3 angular_velocity\n"
+"geometry_msgs/Vector3 linear_acceleration\n"
+"geometry_msgs/Vector3 linear_velocity\n"
+"geographic_msgs/GeoPoint geo\n"
+"float32 ind_airspeed\n"
+"float32 true_airspeed\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"float64 w\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Vector3\n"
+"# This represents a vector in free space. \n"
+"# It is only meant to represent a direction. Therefore, it does not\n"
+"# make sense to apply a translation to it (e.g., when applying a \n"
+"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
+"# rotation). If you want your data to be translatable too, use the\n"
+"# geometry_msgs/Point message instead.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"================================================================================\n"
+"MSG: geographic_msgs/GeoPoint\n"
+"# Geographic point, using the WGS 84 reference ellipsoid.\n"
+"\n"
+"# Latitude [degrees]. Positive is north of equator; negative is south\n"
+"# (-90 <= latitude <= +90).\n"
+"float64 latitude\n"
+"\n"
+"# Longitude [degrees]. Positive is east of prime meridian; negative is\n"
+"# west (-180 <= longitude <= +180). At the poles, latitude is -90 or\n"
+"# +90, and longitude is irrelevant, but must be in range.\n"
+"float64 longitude\n"
+"\n"
+"# Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).\n"
+"float64 altitude\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::HilStateQuaternion_<ContainerAllocator>&) { return value(); }

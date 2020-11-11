@@ -118,10 +118,10 @@
 (setf (get mavros_msgs::LogRequestListRequest :md5sum-) "3e2e88c935b3047e14f450bc4a90c4d2")
 (setf (get mavros_msgs::LogRequestListRequest :datatype-) "mavros_msgs/LogRequestListRequest")
 (setf (get mavros_msgs::LogRequestListRequest :definition-)
-      "
-
-
-
+      "# Request a list of available logs
+#
+#  :start: - first log id (0 for first available)
+#  :end: - last log id (0xffff for last available)
 
 uint16 start
 uint16 end
@@ -133,10 +133,10 @@ bool success
 (setf (get mavros_msgs::LogRequestListResponse :md5sum-) "3e2e88c935b3047e14f450bc4a90c4d2")
 (setf (get mavros_msgs::LogRequestListResponse :datatype-) "mavros_msgs/LogRequestListResponse")
 (setf (get mavros_msgs::LogRequestListResponse :definition-)
-      "
-
-
-
+      "# Request a list of available logs
+#
+#  :start: - first log id (0 for first available)
+#  :end: - last log id (0xffff for last available)
 
 uint16 start
 uint16 end

@@ -55,7 +55,7 @@ class LogRequestEndRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # Stop log transfer and resume normal logging
     
     
     `;

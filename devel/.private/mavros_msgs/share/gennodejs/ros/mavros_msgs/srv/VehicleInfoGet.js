@@ -89,9 +89,9 @@ class VehicleInfoGetRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
+    # Request the Vehicle Info
+    # use this to request the current target sysid / compid defined in mavros
+    # set get_all = True to request all available vehicles
     
     uint8 GET_MY_SYSID = 0
     uint8 GET_MY_COMPID = 0
@@ -265,8 +265,6 @@ class VehicleInfoGetResponse {
     # time-handling sugar is provided by the client library
     time stamp
     #Frame this data is associated with
-    # 0: no frame
-    # 1: global frame
     string frame_id
     
     `;

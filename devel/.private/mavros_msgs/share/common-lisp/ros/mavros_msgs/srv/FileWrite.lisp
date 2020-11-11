@@ -113,10 +113,10 @@
   "7d7e0ed4d86797a80355795ee6728fac")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileWrite-request>)))
   "Returns full string definition for message of type '<FileWrite-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%uint64 offset~%uint8[] data~%~%~%"))
+  (cl:format cl:nil "# FTP::Write~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 offset~%uint8[] data~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileWrite-request)))
   "Returns full string definition for message of type 'FileWrite-request"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%uint64 offset~%uint8[] data~%~%~%"))
+  (cl:format cl:nil "# FTP::Write~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 offset~%uint8[] data~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileWrite-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

@@ -1,6 +1,0 @@
-Symlinking /home/dji/MaRS_Offboard/devel/lib/libmavros_extras.so
-Symlinking /home/dji/MaRS_Offboard/devel/lib/mavros_extras/servo_state_publisher
-Symlinking /home/dji/MaRS_Offboard/devel/lib/mavros_extras/copter_visualization
-Symlinking /home/dji/MaRS_Offboard/devel/lib/pkgconfig/mavros_extras.pc
-Symlinking /home/dji/MaRS_Offboard/devel/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake
-Symlinking /home/dji/MaRS_Offboard/devel/share/mavros_extras/cmake/mavros_extrasConfig.cmake

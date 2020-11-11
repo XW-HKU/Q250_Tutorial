@@ -88,8 +88,8 @@ class StreamRateRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
+    # sets stream rate
+    # See REQUEST_DATA_STREAM message
     
     uint8 STREAM_ALL = 0
     uint8 STREAM_RAW_SENSORS = 1

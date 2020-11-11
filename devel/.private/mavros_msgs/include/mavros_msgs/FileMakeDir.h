@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::FileMakeDir > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::FileMakeDirRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileMakeDir > 
+// service_traits::MD5Sum< ::mavros_msgs::FileMakeDirRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileMakeDir >
 template<>
 struct MD5Sum< ::mavros_msgs::FileMakeDirRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::FileMakeDirRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileMakeDirRequest> should match 
-// service_traits::DataType< ::mavros_msgs::FileMakeDir > 
+// service_traits::DataType< ::mavros_msgs::FileMakeDirRequest> should match
+// service_traits::DataType< ::mavros_msgs::FileMakeDir >
 template<>
 struct DataType< ::mavros_msgs::FileMakeDirRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::FileMakeDirRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::FileMakeDirResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileMakeDir > 
+// service_traits::MD5Sum< ::mavros_msgs::FileMakeDirResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileMakeDir >
 template<>
 struct MD5Sum< ::mavros_msgs::FileMakeDirResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::FileMakeDirResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileMakeDirResponse> should match 
-// service_traits::DataType< ::mavros_msgs::FileMakeDir > 
+// service_traits::DataType< ::mavros_msgs::FileMakeDirResponse> should match
+// service_traits::DataType< ::mavros_msgs::FileMakeDir >
 template<>
 struct DataType< ::mavros_msgs::FileMakeDirResponse>
 {

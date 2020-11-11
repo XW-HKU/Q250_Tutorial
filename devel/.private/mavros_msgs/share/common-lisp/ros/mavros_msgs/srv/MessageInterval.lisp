@@ -76,10 +76,10 @@
   "99e633e185b7ee6b477bc9843a87b5ae")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<MessageInterval-request>)))
   "Returns full string definition for message of type '<MessageInterval-request>"
-  (cl:format cl:nil "~%~%~%uint32 message_id~%float32 message_rate~%~%~%"))
+  (cl:format cl:nil "# sets message interval~%# See MAV_CMD_SET_MESSAGE_INTERVAL~%~%uint32 message_id~%float32 message_rate~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'MessageInterval-request)))
   "Returns full string definition for message of type 'MessageInterval-request"
-  (cl:format cl:nil "~%~%~%uint32 message_id~%float32 message_rate~%~%~%"))
+  (cl:format cl:nil "# sets message interval~%# See MAV_CMD_SET_MESSAGE_INTERVAL~%~%uint32 message_id~%float32 message_rate~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <MessageInterval-request>))
   (cl:+ 0
      4

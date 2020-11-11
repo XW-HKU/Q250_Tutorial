@@ -2,7 +2,7 @@
 
 message(STATUS "mavros_msgs: 43 messages, 34 services")
 
-set(MSG_I_FLAGS "-Imavros_msgs:/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg;-Igeographic_msgs:/opt/ros/kinetic/share/geographic_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/kinetic/share/uuid_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Imavros_msgs:/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg;-Igeographic_msgs:/opt/ros/melodic/share/geographic_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/melodic/share/uuid_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -34,7 +34,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/FileChecksum.srv" NAME_WE)
@@ -84,7 +84,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg" "geometry_msgs/Vector3:geometry_msgs/Quaternion:geographic_msgs/GeoPoint:std_msgs/Header:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg" "geometry_msgs/Vector3:geometry_msgs/Quaternion:geometry_msgs/Point:geographic_msgs/GeoPoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/ParamGet.srv" NAME_WE)
@@ -99,7 +99,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg" NAME_WE)
@@ -164,7 +164,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg" "geometry_msgs/Quaternion:geographic_msgs/GeoPoint:std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg" "geometry_msgs/Vector3:geometry_msgs/Quaternion:geographic_msgs/GeoPoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/FileEntry.msg" NAME_WE)
@@ -239,7 +239,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg" "std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg" "geometry_msgs/Vector3:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg" NAME_WE)
@@ -279,7 +279,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg" "geometry_msgs/Vector3:std_msgs/Header:mavros_msgs/PositionTarget:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg" "geometry_msgs/Vector3:geometry_msgs/Point:mavros_msgs/PositionTarget:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/CommandInt.srv" NAME_WE)
@@ -339,7 +339,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg" "std_msgs/Header:mavros_msgs/ParamValue"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg" "mavros_msgs/ParamValue:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg" NAME_WE)
@@ -354,7 +354,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg" "geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Vector3"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg" "geometry_msgs/Vector3:geometry_msgs/Quaternion:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/FileWrite.srv" NAME_WE)
@@ -369,7 +369,7 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg" NAME_WE)
 add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg" "geometry_msgs/Vector3:std_msgs/Header:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "mavros_msgs" "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg" "geometry_msgs/Vector3:geometry_msgs/Point:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/LogRequestList.srv" NAME_WE)
@@ -411,97 +411,97 @@ add_custom_target(_mavros_msgs_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VFR_HUD.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ManualControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/DebugValue.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/CompanionProcessStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilActuatorControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ExtendedState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/StatusText.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RadioStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Altitude.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
@@ -519,13 +519,13 @@ _generate_msg_cpp(mavros_msgs
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/OpticalFlowRad.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
@@ -537,7 +537,7 @@ _generate_msg_cpp(mavros_msgs
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ADSBVehicle.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
@@ -549,49 +549,49 @@ _generate_msg_cpp(mavros_msgs
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCIn.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ActuatorControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogEntry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WaypointReached.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilGPS.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/State.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
@@ -603,37 +603,37 @@ _generate_msg_cpp(mavros_msgs
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Mavlink.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Thrust.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
@@ -651,19 +651,19 @@ _generate_msg_cpp(mavros_msgs
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/BatteryStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/TimesyncStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 
@@ -695,7 +695,7 @@ _generate_srv_cpp(mavros_msgs
 _generate_srv_cpp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/VehicleInfoGet.srv"
   "${MSG_I_FLAGS}"
-  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/mavros_msgs
 )
 _generate_srv_cpp(mavros_msgs
@@ -1052,97 +1052,97 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mavros_msgs_generate_messages_cpp)
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VFR_HUD.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ManualControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/DebugValue.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/CompanionProcessStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilActuatorControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ExtendedState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/StatusText.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RadioStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Altitude.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
@@ -1160,13 +1160,13 @@ _generate_msg_eus(mavros_msgs
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/OpticalFlowRad.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
@@ -1178,7 +1178,7 @@ _generate_msg_eus(mavros_msgs
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ADSBVehicle.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
@@ -1190,49 +1190,49 @@ _generate_msg_eus(mavros_msgs
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCIn.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ActuatorControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogEntry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WaypointReached.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilGPS.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/State.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
@@ -1244,37 +1244,37 @@ _generate_msg_eus(mavros_msgs
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Mavlink.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Thrust.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
@@ -1292,19 +1292,19 @@ _generate_msg_eus(mavros_msgs
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/BatteryStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/TimesyncStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 
@@ -1336,7 +1336,7 @@ _generate_srv_eus(mavros_msgs
 _generate_srv_eus(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/VehicleInfoGet.srv"
   "${MSG_I_FLAGS}"
-  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/mavros_msgs
 )
 _generate_srv_eus(mavros_msgs
@@ -1693,97 +1693,97 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mavros_msgs_generate_messages_eus)
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VFR_HUD.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ManualControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/DebugValue.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/CompanionProcessStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilActuatorControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ExtendedState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/StatusText.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RadioStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Altitude.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
@@ -1801,13 +1801,13 @@ _generate_msg_lisp(mavros_msgs
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/OpticalFlowRad.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
@@ -1819,7 +1819,7 @@ _generate_msg_lisp(mavros_msgs
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ADSBVehicle.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
@@ -1831,49 +1831,49 @@ _generate_msg_lisp(mavros_msgs
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCIn.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ActuatorControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogEntry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WaypointReached.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilGPS.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/State.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
@@ -1885,37 +1885,37 @@ _generate_msg_lisp(mavros_msgs
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Mavlink.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Thrust.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
@@ -1933,19 +1933,19 @@ _generate_msg_lisp(mavros_msgs
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/BatteryStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/TimesyncStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 
@@ -1977,7 +1977,7 @@ _generate_srv_lisp(mavros_msgs
 _generate_srv_lisp(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/VehicleInfoGet.srv"
   "${MSG_I_FLAGS}"
-  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mavros_msgs
 )
 _generate_srv_lisp(mavros_msgs
@@ -2334,97 +2334,97 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mavros_msgs_generate_messages_lisp)
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VFR_HUD.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ManualControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/DebugValue.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/CompanionProcessStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilActuatorControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ExtendedState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/StatusText.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RadioStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Altitude.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
@@ -2442,13 +2442,13 @@ _generate_msg_nodejs(mavros_msgs
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/OpticalFlowRad.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
@@ -2460,7 +2460,7 @@ _generate_msg_nodejs(mavros_msgs
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ADSBVehicle.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
@@ -2472,49 +2472,49 @@ _generate_msg_nodejs(mavros_msgs
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCIn.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ActuatorControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogEntry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WaypointReached.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilGPS.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/State.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
@@ -2526,37 +2526,37 @@ _generate_msg_nodejs(mavros_msgs
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Mavlink.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Thrust.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
@@ -2574,19 +2574,19 @@ _generate_msg_nodejs(mavros_msgs
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/BatteryStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/TimesyncStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 
@@ -2618,7 +2618,7 @@ _generate_srv_nodejs(mavros_msgs
 _generate_srv_nodejs(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/VehicleInfoGet.srv"
   "${MSG_I_FLAGS}"
-  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/mavros_msgs
 )
 _generate_srv_nodejs(mavros_msgs
@@ -2975,97 +2975,97 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS mavros_msgs_generate_messages_nodej
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VFR_HUD.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Vibration.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogData.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ManualControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/DebugValue.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/CompanionProcessStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCOut.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilActuatorControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/AttitudeTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ExtendedState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/StatusText.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RadioStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/GlobalPositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RTCM.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Altitude.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
@@ -3083,13 +3083,13 @@ _generate_msg_py(mavros_msgs
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/OpticalFlowRad.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilStateQuaternion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
@@ -3101,7 +3101,7 @@ _generate_msg_py(mavros_msgs
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ADSBVehicle.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
@@ -3113,49 +3113,49 @@ _generate_msg_py(mavros_msgs
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/RCIn.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ActuatorControl.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/LogEntry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WaypointReached.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilGPS.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/State.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
@@ -3167,37 +3167,37 @@ _generate_msg_py(mavros_msgs
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Mavlink.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilControls.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Thrust.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/Param.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/ParamValue.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/WheelOdomStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/HilSensor.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
@@ -3215,19 +3215,19 @@ _generate_msg_py(mavros_msgs
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/PositionTarget.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/BatteryStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_msg_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/TimesyncStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 
@@ -3259,7 +3259,7 @@ _generate_srv_py(mavros_msgs
 _generate_srv_py(mavros_msgs
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/srv/VehicleInfoGet.srv"
   "${MSG_I_FLAGS}"
-  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg/VehicleInfo.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs
 )
 _generate_srv_py(mavros_msgs
@@ -3694,7 +3694,7 @@ if(TARGET std_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs)
-  install(CODE "execute_process(COMMAND \"/usr/bin/python\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs\")")
+  install(CODE "execute_process(COMMAND \"/usr/bin/python2\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs\")")
   # install generated code
   install(
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mavros_msgs

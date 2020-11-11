@@ -87,10 +87,10 @@
   "91170669bcd08438f0440f9b4d12a11a")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<LogRequestData-request>)))
   "Returns full string definition for message of type '<LogRequestData-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%uint16 id~%uint32 offset~%uint32 count~%~%~%"))
+  (cl:format cl:nil "# Request a chunk of a log~%#~%#  :id: - log id from LogEntry message~%#  :offset: - offset into the log~%#  :count: - number of bytes to get~%~%uint16 id~%uint32 offset~%uint32 count~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'LogRequestData-request)))
   "Returns full string definition for message of type 'LogRequestData-request"
-  (cl:format cl:nil "~%~%~%~%~%~%uint16 id~%uint32 offset~%uint32 count~%~%~%"))
+  (cl:format cl:nil "# Request a chunk of a log~%#~%#  :id: - log id from LogEntry message~%#  :offset: - offset into the log~%#  :count: - number of bytes to get~%~%uint16 id~%uint32 offset~%uint32 count~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <LogRequestData-request>))
   (cl:+ 0
      2

@@ -97,7 +97,7 @@
 (setf (get mavros_msgs::WaypointClearRequest :md5sum-) "358e233cde0c8a8bcfea4ce193f8fc15")
 (setf (get mavros_msgs::WaypointClearRequest :datatype-) "mavros_msgs/WaypointClearRequest")
 (setf (get mavros_msgs::WaypointClearRequest :definition-)
-      "
+      "# Request clear waypoint
 
 ---
 bool success
@@ -107,7 +107,7 @@ bool success
 (setf (get mavros_msgs::WaypointClearResponse :md5sum-) "358e233cde0c8a8bcfea4ce193f8fc15")
 (setf (get mavros_msgs::WaypointClearResponse :datatype-) "mavros_msgs/WaypointClearResponse")
 (setf (get mavros_msgs::WaypointClearResponse :definition-)
-      "
+      "# Request clear waypoint
 
 ---
 bool success

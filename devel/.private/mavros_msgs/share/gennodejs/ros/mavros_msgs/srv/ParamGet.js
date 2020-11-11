@@ -69,7 +69,7 @@ class ParamGetRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # Request parameter from attached device
     
     string param_id
     

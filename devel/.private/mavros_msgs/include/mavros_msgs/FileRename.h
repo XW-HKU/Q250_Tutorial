@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::FileRename > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::FileRenameRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileRename > 
+// service_traits::MD5Sum< ::mavros_msgs::FileRenameRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileRename >
 template<>
 struct MD5Sum< ::mavros_msgs::FileRenameRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::FileRenameRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileRenameRequest> should match 
-// service_traits::DataType< ::mavros_msgs::FileRename > 
+// service_traits::DataType< ::mavros_msgs::FileRenameRequest> should match
+// service_traits::DataType< ::mavros_msgs::FileRename >
 template<>
 struct DataType< ::mavros_msgs::FileRenameRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::FileRenameRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::FileRenameResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileRename > 
+// service_traits::MD5Sum< ::mavros_msgs::FileRenameResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileRename >
 template<>
 struct MD5Sum< ::mavros_msgs::FileRenameResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::FileRenameResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileRenameResponse> should match 
-// service_traits::DataType< ::mavros_msgs::FileRename > 
+// service_traits::DataType< ::mavros_msgs::FileRenameResponse> should match
+// service_traits::DataType< ::mavros_msgs::FileRename >
 template<>
 struct DataType< ::mavros_msgs::FileRenameResponse>
 {

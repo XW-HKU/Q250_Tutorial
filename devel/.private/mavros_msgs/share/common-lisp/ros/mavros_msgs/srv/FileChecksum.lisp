@@ -61,10 +61,10 @@
   "c32158e17d9a1a1c682fe19adbd29fac")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileChecksum-request>)))
   "Returns full string definition for message of type '<FileChecksum-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%~%string file_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Checksum~%#~%# :file_path:	file to calculate checksum~%# :crc32:	file checksum~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileChecksum-request)))
   "Returns full string definition for message of type 'FileChecksum-request"
-  (cl:format cl:nil "~%~%~%~%~%~%~%string file_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Checksum~%#~%# :file_path:	file to calculate checksum~%# :crc32:	file checksum~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileChecksum-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

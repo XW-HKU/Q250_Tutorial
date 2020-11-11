@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::SetMavFrame > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::SetMavFrameRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::SetMavFrame > 
+// service_traits::MD5Sum< ::mavros_msgs::SetMavFrameRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::SetMavFrame >
 template<>
 struct MD5Sum< ::mavros_msgs::SetMavFrameRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::SetMavFrameRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::SetMavFrameRequest> should match 
-// service_traits::DataType< ::mavros_msgs::SetMavFrame > 
+// service_traits::DataType< ::mavros_msgs::SetMavFrameRequest> should match
+// service_traits::DataType< ::mavros_msgs::SetMavFrame >
 template<>
 struct DataType< ::mavros_msgs::SetMavFrameRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::SetMavFrameRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::SetMavFrameResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::SetMavFrame > 
+// service_traits::MD5Sum< ::mavros_msgs::SetMavFrameResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::SetMavFrame >
 template<>
 struct MD5Sum< ::mavros_msgs::SetMavFrameResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::SetMavFrameResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::SetMavFrameResponse> should match 
-// service_traits::DataType< ::mavros_msgs::SetMavFrame > 
+// service_traits::DataType< ::mavros_msgs::SetMavFrameResponse> should match
+// service_traits::DataType< ::mavros_msgs::SetMavFrame >
 template<>
 struct DataType< ::mavros_msgs::SetMavFrameResponse>
 {

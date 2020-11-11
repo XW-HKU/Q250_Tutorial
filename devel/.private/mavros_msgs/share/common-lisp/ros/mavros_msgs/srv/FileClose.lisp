@@ -61,10 +61,10 @@
   "1c309002d7f7c6df7d3f094925ea8e10")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileClose-request>)))
   "Returns full string definition for message of type '<FileClose-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Close~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileClose-request)))
   "Returns full string definition for message of type 'FileClose-request"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Close~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileClose-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

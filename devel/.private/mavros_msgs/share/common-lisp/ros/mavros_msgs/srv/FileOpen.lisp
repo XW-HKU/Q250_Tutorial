@@ -85,10 +85,10 @@
   "99a3f49cc67b91477cf49ff15c42af0e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileOpen-request>)))
   "Returns full string definition for message of type '<FileOpen-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%~%uint8 MODE_READ = 0~%uint8 MODE_WRITE = 1~%uint8 MODE_CREATE = 2~%~%string file_path~%uint8 mode~%~%~%"))
+  (cl:format cl:nil "# FTP::Open~%#~%# :file_path:	used as session id in read/write/close services~%# :size:	file size returned for MODE_READ~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%uint8 MODE_READ = 0	# open for read~%uint8 MODE_WRITE = 1	# open for write~%uint8 MODE_CREATE = 2	# do creat()~%~%string file_path~%uint8 mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileOpen-request)))
   "Returns full string definition for message of type 'FileOpen-request"
-  (cl:format cl:nil "~%~%~%~%~%~%~%uint8 MODE_READ = 0~%uint8 MODE_WRITE = 1~%uint8 MODE_CREATE = 2~%~%string file_path~%uint8 mode~%~%~%"))
+  (cl:format cl:nil "# FTP::Open~%#~%# :file_path:	used as session id in read/write/close services~%# :size:	file size returned for MODE_READ~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%uint8 MODE_READ = 0	# open for read~%uint8 MODE_WRITE = 1	# open for write~%uint8 MODE_CREATE = 2	# do creat()~%~%string file_path~%uint8 mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileOpen-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

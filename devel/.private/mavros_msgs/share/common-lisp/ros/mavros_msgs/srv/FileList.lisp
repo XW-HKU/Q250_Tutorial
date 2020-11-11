@@ -61,10 +61,10 @@
   "1647c627907cac72fa2d06e0e5f96aac")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileList-request>)))
   "Returns full string definition for message of type '<FileList-request>"
-  (cl:format cl:nil "~%~%~%~%~%string dir_path~%~%~%"))
+  (cl:format cl:nil "# FTP::List~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string dir_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileList-request)))
   "Returns full string definition for message of type 'FileList-request"
-  (cl:format cl:nil "~%~%~%~%~%string dir_path~%~%~%"))
+  (cl:format cl:nil "# FTP::List~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string dir_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileList-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'dir_path))

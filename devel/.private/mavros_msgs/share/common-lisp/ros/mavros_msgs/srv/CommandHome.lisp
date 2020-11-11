@@ -112,10 +112,10 @@
   "3e89d38ecf947c9e62eb2e14dfa6e65d")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandHome-request>)))
   "Returns full string definition for message of type '<CommandHome-request>"
-  (cl:format cl:nil "~%~%bool current_gps~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
+  (cl:format cl:nil "# request set new home position~%~%bool current_gps~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandHome-request)))
   "Returns full string definition for message of type 'CommandHome-request"
-  (cl:format cl:nil "~%~%bool current_gps~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
+  (cl:format cl:nil "# request set new home position~%~%bool current_gps~%float32 latitude~%float32 longitude~%float32 altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandHome-request>))
   (cl:+ 0
      1

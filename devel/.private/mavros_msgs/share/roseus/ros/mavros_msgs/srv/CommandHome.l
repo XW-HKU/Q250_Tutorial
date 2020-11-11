@@ -151,7 +151,7 @@
 (setf (get mavros_msgs::CommandHomeRequest :md5sum-) "3e89d38ecf947c9e62eb2e14dfa6e65d")
 (setf (get mavros_msgs::CommandHomeRequest :datatype-) "mavros_msgs/CommandHomeRequest")
 (setf (get mavros_msgs::CommandHomeRequest :definition-)
-      "
+      "# request set new home position
 
 bool current_gps
 float32 latitude
@@ -166,7 +166,7 @@ uint8 result
 (setf (get mavros_msgs::CommandHomeResponse :md5sum-) "3e89d38ecf947c9e62eb2e14dfa6e65d")
 (setf (get mavros_msgs::CommandHomeResponse :datatype-) "mavros_msgs/CommandHomeResponse")
 (setf (get mavros_msgs::CommandHomeResponse :definition-)
-      "
+      "# request set new home position
 
 bool current_gps
 float32 latitude

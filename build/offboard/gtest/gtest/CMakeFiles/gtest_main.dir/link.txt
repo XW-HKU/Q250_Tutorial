@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC   -shared -Wl,-soname,libgtest_main.so -o libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o  -L/home/dji/MaRS_Offboard/build/offboard/gtest/gtest/src -lpthread libgtest.so -lpthread -Wl,-rpath,/home/dji/MaRS_Offboard/build/offboard/gtest/gtest/src:/home/dji/MaRS_Offboard/build/offboard/gtest/gtest 

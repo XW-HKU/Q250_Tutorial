@@ -48,6 +48,35 @@ struct StreamRateRequest_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(STREAM_ALL)
+  #undef STREAM_ALL
+#endif
+#if defined(_WIN32) && defined(STREAM_RAW_SENSORS)
+  #undef STREAM_RAW_SENSORS
+#endif
+#if defined(_WIN32) && defined(STREAM_EXTENDED_STATUS)
+  #undef STREAM_EXTENDED_STATUS
+#endif
+#if defined(_WIN32) && defined(STREAM_RC_CHANNELS)
+  #undef STREAM_RC_CHANNELS
+#endif
+#if defined(_WIN32) && defined(STREAM_RAW_CONTROLLER)
+  #undef STREAM_RAW_CONTROLLER
+#endif
+#if defined(_WIN32) && defined(STREAM_POSITION)
+  #undef STREAM_POSITION
+#endif
+#if defined(_WIN32) && defined(STREAM_EXTRA1)
+  #undef STREAM_EXTRA1
+#endif
+#if defined(_WIN32) && defined(STREAM_EXTRA2)
+  #undef STREAM_EXTRA2
+#endif
+#if defined(_WIN32) && defined(STREAM_EXTRA3)
+  #undef STREAM_EXTRA3
+#endif
+
   enum {
     STREAM_ALL = 0u,
     STREAM_RAW_SENSORS = 1u,
@@ -100,6 +129,22 @@ ros::message_operations::Printer< ::mavros_msgs::StreamRateRequest_<ContainerAll
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::StreamRateRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::StreamRateRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.stream_id == rhs.stream_id &&
+    lhs.message_rate == rhs.message_rate &&
+    lhs.on_off == rhs.on_off;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::StreamRateRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::StreamRateRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -107,12 +152,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -177,23 +216,23 @@ struct Definition< ::mavros_msgs::StreamRateRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n\
-\n\
-\n\
-uint8 STREAM_ALL = 0\n\
-uint8 STREAM_RAW_SENSORS = 1\n\
-uint8 STREAM_EXTENDED_STATUS = 2\n\
-uint8 STREAM_RC_CHANNELS = 3\n\
-uint8 STREAM_RAW_CONTROLLER = 4\n\
-uint8 STREAM_POSITION = 6\n\
-uint8 STREAM_EXTRA1 = 10\n\
-uint8 STREAM_EXTRA2 = 11\n\
-uint8 STREAM_EXTRA3 = 12\n\
-\n\
-uint8 stream_id\n\
-uint16 message_rate\n\
-bool on_off\n\
-";
+    return "# sets stream rate\n"
+"# See REQUEST_DATA_STREAM message\n"
+"\n"
+"uint8 STREAM_ALL = 0\n"
+"uint8 STREAM_RAW_SENSORS = 1\n"
+"uint8 STREAM_EXTENDED_STATUS = 2\n"
+"uint8 STREAM_RC_CHANNELS = 3\n"
+"uint8 STREAM_RAW_CONTROLLER = 4\n"
+"uint8 STREAM_POSITION = 6\n"
+"uint8 STREAM_EXTRA1 = 10\n"
+"uint8 STREAM_EXTRA2 = 11\n"
+"uint8 STREAM_EXTRA3 = 12\n"
+"\n"
+"uint8 stream_id\n"
+"uint16 message_rate\n"
+"bool on_off\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::StreamRateRequest_<ContainerAllocator>&) { return value(); }

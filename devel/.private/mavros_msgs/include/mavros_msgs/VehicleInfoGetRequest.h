@@ -48,6 +48,14 @@ struct VehicleInfoGetRequest_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(GET_MY_SYSID)
+  #undef GET_MY_SYSID
+#endif
+#if defined(_WIN32) && defined(GET_MY_COMPID)
+  #undef GET_MY_COMPID
+#endif
+
   enum {
     GET_MY_SYSID = 0u,
     GET_MY_COMPID = 0u,
@@ -79,6 +87,22 @@ ros::message_operations::Printer< ::mavros_msgs::VehicleInfoGetRequest_<Containe
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.sysid == rhs.sysid &&
+    lhs.compid == rhs.compid &&
+    lhs.get_all == rhs.get_all;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -86,12 +110,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -156,17 +174,17 @@ struct Definition< ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n\
-\n\
-\n\
-\n\
-uint8 GET_MY_SYSID = 0\n\
-uint8 GET_MY_COMPID = 0\n\
-\n\
-uint8 sysid\n\
-uint8 compid\n\
-bool get_all\n\
-";
+    return "# Request the Vehicle Info\n"
+"# use this to request the current target sysid / compid defined in mavros\n"
+"# set get_all = True to request all available vehicles\n"
+"\n"
+"uint8 GET_MY_SYSID = 0\n"
+"uint8 GET_MY_COMPID = 0\n"
+"\n"
+"uint8 sysid\n"
+"uint8 compid\n"
+"bool get_all\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::VehicleInfoGetRequest_<ContainerAllocator>&) { return value(); }

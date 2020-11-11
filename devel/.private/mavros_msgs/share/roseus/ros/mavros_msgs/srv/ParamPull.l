@@ -118,9 +118,9 @@
 (setf (get mavros_msgs::ParamPullRequest :md5sum-) "c9628aea2226088718fd240fbd62afc7")
 (setf (get mavros_msgs::ParamPullRequest :datatype-) "mavros_msgs/ParamPullRequest")
 (setf (get mavros_msgs::ParamPullRequest :definition-)
-      "
-
-
+      "# Request parameters from device
+#
+# Returns success status and param_recived count
 
 bool force_pull
 ---
@@ -132,9 +132,9 @@ uint32 param_received
 (setf (get mavros_msgs::ParamPullResponse :md5sum-) "c9628aea2226088718fd240fbd62afc7")
 (setf (get mavros_msgs::ParamPullResponse :datatype-) "mavros_msgs/ParamPullResponse")
 (setf (get mavros_msgs::ParamPullResponse :definition-)
-      "
-
-
+      "# Request parameters from device
+#
+# Returns success status and param_recived count
 
 bool force_pull
 ---

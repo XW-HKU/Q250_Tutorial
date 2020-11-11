@@ -24,8 +24,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/dji/MaRS_Offboard/src/mavros/libmavconn/include"
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/include"
   "/home/dji/MaRS_Offboard/src/mavros/mavros/include"
-  "/opt/ros/kinetic/include"
-  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
   )
 
 # Targets to which this target links.

@@ -66,7 +66,7 @@ class CommandBoolRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # Common type for switch commands
     
     bool value
     

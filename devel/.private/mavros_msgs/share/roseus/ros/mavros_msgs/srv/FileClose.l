@@ -118,11 +118,11 @@
 (setf (get mavros_msgs::FileCloseRequest :md5sum-) "1c309002d7f7c6df7d3f094925ea8e10")
 (setf (get mavros_msgs::FileCloseRequest :datatype-) "mavros_msgs/FileCloseRequest")
 (setf (get mavros_msgs::FileCloseRequest :definition-)
-      "
-
-
-
-
+      "# FTP::Close
+#
+# Call FTP::Open first.
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---
@@ -134,11 +134,11 @@ int32 r_errno
 (setf (get mavros_msgs::FileCloseResponse :md5sum-) "1c309002d7f7c6df7d3f094925ea8e10")
 (setf (get mavros_msgs::FileCloseResponse :datatype-) "mavros_msgs/FileCloseResponse")
 (setf (get mavros_msgs::FileCloseResponse :definition-)
-      "
-
-
-
-
+      "# FTP::Close
+#
+# Call FTP::Open first.
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---

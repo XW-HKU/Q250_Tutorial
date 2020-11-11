@@ -73,10 +73,10 @@
   "c423cafb898fff374cbe8530ecd4d285")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ParamSet-request>)))
   "Returns full string definition for message of type '<ParamSet-request>"
-  (cl:format cl:nil "~%~%string param_id~%mavros_msgs/ParamValue value~%~%================================================================================~%MSG: mavros_msgs/ParamValue~%# Parameter value storage type.~%#~%# Integer and float fields:~%#~%# if integer != 0: it is integer value~%# else if real != 0.0: it is float value~%# else: it is zero.~%~%int64 integer~%float64 real~%~%~%"))
+  (cl:format cl:nil "# Request set parameter value~%~%string param_id~%mavros_msgs/ParamValue value~%~%================================================================================~%MSG: mavros_msgs/ParamValue~%# Parameter value storage type.~%#~%# Integer and float fields:~%#~%# if integer != 0: it is integer value~%# else if real != 0.0: it is float value~%# else: it is zero.~%~%int64 integer~%float64 real~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ParamSet-request)))
   "Returns full string definition for message of type 'ParamSet-request"
-  (cl:format cl:nil "~%~%string param_id~%mavros_msgs/ParamValue value~%~%================================================================================~%MSG: mavros_msgs/ParamValue~%# Parameter value storage type.~%#~%# Integer and float fields:~%#~%# if integer != 0: it is integer value~%# else if real != 0.0: it is float value~%# else: it is zero.~%~%int64 integer~%float64 real~%~%~%"))
+  (cl:format cl:nil "# Request set parameter value~%~%string param_id~%mavros_msgs/ParamValue value~%~%================================================================================~%MSG: mavros_msgs/ParamValue~%# Parameter value storage type.~%#~%# Integer and float fields:~%#~%# if integer != 0: it is integer value~%# else if real != 0.0: it is float value~%# else: it is zero.~%~%int64 integer~%float64 real~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ParamSet-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'param_id))

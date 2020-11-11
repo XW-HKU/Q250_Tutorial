@@ -23,14 +23,16 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/dji/MaRS_Offboard/devel/.private/mavros_msgs/include"
   "/home/dji/MaRS_Offboard/src/mavros/libmavconn/include"
   "/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/include"
-  "/opt/ros/kinetic/include"
-  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/opt/ros/melodic/share/orocos_kdl/cmake/../../../include"
   "/usr/include/eigen3"
+  "/usr/src/googletest/googletest/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/dji/MaRS_Offboard/build/mavros/gtest/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/dji/MaRS_Offboard/build/mavros/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "/home/dji/MaRS_Offboard/build/mavros/CMakeFiles/mavros.dir/DependInfo.cmake"
   )
 

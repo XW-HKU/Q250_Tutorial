@@ -99,6 +99,23 @@ struct Mavlink_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(FRAMING_OK)
+  #undef FRAMING_OK
+#endif
+#if defined(_WIN32) && defined(FRAMING_BAD_CRC)
+  #undef FRAMING_BAD_CRC
+#endif
+#if defined(_WIN32) && defined(FRAMING_BAD_SIGNATURE)
+  #undef FRAMING_BAD_SIGNATURE
+#endif
+#if defined(_WIN32) && defined(MAVLINK_V10)
+  #undef MAVLINK_V10
+#endif
+#if defined(_WIN32) && defined(MAVLINK_V20)
+  #undef MAVLINK_V20
+#endif
+
   enum {
     FRAMING_OK = 1u,
     FRAMING_BAD_CRC = 2u,
@@ -139,6 +156,32 @@ ros::message_operations::Printer< ::mavros_msgs::Mavlink_<ContainerAllocator> >:
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::Mavlink_<ContainerAllocator1> & lhs, const ::mavros_msgs::Mavlink_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.framing_status == rhs.framing_status &&
+    lhs.magic == rhs.magic &&
+    lhs.len == rhs.len &&
+    lhs.incompat_flags == rhs.incompat_flags &&
+    lhs.compat_flags == rhs.compat_flags &&
+    lhs.seq == rhs.seq &&
+    lhs.sysid == rhs.sysid &&
+    lhs.compid == rhs.compid &&
+    lhs.msgid == rhs.msgid &&
+    lhs.checksum == rhs.checksum &&
+    lhs.payload64 == rhs.payload64 &&
+    lhs.signature == rhs.signature;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::Mavlink_<ContainerAllocator1> & lhs, const ::mavros_msgs::Mavlink_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -146,12 +189,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -216,63 +253,61 @@ struct Definition< ::mavros_msgs::Mavlink_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Mavlink message transport type.\n\
-#\n\
-# Used to transport mavlink_message_t via ROS topic\n\
-#\n\
-# :framing_status:\n\
-#       Frame decoding status: OK, CRC error, bad Signature (mavlink v2.0)\n\
-#       You may simply drop all non valid messages.\n\
-#       Used for GCS Bridge to transport unknown messages.\n\
-#\n\
-# :magic:\n\
-#       STX byte, used to determine protocol version v1.0 or v2.0.\n\
-#\n\
-# Please use mavros_msgs::mavlink::convert() from <mavros_msgs/mavlink_convert.h>\n\
-# to convert between ROS and MAVLink message type\n\
-\n\
-# mavlink_framing_t enum\n\
-uint8 FRAMING_OK = 1\n\
-uint8 FRAMING_BAD_CRC = 2\n\
-uint8 FRAMING_BAD_SIGNATURE = 3\n\
-\n\
-# stx values\n\
-uint8 MAVLINK_V10 = 254\n\
-uint8 MAVLINK_V20 = 253\n\
-\n\
-std_msgs/Header header\n\
-uint8 framing_status\n\
-\n\
-uint8 magic		# STX byte\n\
-uint8 len\n\
-uint8 incompat_flags\n\
-uint8 compat_flags\n\
-uint8 seq\n\
-uint8 sysid\n\
-uint8 compid\n\
-uint32 msgid		# 24-bit message id\n\
-uint16 checksum\n\
-uint64[] payload64\n\
-uint8[] signature	# optional signature\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# Mavlink message transport type.\n"
+"#\n"
+"# Used to transport mavlink_message_t via ROS topic\n"
+"#\n"
+"# :framing_status:\n"
+"#       Frame decoding status: OK, CRC error, bad Signature (mavlink v2.0)\n"
+"#       You may simply drop all non valid messages.\n"
+"#       Used for GCS Bridge to transport unknown messages.\n"
+"#\n"
+"# :magic:\n"
+"#       STX byte, used to determine protocol version v1.0 or v2.0.\n"
+"#\n"
+"# Please use mavros_msgs::mavlink::convert() from <mavros_msgs/mavlink_convert.h>\n"
+"# to convert between ROS and MAVLink message type\n"
+"\n"
+"# mavlink_framing_t enum\n"
+"uint8 FRAMING_OK = 1\n"
+"uint8 FRAMING_BAD_CRC = 2\n"
+"uint8 FRAMING_BAD_SIGNATURE = 3\n"
+"\n"
+"# stx values\n"
+"uint8 MAVLINK_V10 = 254\n"
+"uint8 MAVLINK_V20 = 253\n"
+"\n"
+"std_msgs/Header header\n"
+"uint8 framing_status\n"
+"\n"
+"uint8 magic		# STX byte\n"
+"uint8 len\n"
+"uint8 incompat_flags\n"
+"uint8 compat_flags\n"
+"uint8 seq\n"
+"uint8 sysid\n"
+"uint8 compid\n"
+"uint32 msgid		# 24-bit message id\n"
+"uint16 checksum\n"
+"uint64[] payload64\n"
+"uint8[] signature	# optional signature\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::Mavlink_<ContainerAllocator>&) { return value(); }

@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::StreamRate > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::StreamRateRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::StreamRate > 
+// service_traits::MD5Sum< ::mavros_msgs::StreamRateRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::StreamRate >
 template<>
 struct MD5Sum< ::mavros_msgs::StreamRateRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::StreamRateRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::StreamRateRequest> should match 
-// service_traits::DataType< ::mavros_msgs::StreamRate > 
+// service_traits::DataType< ::mavros_msgs::StreamRateRequest> should match
+// service_traits::DataType< ::mavros_msgs::StreamRate >
 template<>
 struct DataType< ::mavros_msgs::StreamRateRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::StreamRateRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::StreamRateResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::StreamRate > 
+// service_traits::MD5Sum< ::mavros_msgs::StreamRateResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::StreamRate >
 template<>
 struct MD5Sum< ::mavros_msgs::StreamRateResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::StreamRateResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::StreamRateResponse> should match 
-// service_traits::DataType< ::mavros_msgs::StreamRate > 
+// service_traits::DataType< ::mavros_msgs::StreamRateResponse> should match
+// service_traits::DataType< ::mavros_msgs::StreamRate >
 template<>
 struct DataType< ::mavros_msgs::StreamRateResponse>
 {

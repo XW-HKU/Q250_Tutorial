@@ -77,6 +77,23 @@ ros::message_operations::Printer< ::mavros_msgs::BatteryStatus_<ContainerAllocat
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::BatteryStatus_<ContainerAllocator1> & lhs, const ::mavros_msgs::BatteryStatus_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.voltage == rhs.voltage &&
+    lhs.current == rhs.current &&
+    lhs.remaining == rhs.remaining;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::BatteryStatus_<ContainerAllocator1> & lhs, const ::mavros_msgs::BatteryStatus_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -84,12 +101,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -154,34 +165,32 @@ struct Definition< ::mavros_msgs::BatteryStatus_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Represent battery status from SYSTEM_STATUS\n\
-#\n\
-# To be replaced when sensor_msgs/BatteryState PR will be merged\n\
-# https://github.com/ros/common_msgs/pull/74\n\
-\n\
-std_msgs/Header header\n\
-float32 voltage # [V]\n\
-float32 current # [A]\n\
-float32 remaining # 0..1\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# Represent battery status from SYSTEM_STATUS\n"
+"#\n"
+"# To be replaced when sensor_msgs/BatteryState PR will be merged\n"
+"# https://github.com/ros/common_msgs/pull/74\n"
+"\n"
+"std_msgs/Header header\n"
+"float32 voltage # [V]\n"
+"float32 current # [A]\n"
+"float32 remaining # 0..1\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::BatteryStatus_<ContainerAllocator>&) { return value(); }

@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::CommandTriggerInterval > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerIntervalRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerInterval > 
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerIntervalRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerInterval >
 template<>
 struct MD5Sum< ::mavros_msgs::CommandTriggerIntervalRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::CommandTriggerIntervalRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerIntervalRequest> should match 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerInterval > 
+// service_traits::DataType< ::mavros_msgs::CommandTriggerIntervalRequest> should match
+// service_traits::DataType< ::mavros_msgs::CommandTriggerInterval >
 template<>
 struct DataType< ::mavros_msgs::CommandTriggerIntervalRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::CommandTriggerIntervalRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerIntervalResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerInterval > 
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerIntervalResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerInterval >
 template<>
 struct MD5Sum< ::mavros_msgs::CommandTriggerIntervalResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::CommandTriggerIntervalResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerIntervalResponse> should match 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerInterval > 
+// service_traits::DataType< ::mavros_msgs::CommandTriggerIntervalResponse> should match
+// service_traits::DataType< ::mavros_msgs::CommandTriggerInterval >
 template<>
 struct DataType< ::mavros_msgs::CommandTriggerIntervalResponse>
 {

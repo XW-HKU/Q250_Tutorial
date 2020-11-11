@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::FileRemoveDir > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDirRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDir > 
+// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDirRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDir >
 template<>
 struct MD5Sum< ::mavros_msgs::FileRemoveDirRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::FileRemoveDirRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileRemoveDirRequest> should match 
-// service_traits::DataType< ::mavros_msgs::FileRemoveDir > 
+// service_traits::DataType< ::mavros_msgs::FileRemoveDirRequest> should match
+// service_traits::DataType< ::mavros_msgs::FileRemoveDir >
 template<>
 struct DataType< ::mavros_msgs::FileRemoveDirRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::FileRemoveDirRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDirResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDir > 
+// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDirResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileRemoveDir >
 template<>
 struct MD5Sum< ::mavros_msgs::FileRemoveDirResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::FileRemoveDirResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileRemoveDirResponse> should match 
-// service_traits::DataType< ::mavros_msgs::FileRemoveDir > 
+// service_traits::DataType< ::mavros_msgs::FileRemoveDirResponse> should match
+// service_traits::DataType< ::mavros_msgs::FileRemoveDir >
 template<>
 struct DataType< ::mavros_msgs::FileRemoveDirResponse>
 {

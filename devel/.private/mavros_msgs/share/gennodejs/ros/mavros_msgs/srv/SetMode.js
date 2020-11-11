@@ -79,12 +79,12 @@ class SetModeRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # set FCU mode
+    #
+    # Known custom modes listed here:
+    # http://wiki.ros.org/mavros/CustomModes
     
-    
-    
-    
-    
-    
+    # basic modes from MAV_MODE
     uint8 MAV_MODE_PREFLIGHT		= 0
     uint8 MAV_MODE_STABILIZE_DISARMED	= 80
     uint8 MAV_MODE_STABILIZE_ARMED		= 208
@@ -97,8 +97,8 @@ class SetModeRequest {
     uint8 MAV_MODE_TEST_DISARMED		= 66
     uint8 MAV_MODE_TEST_ARMED		= 194
     
-    uint8 base_mode
-    string custom_mode
+    uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''
+    string custom_mode	# string mode representation or integer
     
     `;
   }
@@ -191,7 +191,7 @@ class SetModeResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    bool mode_sent
+    bool mode_sent		# Mode known/parsed correctly and SET_MODE are sent
     
     
     `;

@@ -122,7 +122,7 @@
 (setf (get mavros_msgs::ParamGetRequest :md5sum-) "777d24d2a7ab1765ef009a69f464d2bc")
 (setf (get mavros_msgs::ParamGetRequest :datatype-) "mavros_msgs/ParamGetRequest")
 (setf (get mavros_msgs::ParamGetRequest :definition-)
-      "
+      "# Request parameter from attached device
 
 string param_id
 ---
@@ -147,7 +147,7 @@ float64 real
 (setf (get mavros_msgs::ParamGetResponse :md5sum-) "777d24d2a7ab1765ef009a69f464d2bc")
 (setf (get mavros_msgs::ParamGetResponse :datatype-) "mavros_msgs/ParamGetResponse")
 (setf (get mavros_msgs::ParamGetResponse :definition-)
-      "
+      "# Request parameter from attached device
 
 string param_id
 ---

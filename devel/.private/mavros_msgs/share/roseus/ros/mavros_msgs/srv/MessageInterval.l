@@ -118,8 +118,8 @@
 (setf (get mavros_msgs::MessageIntervalRequest :md5sum-) "99e633e185b7ee6b477bc9843a87b5ae")
 (setf (get mavros_msgs::MessageIntervalRequest :datatype-) "mavros_msgs/MessageIntervalRequest")
 (setf (get mavros_msgs::MessageIntervalRequest :definition-)
-      "
-
+      "# sets message interval
+# See MAV_CMD_SET_MESSAGE_INTERVAL
 
 uint32 message_id
 float32 message_rate
@@ -131,8 +131,8 @@ bool success
 (setf (get mavros_msgs::MessageIntervalResponse :md5sum-) "99e633e185b7ee6b477bc9843a87b5ae")
 (setf (get mavros_msgs::MessageIntervalResponse :datatype-) "mavros_msgs/MessageIntervalResponse")
 (setf (get mavros_msgs::MessageIntervalResponse :definition-)
-      "
-
+      "# sets message interval
+# See MAV_CMD_SET_MESSAGE_INTERVAL
 
 uint32 message_id
 float32 message_rate

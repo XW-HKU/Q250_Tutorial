@@ -164,11 +164,11 @@
 (setf (get mavros_msgs::FileWriteRequest :md5sum-) "7d7e0ed4d86797a80355795ee6728fac")
 (setf (get mavros_msgs::FileWriteRequest :datatype-) "mavros_msgs/FileWriteRequest")
 (setf (get mavros_msgs::FileWriteRequest :definition-)
-      "
-
-
-
-
+      "# FTP::Write
+#
+# Call FTP::Open first.
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 uint64 offset
@@ -182,11 +182,11 @@ int32 r_errno
 (setf (get mavros_msgs::FileWriteResponse :md5sum-) "7d7e0ed4d86797a80355795ee6728fac")
 (setf (get mavros_msgs::FileWriteResponse :datatype-) "mavros_msgs/FileWriteResponse")
 (setf (get mavros_msgs::FileWriteResponse :definition-)
-      "
-
-
-
-
+      "# FTP::Write
+#
+# Call FTP::Open first.
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 uint64 offset

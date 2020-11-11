@@ -1,5 +1,5 @@
 Not searching for unused variables given on the command line.
-[36m--[0m Found PythonInterp: /usr/bin/python (found suitable version "2.7.12", minimum required is "2")
+[36m--[0m Found PythonInterp: /usr/bin/python (found suitable version "2.7.17", minimum required is "2")
 [36m--[0m Package version: 2019.4.4
 [36m--[0m processing v1.0: /home/dji/MaRS_Offboard/src/mavlink/message_definitions/v1.0/ASLUAV.xml
 [36m--[0m processing v1.0: /home/dji/MaRS_Offboard/src/mavlink/message_definitions/v1.0/ardupilotmega.xml

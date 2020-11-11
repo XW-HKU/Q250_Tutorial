@@ -107,9 +107,9 @@
 (setf (get mavros_msgs::WaypointSetCurrentRequest :md5sum-) "f99aa1a911a80ab546ea470f4e90c807")
 (setf (get mavros_msgs::WaypointSetCurrentRequest :datatype-) "mavros_msgs/WaypointSetCurrentRequest")
 (setf (get mavros_msgs::WaypointSetCurrentRequest :definition-)
-      "
-
-
+      "# Request set current waypoint
+#
+# wp_seq - index in waypoint array
 
 uint16 wp_seq
 ---
@@ -120,9 +120,9 @@ bool success
 (setf (get mavros_msgs::WaypointSetCurrentResponse :md5sum-) "f99aa1a911a80ab546ea470f4e90c807")
 (setf (get mavros_msgs::WaypointSetCurrentResponse :datatype-) "mavros_msgs/WaypointSetCurrentResponse")
 (setf (get mavros_msgs::WaypointSetCurrentResponse :definition-)
-      "
-
-
+      "# Request set current waypoint
+#
+# wp_seq - index in waypoint array
 
 uint16 wp_seq
 ---

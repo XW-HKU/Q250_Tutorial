@@ -85,10 +85,10 @@
   "07d853e3d48c88a648998515aab1f5b7")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileRename-request>)))
   "Returns full string definition for message of type '<FileRename-request>"
-  (cl:format cl:nil "~%~%~%~%~%string old_path~%string new_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Rename~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string old_path~%string new_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileRename-request)))
   "Returns full string definition for message of type 'FileRename-request"
-  (cl:format cl:nil "~%~%~%~%~%string old_path~%string new_path~%~%~%"))
+  (cl:format cl:nil "# FTP::Rename~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string old_path~%string new_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileRename-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'old_path))

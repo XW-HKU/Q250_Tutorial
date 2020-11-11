@@ -38,6 +38,44 @@ struct SetMavFrameRequest_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(FRAME_GLOBAL)
+  #undef FRAME_GLOBAL
+#endif
+#if defined(_WIN32) && defined(FRAME_LOCAL_NED)
+  #undef FRAME_LOCAL_NED
+#endif
+#if defined(_WIN32) && defined(FRAME_MISSION)
+  #undef FRAME_MISSION
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_RELATIVE_ALT)
+  #undef FRAME_GLOBAL_RELATIVE_ALT
+#endif
+#if defined(_WIN32) && defined(FRAME_LOCAL_ENU)
+  #undef FRAME_LOCAL_ENU
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_INT)
+  #undef FRAME_GLOBAL_INT
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_RELATIVE_ALT_INT)
+  #undef FRAME_GLOBAL_RELATIVE_ALT_INT
+#endif
+#if defined(_WIN32) && defined(FRAME_LOCAL_OFFSET_NED)
+  #undef FRAME_LOCAL_OFFSET_NED
+#endif
+#if defined(_WIN32) && defined(FRAME_BODY_NED)
+  #undef FRAME_BODY_NED
+#endif
+#if defined(_WIN32) && defined(FRAME_BODY_OFFSET_NED)
+  #undef FRAME_BODY_OFFSET_NED
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_TERRAIN_ALT)
+  #undef FRAME_GLOBAL_TERRAIN_ALT
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_TERRAIN_ALT_INT)
+  #undef FRAME_GLOBAL_TERRAIN_ALT_INT
+#endif
+
   enum {
     FRAME_GLOBAL = 0u,
     FRAME_LOCAL_NED = 1u,
@@ -99,6 +137,20 @@ ros::message_operations::Printer< ::mavros_msgs::SetMavFrameRequest_<ContainerAl
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.mav_frame == rhs.mav_frame;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -106,12 +158,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -176,42 +222,42 @@ struct Definition< ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-uint8 FRAME_GLOBAL = 0\n\
-uint8 FRAME_LOCAL_NED = 1\n\
-uint8 FRAME_MISSION = 2\n\
-uint8 FRAME_GLOBAL_RELATIVE_ALT = 3\n\
-uint8 FRAME_LOCAL_ENU = 4\n\
-uint8 FRAME_GLOBAL_INT = 5\n\
-uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6\n\
-uint8 FRAME_LOCAL_OFFSET_NED = 7\n\
-uint8 FRAME_BODY_NED = 8\n\
-uint8 FRAME_BODY_OFFSET_NED = 9\n\
-uint8 FRAME_GLOBAL_TERRAIN_ALT = 10\n\
-uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11\n\
-\n\
-\n\
-uint8 mav_frame\n\
-";
+    return "# Set MAV_FRAME for setpoints\n"
+"\n"
+"# [[[cog:\n"
+"# from pymavlink.dialects.v20 import common\n"
+"#\n"
+"# def decl_enum(ename, pfx='', bsz=8):\n"
+"#     enum = sorted(common.enums[ename].items())\n"
+"#     enum.pop() # remove ENUM_END\n"
+"#\n"
+"#     cog.outl(\"# \" + ename)\n"
+"#     for k, e in enum:\n"
+"#         sn = e.name[len(ename) + 1:]\n"
+"#         l = \"uint{bsz} {pfx}{sn} = {k}\".format(**locals())\n"
+"#         if e.description:\n"
+"#             l += ' ' * (40 - len(l)) + ' # ' + e.description\n"
+"#         cog.outl(l)\n"
+"#\n"
+"# decl_enum('MAV_FRAME', 'FRAME_')\n"
+"# ]]]\n"
+"# MAV_FRAME\n"
+"uint8 FRAME_GLOBAL = 0                   # Global coordinate frame, WGS84 coordinate system. First value / x: latitude, second value / y: longitude, third value / z: positive altitude over mean sea level (MSL)\n"
+"uint8 FRAME_LOCAL_NED = 1                # Local coordinate frame, Z-up (x: north, y: east, z: down).\n"
+"uint8 FRAME_MISSION = 2                  # NOT a coordinate frame, indicates a mission command.\n"
+"uint8 FRAME_GLOBAL_RELATIVE_ALT = 3      # Global coordinate frame, WGS84 coordinate system, relative altitude over ground with respect to the home position. First value / x: latitude, second value / y: longitude, third value / z: positive altitude with 0 being at the altitude of the home location.\n"
+"uint8 FRAME_LOCAL_ENU = 4                # Local coordinate frame, Z-down (x: east, y: north, z: up)\n"
+"uint8 FRAME_GLOBAL_INT = 5               # Global coordinate frame, WGS84 coordinate system. First value / x: latitude in degrees*1.0e-7, second value / y: longitude in degrees*1.0e-7, third value / z: positive altitude over mean sea level (MSL)\n"
+"uint8 FRAME_GLOBAL_RELATIVE_ALT_INT = 6  # Global coordinate frame, WGS84 coordinate system, relative altitude over ground with respect to the home position. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude with 0 being at the altitude of the home location.\n"
+"uint8 FRAME_LOCAL_OFFSET_NED = 7         # Offset to the current local frame. Anything expressed in this frame should be added to the current local frame position.\n"
+"uint8 FRAME_BODY_NED = 8                 # Setpoint in body NED frame. This makes sense if all position control is externalized - e.g. useful to command 2 m/s^2 acceleration to the right.\n"
+"uint8 FRAME_BODY_OFFSET_NED = 9          # Offset in body NED frame. This makes sense if adding setpoints to the current flight path, to avoid an obstacle - e.g. useful to command 2 m/s^2 acceleration to the east.\n"
+"uint8 FRAME_GLOBAL_TERRAIN_ALT = 10      # Global coordinate frame with above terrain level altitude. WGS84 coordinate system, relative altitude over terrain with respect to the waypoint coordinate. First value / x: latitude in degrees, second value / y: longitude in degrees, third value / z: positive altitude in meters with 0 being at ground level in terrain model.\n"
+"uint8 FRAME_GLOBAL_TERRAIN_ALT_INT = 11  # Global coordinate frame with above terrain level altitude. WGS84 coordinate system, relative altitude over terrain with respect to the waypoint coordinate. First value / x: latitude in degrees*10e-7, second value / y: longitude in degrees*10e-7, third value / z: positive altitude in meters with 0 being at ground level in terrain model.\n"
+"# [[[end]]] (checksum: e1f224cdf07c92a4457f1a880abdc0ff)\n"
+"\n"
+"uint8 mav_frame\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::SetMavFrameRequest_<ContainerAllocator>&) { return value(); }

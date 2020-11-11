@@ -48,6 +48,14 @@ struct FileEntry_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(TYPE_FILE)
+  #undef TYPE_FILE
+#endif
+#if defined(_WIN32) && defined(TYPE_DIRECTORY)
+  #undef TYPE_DIRECTORY
+#endif
+
   enum {
     TYPE_FILE = 0u,
     TYPE_DIRECTORY = 1u,
@@ -79,6 +87,22 @@ ros::message_operations::Printer< ::mavros_msgs::FileEntry_<ContainerAllocator> 
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::FileEntry_<ContainerAllocator1> & lhs, const ::mavros_msgs::FileEntry_<ContainerAllocator2> & rhs)
+{
+  return lhs.name == rhs.name &&
+    lhs.type == rhs.type &&
+    lhs.size == rhs.size;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::FileEntry_<ContainerAllocator1> & lhs, const ::mavros_msgs::FileEntry_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -86,12 +110,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -156,19 +174,19 @@ struct Definition< ::mavros_msgs::FileEntry_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# File/Dir information\n\
-\n\
-uint8 TYPE_FILE = 0\n\
-uint8 TYPE_DIRECTORY = 1\n\
-\n\
-string name\n\
-uint8 type\n\
-uint64 size\n\
-\n\
-# Not supported by MAVLink FTP\n\
-#time atime\n\
-#int32 access_flags\n\
-";
+    return "# File/Dir information\n"
+"\n"
+"uint8 TYPE_FILE = 0\n"
+"uint8 TYPE_DIRECTORY = 1\n"
+"\n"
+"string name\n"
+"uint8 type\n"
+"uint64 size\n"
+"\n"
+"# Not supported by MAVLink FTP\n"
+"#time atime\n"
+"#int32 access_flags\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::FileEntry_<ContainerAllocator>&) { return value(); }

@@ -129,11 +129,11 @@
 (setf (get mavros_msgs::LogRequestDataRequest :md5sum-) "91170669bcd08438f0440f9b4d12a11a")
 (setf (get mavros_msgs::LogRequestDataRequest :datatype-) "mavros_msgs/LogRequestDataRequest")
 (setf (get mavros_msgs::LogRequestDataRequest :definition-)
-      "
-
-
-
-
+      "# Request a chunk of a log
+#
+#  :id: - log id from LogEntry message
+#  :offset: - offset into the log
+#  :count: - number of bytes to get
 
 uint16 id
 uint32 offset
@@ -146,11 +146,11 @@ bool success
 (setf (get mavros_msgs::LogRequestDataResponse :md5sum-) "91170669bcd08438f0440f9b4d12a11a")
 (setf (get mavros_msgs::LogRequestDataResponse :datatype-) "mavros_msgs/LogRequestDataResponse")
 (setf (get mavros_msgs::LogRequestDataResponse :definition-)
-      "
-
-
-
-
+      "# Request a chunk of a log
+#
+#  :id: - log id from LogEntry message
+#  :offset: - offset into the log
+#  :count: - number of bytes to get
 
 uint16 id
 uint32 offset

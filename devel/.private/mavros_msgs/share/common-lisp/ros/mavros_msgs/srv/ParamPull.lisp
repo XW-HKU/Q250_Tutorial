@@ -49,10 +49,10 @@
   "c9628aea2226088718fd240fbd62afc7")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ParamPull-request>)))
   "Returns full string definition for message of type '<ParamPull-request>"
-  (cl:format cl:nil "~%~%~%~%bool force_pull~%~%~%"))
+  (cl:format cl:nil "# Request parameters from device~%#~%# Returns success status and param_recived count~%~%bool force_pull~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ParamPull-request)))
   "Returns full string definition for message of type 'ParamPull-request"
-  (cl:format cl:nil "~%~%~%~%bool force_pull~%~%~%"))
+  (cl:format cl:nil "# Request parameters from device~%#~%# Returns success status and param_recived count~%~%bool force_pull~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ParamPull-request>))
   (cl:+ 0
      1

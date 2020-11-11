@@ -104,6 +104,95 @@ struct ADSBVehicle_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(ALT_PRESSURE_QNH)
+  #undef ALT_PRESSURE_QNH
+#endif
+#if defined(_WIN32) && defined(ALT_GEOMETRIC)
+  #undef ALT_GEOMETRIC
+#endif
+#if defined(_WIN32) && defined(EMITTER_NO_INFO)
+  #undef EMITTER_NO_INFO
+#endif
+#if defined(_WIN32) && defined(EMITTER_LIGHT)
+  #undef EMITTER_LIGHT
+#endif
+#if defined(_WIN32) && defined(EMITTER_SMALL)
+  #undef EMITTER_SMALL
+#endif
+#if defined(_WIN32) && defined(EMITTER_LARGE)
+  #undef EMITTER_LARGE
+#endif
+#if defined(_WIN32) && defined(EMITTER_HIGH_VORTEX_LARGE)
+  #undef EMITTER_HIGH_VORTEX_LARGE
+#endif
+#if defined(_WIN32) && defined(EMITTER_HEAVY)
+  #undef EMITTER_HEAVY
+#endif
+#if defined(_WIN32) && defined(EMITTER_HIGHLY_MANUV)
+  #undef EMITTER_HIGHLY_MANUV
+#endif
+#if defined(_WIN32) && defined(EMITTER_ROTOCRAFT)
+  #undef EMITTER_ROTOCRAFT
+#endif
+#if defined(_WIN32) && defined(EMITTER_UNASSIGNED)
+  #undef EMITTER_UNASSIGNED
+#endif
+#if defined(_WIN32) && defined(EMITTER_GLIDER)
+  #undef EMITTER_GLIDER
+#endif
+#if defined(_WIN32) && defined(EMITTER_LIGHTER_AIR)
+  #undef EMITTER_LIGHTER_AIR
+#endif
+#if defined(_WIN32) && defined(EMITTER_PARACHUTE)
+  #undef EMITTER_PARACHUTE
+#endif
+#if defined(_WIN32) && defined(EMITTER_ULTRA_LIGHT)
+  #undef EMITTER_ULTRA_LIGHT
+#endif
+#if defined(_WIN32) && defined(EMITTER_UNASSIGNED2)
+  #undef EMITTER_UNASSIGNED2
+#endif
+#if defined(_WIN32) && defined(EMITTER_UAV)
+  #undef EMITTER_UAV
+#endif
+#if defined(_WIN32) && defined(EMITTER_SPACE)
+  #undef EMITTER_SPACE
+#endif
+#if defined(_WIN32) && defined(EMITTER_UNASSGINED3)
+  #undef EMITTER_UNASSGINED3
+#endif
+#if defined(_WIN32) && defined(EMITTER_EMERGENCY_SURFACE)
+  #undef EMITTER_EMERGENCY_SURFACE
+#endif
+#if defined(_WIN32) && defined(EMITTER_SERVICE_SURFACE)
+  #undef EMITTER_SERVICE_SURFACE
+#endif
+#if defined(_WIN32) && defined(EMITTER_POINT_OBSTACLE)
+  #undef EMITTER_POINT_OBSTACLE
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_COORDS)
+  #undef FLAG_VALID_COORDS
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_ALTITUDE)
+  #undef FLAG_VALID_ALTITUDE
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_HEADING)
+  #undef FLAG_VALID_HEADING
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_VELOCITY)
+  #undef FLAG_VALID_VELOCITY
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_CALLSIGN)
+  #undef FLAG_VALID_CALLSIGN
+#endif
+#if defined(_WIN32) && defined(FLAG_VALID_SQUAWK)
+  #undef FLAG_VALID_SQUAWK
+#endif
+#if defined(_WIN32) && defined(FLAG_SIMULATED)
+  #undef FLAG_SIMULATED
+#endif
+
   enum {
     ALT_PRESSURE_QNH = 0u,
     ALT_GEOMETRIC = 1u,
@@ -216,6 +305,33 @@ ros::message_operations::Printer< ::mavros_msgs::ADSBVehicle_<ContainerAllocator
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::ADSBVehicle_<ContainerAllocator1> & lhs, const ::mavros_msgs::ADSBVehicle_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.ICAO_address == rhs.ICAO_address &&
+    lhs.callsign == rhs.callsign &&
+    lhs.latitude == rhs.latitude &&
+    lhs.longitude == rhs.longitude &&
+    lhs.altitude == rhs.altitude &&
+    lhs.heading == rhs.heading &&
+    lhs.hor_velocity == rhs.hor_velocity &&
+    lhs.ver_velocity == rhs.ver_velocity &&
+    lhs.altitude_type == rhs.altitude_type &&
+    lhs.emitter_type == rhs.emitter_type &&
+    lhs.tslc == rhs.tslc &&
+    lhs.flags == rhs.flags &&
+    lhs.squawk == rhs.squawk;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::ADSBVehicle_<ContainerAllocator1> & lhs, const ::mavros_msgs::ADSBVehicle_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -223,12 +339,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -293,101 +403,99 @@ struct Definition< ::mavros_msgs::ADSBVehicle_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# The location and information of an ADSB vehicle\n\
-#\n\
-# https://mavlink.io/en/messages/common.html#ADSB_VEHICLE\n\
-\n\
-# [[[cog:\n\
-# from pymavlink.dialects.v20 import common\n\
-#\n\
-# def decl_enum(ename, pfx='', bsz=8):\n\
-#     enum = sorted(common.enums[ename].items())\n\
-#     enum.pop() # remove ENUM_END\n\
-#\n\
-#     cog.outl(\"# \" + ename)\n\
-#     for k, e in enum:\n\
-#         sn = e.name[len(ename) + 1:]\n\
-#         l = \"uint{bsz} {pfx}{sn} = {k}\".format(**locals())\n\
-#         if e.description:\n\
-#             l += ' ' * (40 - len(l)) + ' # ' + e.description\n\
-#         cog.outl(l)\n\
-#\n\
-# decl_enum('ADSB_ALTITUDE_TYPE', 'ALT_')\n\
-# decl_enum('ADSB_EMITTER_TYPE', 'EMITTER_')\n\
-# decl_enum('ADSB_FLAGS', 'FLAG_', 16)\n\
-# ]]]\n\
-# ADSB_ALTITUDE_TYPE\n\
-uint8 ALT_PRESSURE_QNH = 0               # Altitude reported from a Baro source using QNH reference\n\
-uint8 ALT_GEOMETRIC = 1                  # Altitude reported from a GNSS source\n\
-# ADSB_EMITTER_TYPE\n\
-uint8 EMITTER_NO_INFO = 0\n\
-uint8 EMITTER_LIGHT = 1\n\
-uint8 EMITTER_SMALL = 2\n\
-uint8 EMITTER_LARGE = 3\n\
-uint8 EMITTER_HIGH_VORTEX_LARGE = 4\n\
-uint8 EMITTER_HEAVY = 5\n\
-uint8 EMITTER_HIGHLY_MANUV = 6\n\
-uint8 EMITTER_ROTOCRAFT = 7\n\
-uint8 EMITTER_UNASSIGNED = 8\n\
-uint8 EMITTER_GLIDER = 9\n\
-uint8 EMITTER_LIGHTER_AIR = 10\n\
-uint8 EMITTER_PARACHUTE = 11\n\
-uint8 EMITTER_ULTRA_LIGHT = 12\n\
-uint8 EMITTER_UNASSIGNED2 = 13\n\
-uint8 EMITTER_UAV = 14\n\
-uint8 EMITTER_SPACE = 15\n\
-uint8 EMITTER_UNASSGINED3 = 16\n\
-uint8 EMITTER_EMERGENCY_SURFACE = 17\n\
-uint8 EMITTER_SERVICE_SURFACE = 18\n\
-uint8 EMITTER_POINT_OBSTACLE = 19\n\
-# ADSB_FLAGS\n\
-uint16 FLAG_VALID_COORDS = 1\n\
-uint16 FLAG_VALID_ALTITUDE = 2\n\
-uint16 FLAG_VALID_HEADING = 4\n\
-uint16 FLAG_VALID_VELOCITY = 8\n\
-uint16 FLAG_VALID_CALLSIGN = 16\n\
-uint16 FLAG_VALID_SQUAWK = 32\n\
-uint16 FLAG_SIMULATED = 64\n\
-# [[[end]]] (checksum: e35e77be43548bd572a3cb24138fc2fd)\n\
-\n\
-std_msgs/Header header\n\
-\n\
-uint32 ICAO_address\n\
-string callsign\n\
-\n\
-float64 latitude\n\
-float64 longitude\n\
-float32 altitude 	# AMSL\n\
-\n\
-float32 heading		# deg [0..360)\n\
-float32 hor_velocity	# m/s\n\
-float32 ver_velocity	# m/s\n\
-\n\
-uint8 altitude_type	# Type from ADSB_ALTITUDE_TYPE enum\n\
-uint8 emitter_type	# Type from ADSB_EMITTER_TYPE enum\n\
-\n\
-duration tslc		# Duration from last communication, seconds [0..255]\n\
-uint16 flags		# ADSB_FLAGS bit field\n\
-uint16 squawk		# Squawk code\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "# The location and information of an ADSB vehicle\n"
+"#\n"
+"# https://mavlink.io/en/messages/common.html#ADSB_VEHICLE\n"
+"\n"
+"# [[[cog:\n"
+"# from pymavlink.dialects.v20 import common\n"
+"#\n"
+"# def decl_enum(ename, pfx='', bsz=8):\n"
+"#     enum = sorted(common.enums[ename].items())\n"
+"#     enum.pop() # remove ENUM_END\n"
+"#\n"
+"#     cog.outl(\"# \" + ename)\n"
+"#     for k, e in enum:\n"
+"#         sn = e.name[len(ename) + 1:]\n"
+"#         l = \"uint{bsz} {pfx}{sn} = {k}\".format(**locals())\n"
+"#         if e.description:\n"
+"#             l += ' ' * (40 - len(l)) + ' # ' + e.description\n"
+"#         cog.outl(l)\n"
+"#\n"
+"# decl_enum('ADSB_ALTITUDE_TYPE', 'ALT_')\n"
+"# decl_enum('ADSB_EMITTER_TYPE', 'EMITTER_')\n"
+"# decl_enum('ADSB_FLAGS', 'FLAG_', 16)\n"
+"# ]]]\n"
+"# ADSB_ALTITUDE_TYPE\n"
+"uint8 ALT_PRESSURE_QNH = 0               # Altitude reported from a Baro source using QNH reference\n"
+"uint8 ALT_GEOMETRIC = 1                  # Altitude reported from a GNSS source\n"
+"# ADSB_EMITTER_TYPE\n"
+"uint8 EMITTER_NO_INFO = 0\n"
+"uint8 EMITTER_LIGHT = 1\n"
+"uint8 EMITTER_SMALL = 2\n"
+"uint8 EMITTER_LARGE = 3\n"
+"uint8 EMITTER_HIGH_VORTEX_LARGE = 4\n"
+"uint8 EMITTER_HEAVY = 5\n"
+"uint8 EMITTER_HIGHLY_MANUV = 6\n"
+"uint8 EMITTER_ROTOCRAFT = 7\n"
+"uint8 EMITTER_UNASSIGNED = 8\n"
+"uint8 EMITTER_GLIDER = 9\n"
+"uint8 EMITTER_LIGHTER_AIR = 10\n"
+"uint8 EMITTER_PARACHUTE = 11\n"
+"uint8 EMITTER_ULTRA_LIGHT = 12\n"
+"uint8 EMITTER_UNASSIGNED2 = 13\n"
+"uint8 EMITTER_UAV = 14\n"
+"uint8 EMITTER_SPACE = 15\n"
+"uint8 EMITTER_UNASSGINED3 = 16\n"
+"uint8 EMITTER_EMERGENCY_SURFACE = 17\n"
+"uint8 EMITTER_SERVICE_SURFACE = 18\n"
+"uint8 EMITTER_POINT_OBSTACLE = 19\n"
+"# ADSB_FLAGS\n"
+"uint16 FLAG_VALID_COORDS = 1\n"
+"uint16 FLAG_VALID_ALTITUDE = 2\n"
+"uint16 FLAG_VALID_HEADING = 4\n"
+"uint16 FLAG_VALID_VELOCITY = 8\n"
+"uint16 FLAG_VALID_CALLSIGN = 16\n"
+"uint16 FLAG_VALID_SQUAWK = 32\n"
+"uint16 FLAG_SIMULATED = 64\n"
+"# [[[end]]] (checksum: e35e77be43548bd572a3cb24138fc2fd)\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"uint32 ICAO_address\n"
+"string callsign\n"
+"\n"
+"float64 latitude\n"
+"float64 longitude\n"
+"float32 altitude 	# AMSL\n"
+"\n"
+"float32 heading		# deg [0..360)\n"
+"float32 hor_velocity	# m/s\n"
+"float32 ver_velocity	# m/s\n"
+"\n"
+"uint8 altitude_type	# Type from ADSB_ALTITUDE_TYPE enum\n"
+"uint8 emitter_type	# Type from ADSB_EMITTER_TYPE enum\n"
+"\n"
+"duration tslc		# Duration from last communication, seconds [0..255]\n"
+"uint16 flags		# ADSB_FLAGS bit field\n"
+"uint16 squawk		# Squawk code\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::ADSBVehicle_<ContainerAllocator>&) { return value(); }

@@ -150,10 +150,10 @@
 (setf (get mavros_msgs::FileTruncateRequest :md5sum-) "71bf45fe3600fc220a82346ce1d1430c")
 (setf (get mavros_msgs::FileTruncateRequest :datatype-) "mavros_msgs/FileTruncateRequest")
 (setf (get mavros_msgs::FileTruncateRequest :definition-)
-      "
-
-
-
+      "# FTP::Truncate
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 uint64 length
@@ -166,10 +166,10 @@ int32 r_errno
 (setf (get mavros_msgs::FileTruncateResponse :md5sum-) "71bf45fe3600fc220a82346ce1d1430c")
 (setf (get mavros_msgs::FileTruncateResponse :datatype-) "mavros_msgs/FileTruncateResponse")
 (setf (get mavros_msgs::FileTruncateResponse :definition-)
-      "
-
-
-
+      "# FTP::Truncate
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 uint64 length

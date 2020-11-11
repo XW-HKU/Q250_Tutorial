@@ -228,9 +228,9 @@
 (setf (get mavros_msgs::CommandIntRequest :md5sum-) "5d5fd287bf3d27ad6ec508b1692f3b09")
 (setf (get mavros_msgs::CommandIntRequest :datatype-) "mavros_msgs/CommandIntRequest")
 (setf (get mavros_msgs::CommandIntRequest :definition-)
-      "
+      "# Generic COMMAND_INT
 
-bool broadcast
+bool broadcast # send this command in broadcast mode
 
 uint8 frame
 uint16 command
@@ -240,22 +240,22 @@ float32 param1
 float32 param2
 float32 param3
 float32 param4
-int32 x
-int32 y
-float32 z
+int32 x	# latitude in deg * 1E7 or local x * 1E4 m
+int32 y	# longitude in deg * 1E7 or local y * 1E4 m
+float32 z	# altitude
 ---
 bool success
-
-
+# seems that this message don't produce andy COMMAND_ACK messages
+# so no result field
 
 ")
 
 (setf (get mavros_msgs::CommandIntResponse :md5sum-) "5d5fd287bf3d27ad6ec508b1692f3b09")
 (setf (get mavros_msgs::CommandIntResponse :datatype-) "mavros_msgs/CommandIntResponse")
 (setf (get mavros_msgs::CommandIntResponse :definition-)
-      "
+      "# Generic COMMAND_INT
 
-bool broadcast
+bool broadcast # send this command in broadcast mode
 
 uint8 frame
 uint16 command
@@ -265,13 +265,13 @@ float32 param1
 float32 param2
 float32 param3
 float32 param4
-int32 x
-int32 y
-float32 z
+int32 x	# latitude in deg * 1E7 or local x * 1E4 m
+int32 y	# longitude in deg * 1E7 or local y * 1E4 m
+float32 z	# altitude
 ---
 bool success
-
-
+# seems that this message don't produce andy COMMAND_ACK messages
+# so no result field
 
 ")
 

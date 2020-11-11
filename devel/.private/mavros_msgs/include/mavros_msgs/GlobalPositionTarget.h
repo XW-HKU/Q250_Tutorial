@@ -86,6 +86,53 @@ struct GlobalPositionTarget_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(FRAME_GLOBAL_INT)
+  #undef FRAME_GLOBAL_INT
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_REL_ALT)
+  #undef FRAME_GLOBAL_REL_ALT
+#endif
+#if defined(_WIN32) && defined(FRAME_GLOBAL_TERRAIN_ALT)
+  #undef FRAME_GLOBAL_TERRAIN_ALT
+#endif
+#if defined(_WIN32) && defined(IGNORE_LATITUDE)
+  #undef IGNORE_LATITUDE
+#endif
+#if defined(_WIN32) && defined(IGNORE_LONGITUDE)
+  #undef IGNORE_LONGITUDE
+#endif
+#if defined(_WIN32) && defined(IGNORE_ALTITUDE)
+  #undef IGNORE_ALTITUDE
+#endif
+#if defined(_WIN32) && defined(IGNORE_VX)
+  #undef IGNORE_VX
+#endif
+#if defined(_WIN32) && defined(IGNORE_VY)
+  #undef IGNORE_VY
+#endif
+#if defined(_WIN32) && defined(IGNORE_VZ)
+  #undef IGNORE_VZ
+#endif
+#if defined(_WIN32) && defined(IGNORE_AFX)
+  #undef IGNORE_AFX
+#endif
+#if defined(_WIN32) && defined(IGNORE_AFY)
+  #undef IGNORE_AFY
+#endif
+#if defined(_WIN32) && defined(IGNORE_AFZ)
+  #undef IGNORE_AFZ
+#endif
+#if defined(_WIN32) && defined(FORCE)
+  #undef FORCE
+#endif
+#if defined(_WIN32) && defined(IGNORE_YAW)
+  #undef IGNORE_YAW
+#endif
+#if defined(_WIN32) && defined(IGNORE_YAW_RATE)
+  #undef IGNORE_YAW_RATE
+#endif
+
   enum {
     FRAME_GLOBAL_INT = 5u,
     FRAME_GLOBAL_REL_ALT = 6u,
@@ -156,6 +203,29 @@ ros::message_operations::Printer< ::mavros_msgs::GlobalPositionTarget_<Container
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator1> & lhs, const ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.coordinate_frame == rhs.coordinate_frame &&
+    lhs.type_mask == rhs.type_mask &&
+    lhs.latitude == rhs.latitude &&
+    lhs.longitude == rhs.longitude &&
+    lhs.altitude == rhs.altitude &&
+    lhs.velocity == rhs.velocity &&
+    lhs.acceleration_or_force == rhs.acceleration_or_force &&
+    lhs.yaw == rhs.yaw &&
+    lhs.yaw_rate == rhs.yaw_rate;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator1> & lhs, const ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -163,12 +233,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -233,72 +297,70 @@ struct Definition< ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# Message for SET_POSITION_TARGET_GLOBAL_INT\n\
-#\n\
-# https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT\n\
-# Some complex system requires all feautures that mavlink\n\
-# message provide. See issue #402, #415.\n\
-\n\
-std_msgs/Header header\n\
-\n\
-uint8 coordinate_frame\n\
-uint8 FRAME_GLOBAL_INT = 5\n\
-uint8 FRAME_GLOBAL_REL_ALT = 6\n\
-uint8 FRAME_GLOBAL_TERRAIN_ALT = 11\n\
-\n\
-uint16 type_mask\n\
-uint16 IGNORE_LATITUDE = 1	# Position ignore flags\n\
-uint16 IGNORE_LONGITUDE = 2\n\
-uint16 IGNORE_ALTITUDE = 4\n\
-uint16 IGNORE_VX = 8	# Velocity vector ignore flags\n\
-uint16 IGNORE_VY = 16\n\
-uint16 IGNORE_VZ = 32\n\
-uint16 IGNORE_AFX = 64	# Acceleration/Force vector ignore flags\n\
-uint16 IGNORE_AFY = 128\n\
-uint16 IGNORE_AFZ = 256\n\
-uint16 FORCE = 512	# Force in af vector flag\n\
-uint16 IGNORE_YAW = 1024\n\
-uint16 IGNORE_YAW_RATE = 2048\n\
-\n\
-float64 latitude\n\
-float64 longitude\n\
-float32 altitude	# in meters, AMSL or above terrain\n\
-geometry_msgs/Vector3 velocity\n\
-geometry_msgs/Vector3 acceleration_or_force\n\
-float32 yaw\n\
-float32 yaw_rate\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
-================================================================================\n\
-MSG: geometry_msgs/Vector3\n\
-# This represents a vector in free space. \n\
-# It is only meant to represent a direction. Therefore, it does not\n\
-# make sense to apply a translation to it (e.g., when applying a \n\
-# generic rigid transformation to a Vector3, tf2 will only apply the\n\
-# rotation). If you want your data to be translatable too, use the\n\
-# geometry_msgs/Point message instead.\n\
-\n\
-float64 x\n\
-float64 y\n\
-float64 z\n\
-";
+    return "# Message for SET_POSITION_TARGET_GLOBAL_INT\n"
+"#\n"
+"# https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT\n"
+"# Some complex system requires all feautures that mavlink\n"
+"# message provide. See issue #402, #415.\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"uint8 coordinate_frame\n"
+"uint8 FRAME_GLOBAL_INT = 5\n"
+"uint8 FRAME_GLOBAL_REL_ALT = 6\n"
+"uint8 FRAME_GLOBAL_TERRAIN_ALT = 11\n"
+"\n"
+"uint16 type_mask\n"
+"uint16 IGNORE_LATITUDE = 1	# Position ignore flags\n"
+"uint16 IGNORE_LONGITUDE = 2\n"
+"uint16 IGNORE_ALTITUDE = 4\n"
+"uint16 IGNORE_VX = 8	# Velocity vector ignore flags\n"
+"uint16 IGNORE_VY = 16\n"
+"uint16 IGNORE_VZ = 32\n"
+"uint16 IGNORE_AFX = 64	# Acceleration/Force vector ignore flags\n"
+"uint16 IGNORE_AFY = 128\n"
+"uint16 IGNORE_AFZ = 256\n"
+"uint16 FORCE = 512	# Force in af vector flag\n"
+"uint16 IGNORE_YAW = 1024\n"
+"uint16 IGNORE_YAW_RATE = 2048\n"
+"\n"
+"float64 latitude\n"
+"float64 longitude\n"
+"float32 altitude	# in meters, AMSL or above terrain\n"
+"geometry_msgs/Vector3 velocity\n"
+"geometry_msgs/Vector3 acceleration_or_force\n"
+"float32 yaw\n"
+"float32 yaw_rate\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Vector3\n"
+"# This represents a vector in free space. \n"
+"# It is only meant to represent a direction. Therefore, it does not\n"
+"# make sense to apply a translation to it (e.g., when applying a \n"
+"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
+"# rotation). If you want your data to be translatable too, use the\n"
+"# geometry_msgs/Point message instead.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::GlobalPositionTarget_<ContainerAllocator>&) { return value(); }

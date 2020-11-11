@@ -61,6 +61,20 @@ ros::message_operations::Printer< ::mavros_msgs::CommandBoolRequest_<ContainerAl
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::CommandBoolRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::CommandBoolRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.value == rhs.value;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::CommandBoolRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::CommandBoolRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -68,12 +82,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -138,10 +146,10 @@ struct Definition< ::mavros_msgs::CommandBoolRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n\
-\n\
-bool value\n\
-";
+    return "# Common type for switch commands\n"
+"\n"
+"bool value\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::CommandBoolRequest_<ContainerAllocator>&) { return value(); }

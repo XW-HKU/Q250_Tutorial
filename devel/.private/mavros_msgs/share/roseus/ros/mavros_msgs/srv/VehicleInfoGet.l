@@ -158,9 +158,9 @@
 (setf (get mavros_msgs::VehicleInfoGetRequest :md5sum-) "519756d07eeab57c2f1ab9495e90e33f")
 (setf (get mavros_msgs::VehicleInfoGetRequest :datatype-) "mavros_msgs/VehicleInfoGetRequest")
 (setf (get mavros_msgs::VehicleInfoGetRequest :definition-)
-      "
-
-
+      "# Request the Vehicle Info
+# use this to request the current target sysid / compid defined in mavros
+# set get_all = True to request all available vehicles
 
 uint8 GET_MY_SYSID = 0
 uint8 GET_MY_COMPID = 0
@@ -221,17 +221,15 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
-# 0: no frame
-# 1: global frame
 string frame_id
 ")
 
 (setf (get mavros_msgs::VehicleInfoGetResponse :md5sum-) "519756d07eeab57c2f1ab9495e90e33f")
 (setf (get mavros_msgs::VehicleInfoGetResponse :datatype-) "mavros_msgs/VehicleInfoGetResponse")
 (setf (get mavros_msgs::VehicleInfoGetResponse :definition-)
-      "
-
-
+      "# Request the Vehicle Info
+# use this to request the current target sysid / compid defined in mavros
+# set get_all = True to request all available vehicles
 
 uint8 GET_MY_SYSID = 0
 uint8 GET_MY_COMPID = 0
@@ -292,8 +290,6 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
-# 0: no frame
-# 1: global frame
 string frame_id
 ")
 

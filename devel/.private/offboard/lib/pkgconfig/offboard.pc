@@ -4,5 +4,5 @@ Name: offboard
 Description: Description of offboard
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/dji/MaRS_Offboard/devel/.private/offboard/lib 
+Libs: -L${prefix}/lib 
 Requires: 

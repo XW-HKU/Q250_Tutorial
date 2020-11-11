@@ -67,13 +67,13 @@ PublishedRigidBody::PublishedRigidBody(XmlRpc::XmlRpcValue &config_node)
   if (publish_pose)
   {
     pose_topic = (std::string&) config_node[POSE_TOPIC_PARAM_NAME];
-    pose_pub = n.advertise<geometry_msgs::PoseStamped>(pose_topic, 1000);
+    pose_pub = n.advertise<geometry_msgs::PoseStamped>(pose_topic, 10000);
   }
 
   if (publish_pose2d)
   {
     pose2d_topic = (std::string&) config_node[POSE2D_TOPIC_PARAM_NAME];
-    pose2d_pub = n.advertise<geometry_msgs::Pose2D>(pose2d_topic, 1000);
+    pose2d_pub = n.advertise<geometry_msgs::Pose2D>(pose2d_topic, 10000);
   }
 
   if (publish_tf)
@@ -98,6 +98,8 @@ void PublishedRigidBody::publish(RigidBody &body)
 
   // TODO Below was const, see if there a way to keep it like that.
   geometry_msgs::PoseStamped pose = body.get_ros_pose(use_new_coordinates);
+
+  // std::cout<<"aaa"<<std::endl;
 
   if (publish_pose)
   {

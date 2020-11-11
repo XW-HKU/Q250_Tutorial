@@ -162,9 +162,9 @@
 (setf (get mavros_msgs::CommandTOLRequest :md5sum-) "93ff4eaa9907f58c0e7a909cddce23e2")
 (setf (get mavros_msgs::CommandTOLRequest :datatype-) "mavros_msgs/CommandTOLRequest")
 (setf (get mavros_msgs::CommandTOLRequest :definition-)
-      "
+      "# Common type for Take Off and Landing
 
-float32 min_pitch
+float32 min_pitch	# used by takeoff
 float32 yaw
 float32 latitude
 float32 longitude
@@ -178,9 +178,9 @@ uint8 result
 (setf (get mavros_msgs::CommandTOLResponse :md5sum-) "93ff4eaa9907f58c0e7a909cddce23e2")
 (setf (get mavros_msgs::CommandTOLResponse :datatype-) "mavros_msgs/CommandTOLResponse")
 (setf (get mavros_msgs::CommandTOLResponse :definition-)
-      "
+      "# Common type for Take Off and Landing
 
-float32 min_pitch
+float32 min_pitch	# used by takeoff
 float32 yaw
 float32 latitude
 float32 longitude

@@ -88,11 +88,11 @@ class CommandTriggerControlRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # Type for controlling onboard camera triggering system
     
-    
-    bool    trigger_enable
-    bool    sequence_reset
-    bool    trigger_pause
+    bool    trigger_enable		# Trigger enable/disable
+    bool    sequence_reset		# Reset the trigger sequence
+    bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.
     
     `;
   }

@@ -61,10 +61,10 @@
   "f140c5ef05b00c3cfc30d5a2061b4d63")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileMakeDir-request>)))
   "Returns full string definition for message of type '<FileMakeDir-request>"
-  (cl:format cl:nil "~%~%~%~%~%string dir_path~%~%~%"))
+  (cl:format cl:nil "# FTP::MakeDir~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string dir_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileMakeDir-request)))
   "Returns full string definition for message of type 'FileMakeDir-request"
-  (cl:format cl:nil "~%~%~%~%~%string dir_path~%~%~%"))
+  (cl:format cl:nil "# FTP::MakeDir~%#~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string dir_path~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileMakeDir-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'dir_path))

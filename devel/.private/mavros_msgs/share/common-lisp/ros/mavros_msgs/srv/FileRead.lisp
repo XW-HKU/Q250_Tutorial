@@ -113,10 +113,10 @@
   "7700526a6a54d8971e0db6dc1d712523")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<FileRead-request>)))
   "Returns full string definition for message of type '<FileRead-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%uint64 offset~%uint64 size~%~%~%"))
+  (cl:format cl:nil "# FTP::Read~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 offset~%uint64 size~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'FileRead-request)))
   "Returns full string definition for message of type 'FileRead-request"
-  (cl:format cl:nil "~%~%~%~%~%~%string file_path~%uint64 offset~%uint64 size~%~%~%"))
+  (cl:format cl:nil "# FTP::Read~%#~%# Call FTP::Open first.~%# :success:	indicates success end of request~%# :r_errno:	remote errno if applicapable~%~%string file_path~%uint64 offset~%uint64 size~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <FileRead-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'file_path))

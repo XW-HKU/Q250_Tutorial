@@ -222,10 +222,10 @@
   "eb9034afc87577c0a235d45b8f3437d2")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandLong-request>)))
   "Returns full string definition for message of type '<CommandLong-request>"
-  (cl:format cl:nil "~%~%bool broadcast~%~%uint16 command~%uint8 confirmation~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%float32 param5~%float32 param6~%float32 param7~%~%~%"))
+  (cl:format cl:nil "# Generic COMMAND_LONG~%~%bool broadcast # send this command in broadcast mode~%~%uint16 command~%uint8 confirmation~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%float32 param5	# x_lat~%float32 param6	# y_lon~%float32 param7	# z_alt~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandLong-request)))
   "Returns full string definition for message of type 'CommandLong-request"
-  (cl:format cl:nil "~%~%bool broadcast~%~%uint16 command~%uint8 confirmation~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%float32 param5~%float32 param6~%float32 param7~%~%~%"))
+  (cl:format cl:nil "# Generic COMMAND_LONG~%~%bool broadcast # send this command in broadcast mode~%~%uint16 command~%uint8 confirmation~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%float32 param5	# x_lat~%float32 param6	# y_lon~%float32 param7	# z_alt~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandLong-request>))
   (cl:+ 0
      1
@@ -310,10 +310,10 @@
   "eb9034afc87577c0a235d45b8f3437d2")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandLong-response>)))
   "Returns full string definition for message of type '<CommandLong-response>"
-  (cl:format cl:nil "bool success~%~%uint8 result~%~%~%~%"))
+  (cl:format cl:nil "bool success~%# raw result returned by COMMAND_ACK~%uint8 result~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandLong-response)))
   "Returns full string definition for message of type 'CommandLong-response"
-  (cl:format cl:nil "bool success~%~%uint8 result~%~%~%~%"))
+  (cl:format cl:nil "bool success~%# raw result returned by COMMAND_ACK~%uint8 result~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandLong-response>))
   (cl:+ 0
      1

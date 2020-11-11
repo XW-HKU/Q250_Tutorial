@@ -55,9 +55,9 @@ class ParamPushRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
+    # Send current send
+    #
+    # Returns success status and param_transfered count
     
     
     `;

@@ -80,7 +80,7 @@ class ParamSetRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # Request set parameter value
     
     string param_id
     mavros_msgs/ParamValue value

@@ -66,9 +66,9 @@ class WaypointSetCurrentRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
+    # Request set current waypoint
+    #
+    # wp_seq - index in waypoint array
     
     uint16 wp_seq
     

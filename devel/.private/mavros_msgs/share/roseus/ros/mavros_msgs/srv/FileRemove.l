@@ -118,10 +118,10 @@
 (setf (get mavros_msgs::FileRemoveRequest :md5sum-) "1c309002d7f7c6df7d3f094925ea8e10")
 (setf (get mavros_msgs::FileRemoveRequest :datatype-) "mavros_msgs/FileRemoveRequest")
 (setf (get mavros_msgs::FileRemoveRequest :definition-)
-      "
-
-
-
+      "# FTP::Remove
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---
@@ -133,10 +133,10 @@ int32 r_errno
 (setf (get mavros_msgs::FileRemoveResponse :md5sum-) "1c309002d7f7c6df7d3f094925ea8e10")
 (setf (get mavros_msgs::FileRemoveResponse :datatype-) "mavros_msgs/FileRemoveResponse")
 (setf (get mavros_msgs::FileRemoveResponse :definition-)
-      "
-
-
-
+      "# FTP::Remove
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string file_path
 ---

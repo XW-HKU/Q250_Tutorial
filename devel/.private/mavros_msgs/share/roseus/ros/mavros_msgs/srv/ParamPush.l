@@ -108,9 +108,9 @@
 (setf (get mavros_msgs::ParamPushRequest :md5sum-) "d3fc4d8cefa193382985a92a041a2a3d")
 (setf (get mavros_msgs::ParamPushRequest :datatype-) "mavros_msgs/ParamPushRequest")
 (setf (get mavros_msgs::ParamPushRequest :definition-)
-      "
-
-
+      "# Send current send
+#
+# Returns success status and param_transfered count
 
 ---
 bool success
@@ -121,9 +121,9 @@ uint32 param_transfered
 (setf (get mavros_msgs::ParamPushResponse :md5sum-) "d3fc4d8cefa193382985a92a041a2a3d")
 (setf (get mavros_msgs::ParamPushResponse :datatype-) "mavros_msgs/ParamPushResponse")
 (setf (get mavros_msgs::ParamPushResponse :definition-)
-      "
-
-
+      "# Send current send
+#
+# Returns success status and param_transfered count
 
 ---
 bool success

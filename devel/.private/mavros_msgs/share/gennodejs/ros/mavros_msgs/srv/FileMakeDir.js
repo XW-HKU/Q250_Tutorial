@@ -68,10 +68,10 @@ class FileMakeDirRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
-    
+    # FTP::MakeDir
+    #
+    # :success:	indicates success end of request
+    # :r_errno:	remote errno if applicapable
     
     string dir_path
     

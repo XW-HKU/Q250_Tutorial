@@ -217,9 +217,9 @@
 (setf (get mavros_msgs::CommandLongRequest :md5sum-) "eb9034afc87577c0a235d45b8f3437d2")
 (setf (get mavros_msgs::CommandLongRequest :datatype-) "mavros_msgs/CommandLongRequest")
 (setf (get mavros_msgs::CommandLongRequest :definition-)
-      "
+      "# Generic COMMAND_LONG
 
-bool broadcast
+bool broadcast # send this command in broadcast mode
 
 uint16 command
 uint8 confirmation
@@ -227,12 +227,12 @@ float32 param1
 float32 param2
 float32 param3
 float32 param4
-float32 param5
-float32 param6
-float32 param7
+float32 param5	# x_lat
+float32 param6	# y_lon
+float32 param7	# z_alt
 ---
 bool success
-
+# raw result returned by COMMAND_ACK
 uint8 result
 
 ")
@@ -240,9 +240,9 @@ uint8 result
 (setf (get mavros_msgs::CommandLongResponse :md5sum-) "eb9034afc87577c0a235d45b8f3437d2")
 (setf (get mavros_msgs::CommandLongResponse :datatype-) "mavros_msgs/CommandLongResponse")
 (setf (get mavros_msgs::CommandLongResponse :definition-)
-      "
+      "# Generic COMMAND_LONG
 
-bool broadcast
+bool broadcast # send this command in broadcast mode
 
 uint16 command
 uint8 confirmation
@@ -250,12 +250,12 @@ float32 param1
 float32 param2
 float32 param3
 float32 param4
-float32 param5
-float32 param6
-float32 param7
+float32 param5	# x_lat
+float32 param6	# y_lon
+float32 param7	# z_alt
 ---
 bool success
-
+# raw result returned by COMMAND_ACK
 uint8 result
 
 ")

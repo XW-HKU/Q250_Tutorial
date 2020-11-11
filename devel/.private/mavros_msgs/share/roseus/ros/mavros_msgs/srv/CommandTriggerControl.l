@@ -140,11 +140,11 @@
 (setf (get mavros_msgs::CommandTriggerControlRequest :md5sum-) "65be46a6918cb61b7dceb7c9ba9b1c97")
 (setf (get mavros_msgs::CommandTriggerControlRequest :datatype-) "mavros_msgs/CommandTriggerControlRequest")
 (setf (get mavros_msgs::CommandTriggerControlRequest :definition-)
-      "
+      "# Type for controlling onboard camera triggering system
 
-bool    trigger_enable
-bool    sequence_reset
-bool    trigger_pause
+bool    trigger_enable		# Trigger enable/disable
+bool    sequence_reset		# Reset the trigger sequence
+bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.
 ---
 bool success
 uint8 result
@@ -154,11 +154,11 @@ uint8 result
 (setf (get mavros_msgs::CommandTriggerControlResponse :md5sum-) "65be46a6918cb61b7dceb7c9ba9b1c97")
 (setf (get mavros_msgs::CommandTriggerControlResponse :datatype-) "mavros_msgs/CommandTriggerControlResponse")
 (setf (get mavros_msgs::CommandTriggerControlResponse :definition-)
-      "
+      "# Type for controlling onboard camera triggering system
 
-bool    trigger_enable
-bool    sequence_reset
-bool    trigger_pause
+bool    trigger_enable		# Trigger enable/disable
+bool    sequence_reset		# Reset the trigger sequence
+bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.
 ---
 bool success
 uint8 result

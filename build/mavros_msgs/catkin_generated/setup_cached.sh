@@ -8,5 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/dji/MaRS_Offboard/devel/.private/mavros_msgs:$CMAKE_PREFIX_PATH"
-export PWD="/home/dji/MaRS_Offboard/build/mavros_msgs"
+export PWD='/home/dji/MaRS_Offboard/build/mavros_msgs'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/dji/MaRS_Offboard/devel/.private/mavros_msgs/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/dji/MaRS_Offboard/src/mavros/mavros_msgs:$ROS_PACKAGE_PATH"

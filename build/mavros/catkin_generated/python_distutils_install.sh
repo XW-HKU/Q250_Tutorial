@@ -9,7 +9,6 @@ if [ -n "$DESTDIR" ] ; then
             /bin/echo "otherwise python's distutils will bork things."
             exit 1
     esac
-    DESTDIR_ARG="--root=$DESTDIR"
 fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
@@ -25,9 +24,10 @@ echo_and_run mkdir -p "$DESTDIR/home/dji/MaRS_Offboard/install/lib/python2.7/dis
 echo_and_run /usr/bin/env \
     PYTHONPATH="/home/dji/MaRS_Offboard/install/lib/python2.7/dist-packages:/home/dji/MaRS_Offboard/build/mavros/lib/python2.7/dist-packages:$PYTHONPATH" \
     CATKIN_BINARY_DIR="/home/dji/MaRS_Offboard/build/mavros" \
-    "/usr/bin/python" \
+    "/usr/bin/python2" \
     "/home/dji/MaRS_Offboard/src/mavros/mavros/setup.py" \
+     \
     build --build-base "/home/dji/MaRS_Offboard/build/mavros" \
     install \
-    $DESTDIR_ARG \
+    --root="${DESTDIR-/}" \
     --install-layout=deb --prefix="/home/dji/MaRS_Offboard/install" --install-scripts="/home/dji/MaRS_Offboard/install/bin"

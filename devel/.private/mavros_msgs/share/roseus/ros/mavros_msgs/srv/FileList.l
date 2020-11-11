@@ -141,10 +141,10 @@
 (setf (get mavros_msgs::FileListRequest :md5sum-) "1647c627907cac72fa2d06e0e5f96aac")
 (setf (get mavros_msgs::FileListRequest :datatype-) "mavros_msgs/FileListRequest")
 (setf (get mavros_msgs::FileListRequest :definition-)
-      "
-
-
-
+      "# FTP::List
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string dir_path
 ---
@@ -172,10 +172,10 @@ uint64 size
 (setf (get mavros_msgs::FileListResponse :md5sum-) "1647c627907cac72fa2d06e0e5f96aac")
 (setf (get mavros_msgs::FileListResponse :datatype-) "mavros_msgs/FileListResponse")
 (setf (get mavros_msgs::FileListResponse :definition-)
-      "
-
-
-
+      "# FTP::List
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string dir_path
 ---

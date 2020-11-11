@@ -8,5 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/dji/MaRS_Offboard/devel/.private/offboard:$CMAKE_PREFIX_PATH"
-export PWD="/home/dji/MaRS_Offboard/build/offboard"
+export PWD='/home/dji/MaRS_Offboard/build/offboard'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/dji/MaRS_Offboard/devel/.private/offboard/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/dji/MaRS_Offboard/src/offboard:$ROS_PACKAGE_PATH"

@@ -97,7 +97,7 @@
 (setf (get mavros_msgs::LogRequestEndRequest :md5sum-) "358e233cde0c8a8bcfea4ce193f8fc15")
 (setf (get mavros_msgs::LogRequestEndRequest :datatype-) "mavros_msgs/LogRequestEndRequest")
 (setf (get mavros_msgs::LogRequestEndRequest :definition-)
-      "
+      "# Stop log transfer and resume normal logging
 
 ---
 bool success
@@ -107,7 +107,7 @@ bool success
 (setf (get mavros_msgs::LogRequestEndResponse :md5sum-) "358e233cde0c8a8bcfea4ce193f8fc15")
 (setf (get mavros_msgs::LogRequestEndResponse :datatype-) "mavros_msgs/LogRequestEndResponse")
 (setf (get mavros_msgs::LogRequestEndResponse :definition-)
-      "
+      "# Stop log transfer and resume normal logging
 
 ---
 bool success

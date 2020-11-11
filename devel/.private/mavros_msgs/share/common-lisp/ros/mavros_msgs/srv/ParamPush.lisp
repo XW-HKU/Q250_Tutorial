@@ -38,10 +38,10 @@
   "d3fc4d8cefa193382985a92a041a2a3d")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ParamPush-request>)))
   "Returns full string definition for message of type '<ParamPush-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%"))
+  (cl:format cl:nil "# Send current send~%#~%# Returns success status and param_transfered count~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ParamPush-request)))
   "Returns full string definition for message of type 'ParamPush-request"
-  (cl:format cl:nil "~%~%~%~%~%~%"))
+  (cl:format cl:nil "# Send current send~%#~%# Returns success status and param_transfered count~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ParamPush-request>))
   (cl:+ 0
 ))

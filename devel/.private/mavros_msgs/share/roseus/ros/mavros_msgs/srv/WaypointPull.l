@@ -108,9 +108,9 @@
 (setf (get mavros_msgs::WaypointPullRequest :md5sum-) "a8d9ecef8fb37028d2db2a9aa4ed7e79")
 (setf (get mavros_msgs::WaypointPullRequest :datatype-) "mavros_msgs/WaypointPullRequest")
 (setf (get mavros_msgs::WaypointPullRequest :definition-)
-      "
-
-
+      "# Requests waypoints from device
+#
+# Returns success status and received count
 
 ---
 bool success
@@ -121,9 +121,9 @@ uint32 wp_received
 (setf (get mavros_msgs::WaypointPullResponse :md5sum-) "a8d9ecef8fb37028d2db2a9aa4ed7e79")
 (setf (get mavros_msgs::WaypointPullResponse :datatype-) "mavros_msgs/WaypointPullResponse")
 (setf (get mavros_msgs::WaypointPullResponse :definition-)
-      "
-
-
+      "# Requests waypoints from device
+#
+# Returns success status and received count
 
 ---
 bool success

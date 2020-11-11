@@ -90,6 +90,14 @@ struct Trajectory_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS)
+  #undef MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS
+#endif
+#if defined(_WIN32) && defined(MAV_TRAJECTORY_REPRESENTATION_BEZIER)
+  #undef MAV_TRAJECTORY_REPRESENTATION_BEZIER
+#endif
+
   enum {
     MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0u,
     MAV_TRAJECTORY_REPRESENTATION_BEZIER = 1u,
@@ -121,6 +129,28 @@ ros::message_operations::Printer< ::mavros_msgs::Trajectory_<ContainerAllocator>
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::Trajectory_<ContainerAllocator1> & lhs, const ::mavros_msgs::Trajectory_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.type == rhs.type &&
+    lhs.point_1 == rhs.point_1 &&
+    lhs.point_2 == rhs.point_2 &&
+    lhs.point_3 == rhs.point_3 &&
+    lhs.point_4 == rhs.point_4 &&
+    lhs.point_5 == rhs.point_5 &&
+    lhs.point_valid == rhs.point_valid &&
+    lhs.time_horizon == rhs.time_horizon;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::Trajectory_<ContainerAllocator1> & lhs, const ::mavros_msgs::Trajectory_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -128,12 +158,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -198,98 +222,96 @@ struct Definition< ::mavros_msgs::Trajectory_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# MAVLink message: TRAJECTORY\n\
-# https://mavlink.io/en/messages/common.html#TRAJECTORY\n\
-\n\
-std_msgs/Header header\n\
-\n\
-uint8 type # See enum MAV_TRAJECTORY_REPRESENTATION.\n\
-uint8 MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0\n\
-uint8 MAV_TRAJECTORY_REPRESENTATION_BEZIER = 1\n\
-\n\
-mavros_msgs/PositionTarget point_1\n\
-mavros_msgs/PositionTarget point_2\n\
-mavros_msgs/PositionTarget point_3\n\
-mavros_msgs/PositionTarget point_4\n\
-mavros_msgs/PositionTarget point_5\n\
-\n\
-uint8[5] point_valid # States if respective point is valid.\n\
-\n\
-float32[5] time_horizon # if type MAV_TRAJECTORY_REPRESENTATION_BEZIER, it represents the time horizon for each point, otherwise set to NaN\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
-================================================================================\n\
-MSG: mavros_msgs/PositionTarget\n\
-# Message for SET_POSITION_TARGET_LOCAL_NED\n\
-#\n\
-# Some complex system requires all feautures that mavlink\n\
-# message provide. See issue #402.\n\
-\n\
-std_msgs/Header header\n\
-\n\
-uint8 coordinate_frame\n\
-uint8 FRAME_LOCAL_NED = 1\n\
-uint8 FRAME_LOCAL_OFFSET_NED = 7\n\
-uint8 FRAME_BODY_NED = 8\n\
-uint8 FRAME_BODY_OFFSET_NED = 9\n\
-\n\
-uint16 type_mask\n\
-uint16 IGNORE_PX = 1	# Position ignore flags\n\
-uint16 IGNORE_PY = 2\n\
-uint16 IGNORE_PZ = 4\n\
-uint16 IGNORE_VX = 8	# Velocity vector ignore flags\n\
-uint16 IGNORE_VY = 16\n\
-uint16 IGNORE_VZ = 32\n\
-uint16 IGNORE_AFX = 64	# Acceleration/Force vector ignore flags\n\
-uint16 IGNORE_AFY = 128\n\
-uint16 IGNORE_AFZ = 256\n\
-uint16 FORCE = 512	# Force in af vector flag\n\
-uint16 IGNORE_YAW = 1024\n\
-uint16 IGNORE_YAW_RATE = 2048\n\
-\n\
-geometry_msgs/Point position\n\
-geometry_msgs/Vector3 velocity\n\
-geometry_msgs/Vector3 acceleration_or_force\n\
-float32 yaw\n\
-float32 yaw_rate\n\
-\n\
-================================================================================\n\
-MSG: geometry_msgs/Point\n\
-# This contains the position of a point in free space\n\
-float64 x\n\
-float64 y\n\
-float64 z\n\
-\n\
-================================================================================\n\
-MSG: geometry_msgs/Vector3\n\
-# This represents a vector in free space. \n\
-# It is only meant to represent a direction. Therefore, it does not\n\
-# make sense to apply a translation to it (e.g., when applying a \n\
-# generic rigid transformation to a Vector3, tf2 will only apply the\n\
-# rotation). If you want your data to be translatable too, use the\n\
-# geometry_msgs/Point message instead.\n\
-\n\
-float64 x\n\
-float64 y\n\
-float64 z\n\
-";
+    return "# MAVLink message: TRAJECTORY\n"
+"# https://mavlink.io/en/messages/common.html#TRAJECTORY\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"uint8 type # See enum MAV_TRAJECTORY_REPRESENTATION.\n"
+"uint8 MAV_TRAJECTORY_REPRESENTATION_WAYPOINTS = 0\n"
+"uint8 MAV_TRAJECTORY_REPRESENTATION_BEZIER = 1\n"
+"\n"
+"mavros_msgs/PositionTarget point_1\n"
+"mavros_msgs/PositionTarget point_2\n"
+"mavros_msgs/PositionTarget point_3\n"
+"mavros_msgs/PositionTarget point_4\n"
+"mavros_msgs/PositionTarget point_5\n"
+"\n"
+"uint8[5] point_valid # States if respective point is valid.\n"
+"\n"
+"float32[5] time_horizon # if type MAV_TRAJECTORY_REPRESENTATION_BEZIER, it represents the time horizon for each point, otherwise set to NaN\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+"\n"
+"================================================================================\n"
+"MSG: mavros_msgs/PositionTarget\n"
+"# Message for SET_POSITION_TARGET_LOCAL_NED\n"
+"#\n"
+"# Some complex system requires all feautures that mavlink\n"
+"# message provide. See issue #402.\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"uint8 coordinate_frame\n"
+"uint8 FRAME_LOCAL_NED = 1\n"
+"uint8 FRAME_LOCAL_OFFSET_NED = 7\n"
+"uint8 FRAME_BODY_NED = 8\n"
+"uint8 FRAME_BODY_OFFSET_NED = 9\n"
+"\n"
+"uint16 type_mask\n"
+"uint16 IGNORE_PX = 1	# Position ignore flags\n"
+"uint16 IGNORE_PY = 2\n"
+"uint16 IGNORE_PZ = 4\n"
+"uint16 IGNORE_VX = 8	# Velocity vector ignore flags\n"
+"uint16 IGNORE_VY = 16\n"
+"uint16 IGNORE_VZ = 32\n"
+"uint16 IGNORE_AFX = 64	# Acceleration/Force vector ignore flags\n"
+"uint16 IGNORE_AFY = 128\n"
+"uint16 IGNORE_AFZ = 256\n"
+"uint16 FORCE = 512	# Force in af vector flag\n"
+"uint16 IGNORE_YAW = 1024\n"
+"uint16 IGNORE_YAW_RATE = 2048\n"
+"\n"
+"geometry_msgs/Point position\n"
+"geometry_msgs/Vector3 velocity\n"
+"geometry_msgs/Vector3 acceleration_or_force\n"
+"float32 yaw\n"
+"float32 yaw_rate\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Point\n"
+"# This contains the position of a point in free space\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Vector3\n"
+"# This represents a vector in free space. \n"
+"# It is only meant to represent a direction. Therefore, it does not\n"
+"# make sense to apply a translation to it (e.g., when applying a \n"
+"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
+"# rotation). If you want your data to be translatable too, use the\n"
+"# geometry_msgs/Point message instead.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::Trajectory_<ContainerAllocator>&) { return value(); }

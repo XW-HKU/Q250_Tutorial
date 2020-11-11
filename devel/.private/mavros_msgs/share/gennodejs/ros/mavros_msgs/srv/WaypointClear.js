@@ -55,7 +55,7 @@ class WaypointClearRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
+    # Request clear waypoint
     
     
     `;

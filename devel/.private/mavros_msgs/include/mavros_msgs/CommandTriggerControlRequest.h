@@ -71,6 +71,22 @@ ros::message_operations::Printer< ::mavros_msgs::CommandTriggerControlRequest_<C
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.trigger_enable == rhs.trigger_enable &&
+    lhs.sequence_reset == rhs.sequence_reset &&
+    lhs.trigger_pause == rhs.trigger_pause;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -78,12 +94,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -148,12 +158,12 @@ struct Definition< ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocat
 {
   static const char* value()
   {
-    return "\n\
-\n\
-bool    trigger_enable\n\
-bool    sequence_reset\n\
-bool    trigger_pause\n\
-";
+    return "# Type for controlling onboard camera triggering system\n"
+"\n"
+"bool    trigger_enable		# Trigger enable/disable\n"
+"bool    sequence_reset		# Reset the trigger sequence\n"
+"bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::CommandTriggerControlRequest_<ContainerAllocator>&) { return value(); }

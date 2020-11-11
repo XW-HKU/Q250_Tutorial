@@ -20,37 +20,37 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 
-//user executables (bin)
+//User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
 
-//read-only architecture-independent data (DATAROOTDIR)
+//Read-only architecture-independent data (DATAROOTDIR)
 CMAKE_INSTALL_DATADIR:PATH=
 
-//read-only architecture-independent data root (share)
+//Read-only architecture-independent data root (share)
 CMAKE_INSTALL_DATAROOTDIR:PATH=share
 
-//documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
 CMAKE_INSTALL_DOCDIR:PATH=
 
 //C header files (include)
 CMAKE_INSTALL_INCLUDEDIR:PATH=include
 
-//info documentation (DATAROOTDIR/info)
+//Info documentation (DATAROOTDIR/info)
 CMAKE_INSTALL_INFODIR:PATH=
 
-//object code libraries (lib)
+//Object code libraries (lib)
 CMAKE_INSTALL_LIBDIR:PATH=lib
 
-//program executables (libexec)
+//Program executables (libexec)
 CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
 
-//locale-dependent data (DATAROOTDIR/locale)
+//Locale-dependent data (DATAROOTDIR/locale)
 CMAKE_INSTALL_LOCALEDIR:PATH=
 
-//modifiable single-machine data (var)
+//Modifiable single-machine data (var)
 CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
 
-//man documentation (DATAROOTDIR/man)
+//Man documentation (DATAROOTDIR/man)
 CMAKE_INSTALL_MANDIR:PATH=
 
 //C header files for non-gcc (/usr/include)
@@ -59,13 +59,16 @@ CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/home/dji/MaRS_Offboard/devel
 
-//system admin executables (sbin)
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
 CMAKE_INSTALL_SBINDIR:PATH=sbin
 
-//modifiable architecture-independent data (com)
+//Modifiable architecture-independent data (com)
 CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
 
-//read-only single-machine data (etc)
+//Read-only single-machine data (etc)
 CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
@@ -106,9 +109,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/dji/MaRS_Offboard/build/mavlink
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=5
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=10
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -154,6 +157,8 @@ CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
 CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
 CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
 CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
@@ -166,8 +171,10 @@ CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+//Platform information initialized
+CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.5
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.10
 //ADVANCED property for variable: CMAKE_SKIP_INSTALL_RPATH
 CMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SKIP_RPATH
@@ -177,7 +184,7 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.12(2)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.17(2)]
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run

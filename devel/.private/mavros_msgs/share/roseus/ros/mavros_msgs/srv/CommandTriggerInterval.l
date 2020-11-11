@@ -129,10 +129,10 @@
 (setf (get mavros_msgs::CommandTriggerIntervalRequest :md5sum-) "b16f28a04389d5d47ddaa9e025e7383a")
 (setf (get mavros_msgs::CommandTriggerIntervalRequest :datatype-) "mavros_msgs/CommandTriggerIntervalRequest")
 (setf (get mavros_msgs::CommandTriggerIntervalRequest :definition-)
-      "
+      "# Type for controlling camera trigger interval and integration time
 
-float32   cycle_time
-float32   integration_time
+float32   cycle_time			# Trigger cycle_time (interval between to triggers) - set to 0 to ignore command
+float32   integration_time	# Camera shutter integration_time - set to 0 to ignore command
 ---
 bool success
 uint8 result
@@ -141,10 +141,10 @@ uint8 result
 (setf (get mavros_msgs::CommandTriggerIntervalResponse :md5sum-) "b16f28a04389d5d47ddaa9e025e7383a")
 (setf (get mavros_msgs::CommandTriggerIntervalResponse :datatype-) "mavros_msgs/CommandTriggerIntervalResponse")
 (setf (get mavros_msgs::CommandTriggerIntervalResponse :definition-)
-      "
+      "# Type for controlling camera trigger interval and integration time
 
-float32   cycle_time
-float32   integration_time
+float32   cycle_time			# Trigger cycle_time (interval between to triggers) - set to 0 to ignore command
+float32   integration_time	# Camera shutter integration_time - set to 0 to ignore command
 ---
 bool success
 uint8 result

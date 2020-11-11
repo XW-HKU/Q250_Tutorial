@@ -118,10 +118,10 @@
 (setf (get mavros_msgs::FileMakeDirRequest :md5sum-) "f140c5ef05b00c3cfc30d5a2061b4d63")
 (setf (get mavros_msgs::FileMakeDirRequest :datatype-) "mavros_msgs/FileMakeDirRequest")
 (setf (get mavros_msgs::FileMakeDirRequest :definition-)
-      "
-
-
-
+      "# FTP::MakeDir
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string dir_path
 ---
@@ -133,10 +133,10 @@ int32 r_errno
 (setf (get mavros_msgs::FileMakeDirResponse :md5sum-) "f140c5ef05b00c3cfc30d5a2061b4d63")
 (setf (get mavros_msgs::FileMakeDirResponse :datatype-) "mavros_msgs/FileMakeDirResponse")
 (setf (get mavros_msgs::FileMakeDirResponse :definition-)
-      "
-
-
-
+      "# FTP::MakeDir
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string dir_path
 ---

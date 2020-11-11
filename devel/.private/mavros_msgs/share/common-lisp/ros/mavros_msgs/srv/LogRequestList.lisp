@@ -65,10 +65,10 @@
   "3e2e88c935b3047e14f450bc4a90c4d2")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<LogRequestList-request>)))
   "Returns full string definition for message of type '<LogRequestList-request>"
-  (cl:format cl:nil "~%~%~%~%~%uint16 start~%uint16 end~%~%~%"))
+  (cl:format cl:nil "# Request a list of available logs~%#~%#  :start: - first log id (0 for first available)~%#  :end: - last log id (0xffff for last available)~%~%uint16 start~%uint16 end~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'LogRequestList-request)))
   "Returns full string definition for message of type 'LogRequestList-request"
-  (cl:format cl:nil "~%~%~%~%~%uint16 start~%uint16 end~%~%~%"))
+  (cl:format cl:nil "# Request a list of available logs~%#~%#  :start: - first log id (0 for first available)~%#  :end: - last log id (0xffff for last available)~%~%uint16 start~%uint16 end~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <LogRequestList-request>))
   (cl:+ 0
      2

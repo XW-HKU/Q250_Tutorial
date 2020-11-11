@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::FileTruncate > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::FileTruncateRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileTruncate > 
+// service_traits::MD5Sum< ::mavros_msgs::FileTruncateRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileTruncate >
 template<>
 struct MD5Sum< ::mavros_msgs::FileTruncateRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::FileTruncateRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileTruncateRequest> should match 
-// service_traits::DataType< ::mavros_msgs::FileTruncate > 
+// service_traits::DataType< ::mavros_msgs::FileTruncateRequest> should match
+// service_traits::DataType< ::mavros_msgs::FileTruncate >
 template<>
 struct DataType< ::mavros_msgs::FileTruncateRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::FileTruncateRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::FileTruncateResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::FileTruncate > 
+// service_traits::MD5Sum< ::mavros_msgs::FileTruncateResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::FileTruncate >
 template<>
 struct MD5Sum< ::mavros_msgs::FileTruncateResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::FileTruncateResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::FileTruncateResponse> should match 
-// service_traits::DataType< ::mavros_msgs::FileTruncate > 
+// service_traits::DataType< ::mavros_msgs::FileTruncateResponse> should match
+// service_traits::DataType< ::mavros_msgs::FileTruncate >
 template<>
 struct DataType< ::mavros_msgs::FileTruncateResponse>
 {

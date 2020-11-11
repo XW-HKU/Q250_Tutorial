@@ -146,8 +146,8 @@
 (setf (get mavros_msgs::StreamRateRequest :md5sum-) "d12f7661724c8ba25f67ba597bb7d039")
 (setf (get mavros_msgs::StreamRateRequest :datatype-) "mavros_msgs/StreamRateRequest")
 (setf (get mavros_msgs::StreamRateRequest :definition-)
-      "
-
+      "# sets stream rate
+# See REQUEST_DATA_STREAM message
 
 uint8 STREAM_ALL = 0
 uint8 STREAM_RAW_SENSORS = 1
@@ -169,8 +169,8 @@ bool on_off
 (setf (get mavros_msgs::StreamRateResponse :md5sum-) "d12f7661724c8ba25f67ba597bb7d039")
 (setf (get mavros_msgs::StreamRateResponse :datatype-) "mavros_msgs/StreamRateResponse")
 (setf (get mavros_msgs::StreamRateResponse :definition-)
-      "
-
+      "# sets stream rate
+# See REQUEST_DATA_STREAM message
 
 uint8 STREAM_ALL = 0
 uint8 STREAM_RAW_SENSORS = 1

@@ -79,10 +79,10 @@
   "b16f28a04389d5d47ddaa9e025e7383a")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandTriggerInterval-request>)))
   "Returns full string definition for message of type '<CommandTriggerInterval-request>"
-  (cl:format cl:nil "~%~%float32   cycle_time~%float32   integration_time~%~%~%"))
+  (cl:format cl:nil "# Type for controlling camera trigger interval and integration time~%~%float32   cycle_time			# Trigger cycle_time (interval between to triggers) - set to 0 to ignore command~%float32   integration_time	# Camera shutter integration_time - set to 0 to ignore command~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandTriggerInterval-request)))
   "Returns full string definition for message of type 'CommandTriggerInterval-request"
-  (cl:format cl:nil "~%~%float32   cycle_time~%float32   integration_time~%~%~%"))
+  (cl:format cl:nil "# Type for controlling camera trigger interval and integration time~%~%float32   cycle_time			# Trigger cycle_time (interval between to triggers) - set to 0 to ignore command~%float32   integration_time	# Camera shutter integration_time - set to 0 to ignore command~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandTriggerInterval-request>))
   (cl:+ 0
      4

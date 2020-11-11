@@ -187,9 +187,9 @@ class CommandIntRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # Generic COMMAND_INT
     
-    
-    bool broadcast
+    bool broadcast # send this command in broadcast mode
     
     uint8 frame
     uint16 command
@@ -199,9 +199,9 @@ class CommandIntRequest {
     float32 param2
     float32 param3
     float32 param4
-    int32 x
-    int32 y
-    float32 z
+    int32 x	# latitude in deg * 1E7 or local x * 1E4 m
+    int32 y	# longitude in deg * 1E7 or local y * 1E4 m
+    float32 z	# altitude
     
     `;
   }
@@ -350,8 +350,8 @@ class CommandIntResponse {
     // Returns full string definition for message
     return `
     bool success
-    
-    
+    # seems that this message don't produce andy COMMAND_ACK messages
+    # so no result field
     
     
     `;

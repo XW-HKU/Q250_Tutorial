@@ -129,10 +129,10 @@
 (setf (get mavros_msgs::FileRenameRequest :md5sum-) "07d853e3d48c88a648998515aab1f5b7")
 (setf (get mavros_msgs::FileRenameRequest :datatype-) "mavros_msgs/FileRenameRequest")
 (setf (get mavros_msgs::FileRenameRequest :definition-)
-      "
-
-
-
+      "# FTP::Rename
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string old_path
 string new_path
@@ -145,10 +145,10 @@ int32 r_errno
 (setf (get mavros_msgs::FileRenameResponse :md5sum-) "07d853e3d48c88a648998515aab1f5b7")
 (setf (get mavros_msgs::FileRenameResponse :datatype-) "mavros_msgs/FileRenameResponse")
 (setf (get mavros_msgs::FileRenameResponse :definition-)
-      "
-
-
-
+      "# FTP::Rename
+#
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
 string old_path
 string new_path

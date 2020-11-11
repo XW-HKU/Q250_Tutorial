@@ -38,10 +38,10 @@
   "358e233cde0c8a8bcfea4ce193f8fc15")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<LogRequestEnd-request>)))
   "Returns full string definition for message of type '<LogRequestEnd-request>"
-  (cl:format cl:nil "~%~%~%~%"))
+  (cl:format cl:nil "# Stop log transfer and resume normal logging~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'LogRequestEnd-request)))
   "Returns full string definition for message of type 'LogRequestEnd-request"
-  (cl:format cl:nil "~%~%~%~%"))
+  (cl:format cl:nil "# Stop log transfer and resume normal logging~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <LogRequestEnd-request>))
   (cl:+ 0
 ))

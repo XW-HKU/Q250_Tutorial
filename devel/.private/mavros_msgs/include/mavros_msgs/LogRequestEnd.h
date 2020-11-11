@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::LogRequestEnd > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::LogRequestEndRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::LogRequestEnd > 
+// service_traits::MD5Sum< ::mavros_msgs::LogRequestEndRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::LogRequestEnd >
 template<>
 struct MD5Sum< ::mavros_msgs::LogRequestEndRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::LogRequestEndRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::LogRequestEndRequest> should match 
-// service_traits::DataType< ::mavros_msgs::LogRequestEnd > 
+// service_traits::DataType< ::mavros_msgs::LogRequestEndRequest> should match
+// service_traits::DataType< ::mavros_msgs::LogRequestEnd >
 template<>
 struct DataType< ::mavros_msgs::LogRequestEndRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::LogRequestEndRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::LogRequestEndResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::LogRequestEnd > 
+// service_traits::MD5Sum< ::mavros_msgs::LogRequestEndResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::LogRequestEnd >
 template<>
 struct MD5Sum< ::mavros_msgs::LogRequestEndResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::LogRequestEndResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::LogRequestEndResponse> should match 
-// service_traits::DataType< ::mavros_msgs::LogRequestEnd > 
+// service_traits::DataType< ::mavros_msgs::LogRequestEndResponse> should match
+// service_traits::DataType< ::mavros_msgs::LogRequestEnd >
 template<>
 struct DataType< ::mavros_msgs::LogRequestEndResponse>
 {

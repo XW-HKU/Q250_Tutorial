@@ -43,6 +43,41 @@ struct SetModeRequest_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(MAV_MODE_PREFLIGHT)
+  #undef MAV_MODE_PREFLIGHT
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_STABILIZE_DISARMED)
+  #undef MAV_MODE_STABILIZE_DISARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_STABILIZE_ARMED)
+  #undef MAV_MODE_STABILIZE_ARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_MANUAL_DISARMED)
+  #undef MAV_MODE_MANUAL_DISARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_MANUAL_ARMED)
+  #undef MAV_MODE_MANUAL_ARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_GUIDED_DISARMED)
+  #undef MAV_MODE_GUIDED_DISARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_GUIDED_ARMED)
+  #undef MAV_MODE_GUIDED_ARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_AUTO_DISARMED)
+  #undef MAV_MODE_AUTO_DISARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_AUTO_ARMED)
+  #undef MAV_MODE_AUTO_ARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_TEST_DISARMED)
+  #undef MAV_MODE_TEST_DISARMED
+#endif
+#if defined(_WIN32) && defined(MAV_MODE_TEST_ARMED)
+  #undef MAV_MODE_TEST_ARMED
+#endif
+
   enum {
     MAV_MODE_PREFLIGHT = 0u,
     MAV_MODE_STABILIZE_DISARMED = 80u,
@@ -101,6 +136,21 @@ ros::message_operations::Printer< ::mavros_msgs::SetModeRequest_<ContainerAlloca
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::SetModeRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::SetModeRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.base_mode == rhs.base_mode &&
+    lhs.custom_mode == rhs.custom_mode;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::SetModeRequest_<ContainerAllocator1> & lhs, const ::mavros_msgs::SetModeRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -108,12 +158,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -178,27 +222,27 @@ struct Definition< ::mavros_msgs::SetModeRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n\
-\n\
-\n\
-\n\
-\n\
-\n\
-uint8 MAV_MODE_PREFLIGHT		= 0\n\
-uint8 MAV_MODE_STABILIZE_DISARMED	= 80\n\
-uint8 MAV_MODE_STABILIZE_ARMED		= 208\n\
-uint8 MAV_MODE_MANUAL_DISARMED		= 64\n\
-uint8 MAV_MODE_MANUAL_ARMED		= 192\n\
-uint8 MAV_MODE_GUIDED_DISARMED		= 88\n\
-uint8 MAV_MODE_GUIDED_ARMED		= 216\n\
-uint8 MAV_MODE_AUTO_DISARMED		= 92\n\
-uint8 MAV_MODE_AUTO_ARMED		= 220\n\
-uint8 MAV_MODE_TEST_DISARMED		= 66\n\
-uint8 MAV_MODE_TEST_ARMED		= 194\n\
-\n\
-uint8 base_mode\n\
-string custom_mode\n\
-";
+    return "# set FCU mode\n"
+"#\n"
+"# Known custom modes listed here:\n"
+"# http://wiki.ros.org/mavros/CustomModes\n"
+"\n"
+"# basic modes from MAV_MODE\n"
+"uint8 MAV_MODE_PREFLIGHT		= 0\n"
+"uint8 MAV_MODE_STABILIZE_DISARMED	= 80\n"
+"uint8 MAV_MODE_STABILIZE_ARMED		= 208\n"
+"uint8 MAV_MODE_MANUAL_DISARMED		= 64\n"
+"uint8 MAV_MODE_MANUAL_ARMED		= 192\n"
+"uint8 MAV_MODE_GUIDED_DISARMED		= 88\n"
+"uint8 MAV_MODE_GUIDED_ARMED		= 216\n"
+"uint8 MAV_MODE_AUTO_DISARMED		= 92\n"
+"uint8 MAV_MODE_AUTO_ARMED		= 220\n"
+"uint8 MAV_MODE_TEST_DISARMED		= 66\n"
+"uint8 MAV_MODE_TEST_ARMED		= 194\n"
+"\n"
+"uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''\n"
+"string custom_mode	# string mode representation or integer\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::SetModeRequest_<ContainerAllocator>&) { return value(); }

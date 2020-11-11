@@ -149,16 +149,16 @@
 (setf (get mavros_msgs::FileOpenRequest :md5sum-) "99a3f49cc67b91477cf49ff15c42af0e")
 (setf (get mavros_msgs::FileOpenRequest :datatype-) "mavros_msgs/FileOpenRequest")
 (setf (get mavros_msgs::FileOpenRequest :definition-)
-      "
+      "# FTP::Open
+#
+# :file_path:	used as session id in read/write/close services
+# :size:	file size returned for MODE_READ
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
-
-
-
-
-
-uint8 MODE_READ = 0
-uint8 MODE_WRITE = 1
-uint8 MODE_CREATE = 2
+uint8 MODE_READ = 0	# open for read
+uint8 MODE_WRITE = 1	# open for write
+uint8 MODE_CREATE = 2	# do creat()
 
 string file_path
 uint8 mode
@@ -172,16 +172,16 @@ int32 r_errno
 (setf (get mavros_msgs::FileOpenResponse :md5sum-) "99a3f49cc67b91477cf49ff15c42af0e")
 (setf (get mavros_msgs::FileOpenResponse :datatype-) "mavros_msgs/FileOpenResponse")
 (setf (get mavros_msgs::FileOpenResponse :definition-)
-      "
+      "# FTP::Open
+#
+# :file_path:	used as session id in read/write/close services
+# :size:	file size returned for MODE_READ
+# :success:	indicates success end of request
+# :r_errno:	remote errno if applicapable
 
-
-
-
-
-
-uint8 MODE_READ = 0
-uint8 MODE_WRITE = 1
-uint8 MODE_CREATE = 2
+uint8 MODE_READ = 0	# open for read
+uint8 MODE_WRITE = 1	# open for write
+uint8 MODE_CREATE = 2	# do creat()
 
 string file_path
 uint8 mode

@@ -67,6 +67,21 @@ ros::message_operations::Printer< ::mavros_msgs::VehicleInfoGetResponse_<Contain
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator1> & lhs, const ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator2> & rhs)
+{
+  return lhs.success == rhs.success &&
+    lhs.vehicles == rhs.vehicles;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator1> & lhs, const ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace mavros_msgs
 
 namespace ros
@@ -74,12 +89,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'geographic_msgs': ['/opt/ros/kinetic/share/geographic_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'mavros_msgs': ['/home/dji/MaRS_Offboard/src/mavros/mavros_msgs/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'uuid_msgs': ['/opt/ros/kinetic/share/uuid_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -144,62 +153,60 @@ struct Definition< ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bool success\n\
-mavros_msgs/VehicleInfo[] vehicles\n\
-\n\
-\n\
-\n\
-================================================================================\n\
-MSG: mavros_msgs/VehicleInfo\n\
-# Vehicle Info msg\n\
-\n\
-std_msgs/Header header\n\
-\n\
-uint8 HAVE_INFO_HEARTBEAT = 1\n\
-uint8 HAVE_INFO_AUTOPILOT_VERSION = 2\n\
-uint8 available_info		# Bitmap shows what info is available\n\
-\n\
-# Vehicle address\n\
-uint8 sysid                     # SYSTEM ID\n\
-uint8 compid                    # COMPONENT ID\n\
-\n\
-# -*- Heartbeat info -*-\n\
-uint8 autopilot                 # MAV_AUTOPILOT\n\
-uint8 type                      # MAV_TYPE\n\
-uint8 system_status             # MAV_STATE\n\
-uint8 base_mode\n\
-uint32 custom_mode\n\
-string mode                     # MAV_MODE string\n\
-uint32 mode_id                  # MAV_MODE number\n\
-\n\
-# -*- Autopilot version -*-\n\
-uint64 capabilities             # MAV_PROTOCOL_CAPABILITY\n\
-uint32 flight_sw_version        # Firmware version number\n\
-uint32 middleware_sw_version    # Middleware version number\n\
-uint32 os_sw_version            # Operating system version number\n\
-uint32 board_version            # HW / board version (last 8 bytes should be silicon ID, if any)\n\
-uint16 vendor_id                # ID of the board vendor\n\
-uint16 product_id               # ID of the product\n\
-uint64 uid                      # UID if provided by hardware\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
-# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-";
+    return "bool success\n"
+"mavros_msgs/VehicleInfo[] vehicles\n"
+"\n"
+"\n"
+"\n"
+"================================================================================\n"
+"MSG: mavros_msgs/VehicleInfo\n"
+"# Vehicle Info msg\n"
+"\n"
+"std_msgs/Header header\n"
+"\n"
+"uint8 HAVE_INFO_HEARTBEAT = 1\n"
+"uint8 HAVE_INFO_AUTOPILOT_VERSION = 2\n"
+"uint8 available_info		# Bitmap shows what info is available\n"
+"\n"
+"# Vehicle address\n"
+"uint8 sysid                     # SYSTEM ID\n"
+"uint8 compid                    # COMPONENT ID\n"
+"\n"
+"# -*- Heartbeat info -*-\n"
+"uint8 autopilot                 # MAV_AUTOPILOT\n"
+"uint8 type                      # MAV_TYPE\n"
+"uint8 system_status             # MAV_STATE\n"
+"uint8 base_mode\n"
+"uint32 custom_mode\n"
+"string mode                     # MAV_MODE string\n"
+"uint32 mode_id                  # MAV_MODE number\n"
+"\n"
+"# -*- Autopilot version -*-\n"
+"uint64 capabilities             # MAV_PROTOCOL_CAPABILITY\n"
+"uint32 flight_sw_version        # Firmware version number\n"
+"uint32 middleware_sw_version    # Middleware version number\n"
+"uint32 os_sw_version            # Operating system version number\n"
+"uint32 board_version            # HW / board version (last 8 bytes should be silicon ID, if any)\n"
+"uint16 vendor_id                # ID of the board vendor\n"
+"uint16 product_id               # ID of the product\n"
+"uint64 uid                      # UID if provided by hardware\n"
+"\n"
+"================================================================================\n"
+"MSG: std_msgs/Header\n"
+"# Standard metadata for higher-level stamped data types.\n"
+"# This is generally used to communicate timestamped data \n"
+"# in a particular coordinate frame.\n"
+"# \n"
+"# sequence ID: consecutively increasing ID \n"
+"uint32 seq\n"
+"#Two-integer timestamp that is expressed as:\n"
+"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
+"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
+"# time-handling sugar is provided by the client library\n"
+"time stamp\n"
+"#Frame this data is associated with\n"
+"string frame_id\n"
+;
   }
 
   static const char* value(const ::mavros_msgs::VehicleInfoGetResponse_<ContainerAllocator>&) { return value(); }

@@ -18,11 +18,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/dji/MaRS_Offboard/src/mavros/libmavconn/include"
   "catkin_generated/include"
   "/home/dji/MaRS_Offboard/devel/include"
+  "/usr/src/googletest/googletest/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/dji/MaRS_Offboard/build/libmavconn/gtest/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/dji/MaRS_Offboard/build/libmavconn/gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "/home/dji/MaRS_Offboard/build/libmavconn/CMakeFiles/mavconn.dir/DependInfo.cmake"
   )
 

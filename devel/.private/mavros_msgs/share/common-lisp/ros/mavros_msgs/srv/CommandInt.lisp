@@ -248,10 +248,10 @@
   "5d5fd287bf3d27ad6ec508b1692f3b09")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandInt-request>)))
   "Returns full string definition for message of type '<CommandInt-request>"
-  (cl:format cl:nil "~%~%bool broadcast~%~%uint8 frame~%uint16 command~%uint8 current~%uint8 autocontinue~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%int32 x~%int32 y~%float32 z~%~%~%"))
+  (cl:format cl:nil "# Generic COMMAND_INT~%~%bool broadcast # send this command in broadcast mode~%~%uint8 frame~%uint16 command~%uint8 current~%uint8 autocontinue~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%int32 x	# latitude in deg * 1E7 or local x * 1E4 m~%int32 y	# longitude in deg * 1E7 or local y * 1E4 m~%float32 z	# altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandInt-request)))
   "Returns full string definition for message of type 'CommandInt-request"
-  (cl:format cl:nil "~%~%bool broadcast~%~%uint8 frame~%uint16 command~%uint8 current~%uint8 autocontinue~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%int32 x~%int32 y~%float32 z~%~%~%"))
+  (cl:format cl:nil "# Generic COMMAND_INT~%~%bool broadcast # send this command in broadcast mode~%~%uint8 frame~%uint16 command~%uint8 current~%uint8 autocontinue~%float32 param1~%float32 param2~%float32 param3~%float32 param4~%int32 x	# latitude in deg * 1E7 or local x * 1E4 m~%int32 y	# longitude in deg * 1E7 or local y * 1E4 m~%float32 z	# altitude~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandInt-request>))
   (cl:+ 0
      1
@@ -328,10 +328,10 @@
   "5d5fd287bf3d27ad6ec508b1692f3b09")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandInt-response>)))
   "Returns full string definition for message of type '<CommandInt-response>"
-  (cl:format cl:nil "bool success~%~%~%~%~%~%"))
+  (cl:format cl:nil "bool success~%# seems that this message don't produce andy COMMAND_ACK messages~%# so no result field~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandInt-response)))
   "Returns full string definition for message of type 'CommandInt-response"
-  (cl:format cl:nil "bool success~%~%~%~%~%~%"))
+  (cl:format cl:nil "bool success~%# seems that this message don't produce andy COMMAND_ACK messages~%# so no result field~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandInt-response>))
   (cl:+ 0
      1

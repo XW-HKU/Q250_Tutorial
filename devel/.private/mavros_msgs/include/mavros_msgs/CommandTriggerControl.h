@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::CommandTriggerControl > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControlRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControl > 
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControlRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControl >
 template<>
 struct MD5Sum< ::mavros_msgs::CommandTriggerControlRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::CommandTriggerControlRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerControlRequest> should match 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerControl > 
+// service_traits::DataType< ::mavros_msgs::CommandTriggerControlRequest> should match
+// service_traits::DataType< ::mavros_msgs::CommandTriggerControl >
 template<>
 struct DataType< ::mavros_msgs::CommandTriggerControlRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::CommandTriggerControlRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControlResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControl > 
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControlResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::CommandTriggerControl >
 template<>
 struct MD5Sum< ::mavros_msgs::CommandTriggerControlResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::CommandTriggerControlResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerControlResponse> should match 
-// service_traits::DataType< ::mavros_msgs::CommandTriggerControl > 
+// service_traits::DataType< ::mavros_msgs::CommandTriggerControlResponse> should match
+// service_traits::DataType< ::mavros_msgs::CommandTriggerControl >
 template<>
 struct DataType< ::mavros_msgs::CommandTriggerControlResponse>
 {

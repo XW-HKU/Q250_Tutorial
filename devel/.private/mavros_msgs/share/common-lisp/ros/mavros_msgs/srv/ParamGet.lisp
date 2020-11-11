@@ -61,10 +61,10 @@
   "777d24d2a7ab1765ef009a69f464d2bc")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ParamGet-request>)))
   "Returns full string definition for message of type '<ParamGet-request>"
-  (cl:format cl:nil "~%~%string param_id~%~%~%"))
+  (cl:format cl:nil "# Request parameter from attached device~%~%string param_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ParamGet-request)))
   "Returns full string definition for message of type 'ParamGet-request"
-  (cl:format cl:nil "~%~%string param_id~%~%~%"))
+  (cl:format cl:nil "# Request parameter from attached device~%~%string param_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ParamGet-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'param_id))

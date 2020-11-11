@@ -55,9 +55,9 @@ class WaypointPullRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    
-    
-    
+    # Requests waypoints from device
+    #
+    # Returns success status and received count
     
     
     `;

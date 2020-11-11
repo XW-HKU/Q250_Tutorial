@@ -1,8 +1,0 @@
-Symlinking /home/dji/MaRS_Offboard/devel/lib/libmavros.so
-Symlinking /home/dji/MaRS_Offboard/devel/lib/libmavros_plugins.so
-Symlinking /home/dji/MaRS_Offboard/devel/lib/python2.7/dist-packages/mavros/__init__.py
-Symlinking /home/dji/MaRS_Offboard/devel/lib/pkgconfig/mavros.pc
-Symlinking /home/dji/MaRS_Offboard/devel/lib/mavros/mavros_node
-Symlinking /home/dji/MaRS_Offboard/devel/lib/mavros/gcs_bridge
-Symlinking /home/dji/MaRS_Offboard/devel/share/mavros/cmake/mavrosConfig.cmake
-Symlinking /home/dji/MaRS_Offboard/devel/share/mavros/cmake/mavrosConfig-version.cmake

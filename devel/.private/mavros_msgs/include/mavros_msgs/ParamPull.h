@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::ParamPull > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::ParamPullRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::ParamPull > 
+// service_traits::MD5Sum< ::mavros_msgs::ParamPullRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::ParamPull >
 template<>
 struct MD5Sum< ::mavros_msgs::ParamPullRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::ParamPullRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::ParamPullRequest> should match 
-// service_traits::DataType< ::mavros_msgs::ParamPull > 
+// service_traits::DataType< ::mavros_msgs::ParamPullRequest> should match
+// service_traits::DataType< ::mavros_msgs::ParamPull >
 template<>
 struct DataType< ::mavros_msgs::ParamPullRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::ParamPullRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::ParamPullResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::ParamPull > 
+// service_traits::MD5Sum< ::mavros_msgs::ParamPullResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::ParamPull >
 template<>
 struct MD5Sum< ::mavros_msgs::ParamPullResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::ParamPullResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::ParamPullResponse> should match 
-// service_traits::DataType< ::mavros_msgs::ParamPull > 
+// service_traits::DataType< ::mavros_msgs::ParamPullResponse> should match
+// service_traits::DataType< ::mavros_msgs::ParamPull >
 template<>
 struct DataType< ::mavros_msgs::ParamPullResponse>
 {

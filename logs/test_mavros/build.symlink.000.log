@@ -1,5 +1,0 @@
-Symlinking /home/dji/MaRS_Offboard/devel/lib/libmavros_sitl_test.so
-Symlinking /home/dji/MaRS_Offboard/devel/lib/test_mavros/sitl_test_node
-Symlinking /home/dji/MaRS_Offboard/devel/lib/pkgconfig/test_mavros.pc
-Symlinking /home/dji/MaRS_Offboard/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
-Symlinking /home/dji/MaRS_Offboard/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake

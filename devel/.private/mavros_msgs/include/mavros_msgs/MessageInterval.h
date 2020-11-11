@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::MessageInterval > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::MessageIntervalRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::MessageInterval > 
+// service_traits::MD5Sum< ::mavros_msgs::MessageIntervalRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::MessageInterval >
 template<>
 struct MD5Sum< ::mavros_msgs::MessageIntervalRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::MessageIntervalRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::MessageIntervalRequest> should match 
-// service_traits::DataType< ::mavros_msgs::MessageInterval > 
+// service_traits::DataType< ::mavros_msgs::MessageIntervalRequest> should match
+// service_traits::DataType< ::mavros_msgs::MessageInterval >
 template<>
 struct DataType< ::mavros_msgs::MessageIntervalRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::MessageIntervalRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::MessageIntervalResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::MessageInterval > 
+// service_traits::MD5Sum< ::mavros_msgs::MessageIntervalResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::MessageInterval >
 template<>
 struct MD5Sum< ::mavros_msgs::MessageIntervalResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::MessageIntervalResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::MessageIntervalResponse> should match 
-// service_traits::DataType< ::mavros_msgs::MessageInterval > 
+// service_traits::DataType< ::mavros_msgs::MessageIntervalResponse> should match
+// service_traits::DataType< ::mavros_msgs::MessageInterval >
 template<>
 struct DataType< ::mavros_msgs::MessageIntervalResponse>
 {

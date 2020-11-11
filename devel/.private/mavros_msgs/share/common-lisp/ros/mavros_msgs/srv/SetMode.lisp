@@ -101,10 +101,10 @@
   "e4f18fa93379f9ff1780d270ce110203")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetMode-request>)))
   "Returns full string definition for message of type '<SetMode-request>"
-  (cl:format cl:nil "~%~%~%~%~%~%uint8 MAV_MODE_PREFLIGHT		= 0~%uint8 MAV_MODE_STABILIZE_DISARMED	= 80~%uint8 MAV_MODE_STABILIZE_ARMED		= 208~%uint8 MAV_MODE_MANUAL_DISARMED		= 64~%uint8 MAV_MODE_MANUAL_ARMED		= 192~%uint8 MAV_MODE_GUIDED_DISARMED		= 88~%uint8 MAV_MODE_GUIDED_ARMED		= 216~%uint8 MAV_MODE_AUTO_DISARMED		= 92~%uint8 MAV_MODE_AUTO_ARMED		= 220~%uint8 MAV_MODE_TEST_DISARMED		= 66~%uint8 MAV_MODE_TEST_ARMED		= 194~%~%uint8 base_mode~%string custom_mode~%~%~%"))
+  (cl:format cl:nil "# set FCU mode~%#~%# Known custom modes listed here:~%# http://wiki.ros.org/mavros/CustomModes~%~%# basic modes from MAV_MODE~%uint8 MAV_MODE_PREFLIGHT		= 0~%uint8 MAV_MODE_STABILIZE_DISARMED	= 80~%uint8 MAV_MODE_STABILIZE_ARMED		= 208~%uint8 MAV_MODE_MANUAL_DISARMED		= 64~%uint8 MAV_MODE_MANUAL_ARMED		= 192~%uint8 MAV_MODE_GUIDED_DISARMED		= 88~%uint8 MAV_MODE_GUIDED_ARMED		= 216~%uint8 MAV_MODE_AUTO_DISARMED		= 92~%uint8 MAV_MODE_AUTO_ARMED		= 220~%uint8 MAV_MODE_TEST_DISARMED		= 66~%uint8 MAV_MODE_TEST_ARMED		= 194~%~%uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''~%string custom_mode	# string mode representation or integer~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetMode-request)))
   "Returns full string definition for message of type 'SetMode-request"
-  (cl:format cl:nil "~%~%~%~%~%~%uint8 MAV_MODE_PREFLIGHT		= 0~%uint8 MAV_MODE_STABILIZE_DISARMED	= 80~%uint8 MAV_MODE_STABILIZE_ARMED		= 208~%uint8 MAV_MODE_MANUAL_DISARMED		= 64~%uint8 MAV_MODE_MANUAL_ARMED		= 192~%uint8 MAV_MODE_GUIDED_DISARMED		= 88~%uint8 MAV_MODE_GUIDED_ARMED		= 216~%uint8 MAV_MODE_AUTO_DISARMED		= 92~%uint8 MAV_MODE_AUTO_ARMED		= 220~%uint8 MAV_MODE_TEST_DISARMED		= 66~%uint8 MAV_MODE_TEST_ARMED		= 194~%~%uint8 base_mode~%string custom_mode~%~%~%"))
+  (cl:format cl:nil "# set FCU mode~%#~%# Known custom modes listed here:~%# http://wiki.ros.org/mavros/CustomModes~%~%# basic modes from MAV_MODE~%uint8 MAV_MODE_PREFLIGHT		= 0~%uint8 MAV_MODE_STABILIZE_DISARMED	= 80~%uint8 MAV_MODE_STABILIZE_ARMED		= 208~%uint8 MAV_MODE_MANUAL_DISARMED		= 64~%uint8 MAV_MODE_MANUAL_ARMED		= 192~%uint8 MAV_MODE_GUIDED_DISARMED		= 88~%uint8 MAV_MODE_GUIDED_ARMED		= 216~%uint8 MAV_MODE_AUTO_DISARMED		= 92~%uint8 MAV_MODE_AUTO_ARMED		= 220~%uint8 MAV_MODE_TEST_DISARMED		= 66~%uint8 MAV_MODE_TEST_ARMED		= 194~%~%uint8 base_mode		# filled by MAV_MODE enum value or 0 if custom_mode != ''~%string custom_mode	# string mode representation or integer~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetMode-request>))
   (cl:+ 0
      1
@@ -161,10 +161,10 @@
   "e4f18fa93379f9ff1780d270ce110203")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetMode-response>)))
   "Returns full string definition for message of type '<SetMode-response>"
-  (cl:format cl:nil "bool mode_sent~%~%~%~%"))
+  (cl:format cl:nil "bool mode_sent		# Mode known/parsed correctly and SET_MODE are sent~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetMode-response)))
   "Returns full string definition for message of type 'SetMode-response"
-  (cl:format cl:nil "bool mode_sent~%~%~%~%"))
+  (cl:format cl:nil "bool mode_sent		# Mode known/parsed correctly and SET_MODE are sent~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetMode-response>))
   (cl:+ 0
      1

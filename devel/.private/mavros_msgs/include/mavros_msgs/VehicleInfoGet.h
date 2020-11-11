@@ -57,8 +57,8 @@ struct DataType< ::mavros_msgs::VehicleInfoGet > {
 };
 
 
-// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGetRequest> should match 
-// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGet > 
+// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGetRequest> should match
+// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGet >
 template<>
 struct MD5Sum< ::mavros_msgs::VehicleInfoGetRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::mavros_msgs::VehicleInfoGetRequest>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::VehicleInfoGetRequest> should match 
-// service_traits::DataType< ::mavros_msgs::VehicleInfoGet > 
+// service_traits::DataType< ::mavros_msgs::VehicleInfoGetRequest> should match
+// service_traits::DataType< ::mavros_msgs::VehicleInfoGet >
 template<>
 struct DataType< ::mavros_msgs::VehicleInfoGetRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::mavros_msgs::VehicleInfoGetRequest>
   }
 };
 
-// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGetResponse> should match 
-// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGet > 
+// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGetResponse> should match
+// service_traits::MD5Sum< ::mavros_msgs::VehicleInfoGet >
 template<>
 struct MD5Sum< ::mavros_msgs::VehicleInfoGetResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::mavros_msgs::VehicleInfoGetResponse>
   }
 };
 
-// service_traits::DataType< ::mavros_msgs::VehicleInfoGetResponse> should match 
-// service_traits::DataType< ::mavros_msgs::VehicleInfoGet > 
+// service_traits::DataType< ::mavros_msgs::VehicleInfoGetResponse> should match
+// service_traits::DataType< ::mavros_msgs::VehicleInfoGet >
 template<>
 struct DataType< ::mavros_msgs::VehicleInfoGetResponse>
 {

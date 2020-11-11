@@ -73,10 +73,10 @@
   "65be46a6918cb61b7dceb7c9ba9b1c97")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CommandTriggerControl-request>)))
   "Returns full string definition for message of type '<CommandTriggerControl-request>"
-  (cl:format cl:nil "~%~%bool    trigger_enable~%bool    sequence_reset~%bool    trigger_pause~%~%~%"))
+  (cl:format cl:nil "# Type for controlling onboard camera triggering system~%~%bool    trigger_enable		# Trigger enable/disable~%bool    sequence_reset		# Reset the trigger sequence~%bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CommandTriggerControl-request)))
   "Returns full string definition for message of type 'CommandTriggerControl-request"
-  (cl:format cl:nil "~%~%bool    trigger_enable~%bool    sequence_reset~%bool    trigger_pause~%~%~%"))
+  (cl:format cl:nil "# Type for controlling onboard camera triggering system~%~%bool    trigger_enable		# Trigger enable/disable~%bool    sequence_reset		# Reset the trigger sequence~%bool    trigger_pause		# Pause triggering, but without switching the camera off or retracting it.~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CommandTriggerControl-request>))
   (cl:+ 0
      1
